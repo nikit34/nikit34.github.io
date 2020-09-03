@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Merriweather:wght@300&display=swap');
 
 body {
-    background-image: linear-gradient(white, green);
+    background-image: linear-gradient(white, seagreen);
     background-attachment: fixed;
 }
 
@@ -64,7 +64,10 @@ a:hover {
 }
 
 .sidebar__title {
-    background-color: whitesmoke;
+    background-image: linear-gradient(0deg, white 0%, whitesmoke 100%);
+    border-top: 2px solid lightgreen;
+    border-left: 1px solid lightgreen;
+    border-right: 1px solid lightgreen;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     min-height: 80px;
@@ -90,8 +93,8 @@ a:hover {
 }
 
 .sidebar__email {
-    background-image: linear-gradient(white 0%, lightgreen 25%, green 100%);
-    border-radius: 30px;
+    background-image: linear-gradient( whitesmoke 0%, lightgreen 25%, lightgreen 75%, whitesmoke 100%);
+    border-radius: 10px;
     color: white;
     margin: 15px 25px 0px;
     cursor: pointer;
@@ -100,16 +103,57 @@ a:hover {
 
 .sidebar__email:hover {
     transform: scale(1.05);
+    background-image: linear-gradient(white 0%, lightgreen 10%, seagreen 75%, green 100%);
 }
 
 .sidebar__github {
-    border-radius: 20px;
-    border: 3px solid whitesmoke;
+    border-radius: 15px;
+    border: 2px solid whitesmoke;
     transition: all 0.3s;
 }
 
 .sidebar__github:hover,
 .sidebar__resume:hover {
     background-color: whitesmoke;
+    border-color: lightgreen;
     color: black;
+}
+
+.sidebar__contact {
+    background-image: linear-gradient(white 0%, whitesmoke 100%);
+    border-bottom: 2px solid lightgreen;
+    border-left: 1px solid lightgreen;
+    border-right: 1px solid lightgreen;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: all 0.3s;
+}
+
+.sidebar__contact:hover {
+    border-top: 2px solid lightgreen;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+@media(max-width:991px){
+    .app__main-content {
+        margin: 30px 0;
+    }
+}
+
+.navbar__items {
+    display: flex;
+}
+
+.navbar__active {
+    font-size: 2rem;
+    font-weight: 700;
+    color: seagreen;
+    border-bottom: 4px solid lightgreen;
+}
+
+.navbar__item {
+    margin-right: 20px;
+    text-decoration: none;
+    color:
 }
