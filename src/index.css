@@ -155,5 +155,7 @@ a:hover {
 .navbar__item {
     margin-right: 20px;
     text-decoration: none;
-    color:
+    color: seagreen;
+    font-size: 1.3rem;
+    cursor: pointer;
 }
