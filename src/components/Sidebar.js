@@ -41,7 +41,9 @@ const Sidebar = () => {
                 <div className="sidebar__item">permikov134@yandex.ru</div>
                 <div className="sidebar__item">+7(977)991-80-74</div>
             </div>
-            <div className="sidebar__item sidebar__email" onClick={handleEmailMe}>Email me</div>
+            <a><div className="sidebar__item sidebar__btn sidebar__email" onClick={handleEmailMe}>Email me</div></a>
+            <hr/>
+            <a href="https://nikit34.github.io/nikit34.github.io_v2/"><div className="sidebar__item sidebar__btn sidebar__prev-version">Previous version</div></a>
         </div>
     )
 }

@@ -13,7 +13,7 @@ function App() {
     <Router>
       <div className="app">
         <div className="container app__container">
-          <div className="row app_row">
+          <div className="row app__row">
             <div className="col-lg-3">
               <Sidebar />
             </div>
