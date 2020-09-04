@@ -93,7 +93,7 @@ a:hover {
 }
 
 .sidebar__email {
-    background-image: linear-gradient( whitesmoke 0%, lightgreen 25%, lightgreen 75%, whitesmoke 100%);
+    background-image: linear-gradient( white 0%, lightgreen 20%, seagreen 75%, whitesmoke 100%);
     border-radius: 10px;
     color: white;
     margin: 15px 25px 0px;
@@ -103,7 +103,7 @@ a:hover {
 
 .sidebar__email:hover {
     transform: scale(1.05);
-    background-image: linear-gradient(white 0%, lightgreen 10%, seagreen 75%, green 100%);
+    background-image: linear-gradient(whitesmoke 0%, lightgreen 10%, seagreen 75%, green 100%);
 }
 
 .sidebar__github {
@@ -158,4 +158,46 @@ a:hover {
     color: seagreen;
     font-size: 1.3rem;
     cursor: pointer;
+}
+
+.about {
+    padding:20px;
+}
+
+.about__intro {
+    font-size: 1.1rem;
+    padding: 20px;
+}
+
+.about__container {
+    background-color: whitesmoke;
+    padding: 20px;
+}
+
+.about__heading {
+    font-size: 25px;
+    font-weight: 700;
+    color: green;
+}
+
+.skill-card {
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+}
+
+.skill-card__icon {
+    width: 40px;
+    height: 40px;
+}
+
+.skill_card-body {
+    margin-left: 15px;
+}
+
+.skill-card__content {
+
 }
