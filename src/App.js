@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
 import About from './components/About'
-// import Projects from './components/Projects'
-// import Resume from './components/Resume'
+import Projects from './components/Projects'
+import Resume from './components/Resume'
 
 
 function App() {
@@ -23,10 +23,10 @@ function App() {
                 <Route exact path="/">
                   <About />
                 </Route>
-                {/* <Route path="/resume">
+                <Route path="/resume">
                   <Resume />
                 </Route>
-                <Route path="/projects" component={Projects}/> */}
+                <Route path="/projects" component={Projects}/>
                 <Route>
                   <Redirect to="/" />
                 </Route>
