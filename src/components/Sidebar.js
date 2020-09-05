@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+
 import facebook from '../assets/icons/facebook.svg'
 import youtube from '../assets/icons/youtube.svg'
 import linkedin from '../assets/icons/linkedin.svg'
@@ -13,8 +15,25 @@ const Sidebar = () => {
     const handleEmailMe = () => {
         window.open('mailto:permikov134@yandex.ru')
     }
+
+    const sidebar_variant = {
+        hidden: {
+            x: '-20vw'
+        },
+        visible: {
+            x: 0,
+            transition: {
+                dealy: 0.2, duration: 0.7, type: 'spring'
+            }
+        }
+    }
+
     return (
-        <div className="sidebar">
+        <motion.div className="sidebar"
+            variants={sidebar_variant}
+            initial='hidden'
+            animate='visible'
+        >
             <img src={avatar} alt="avatar" className="sidebar__avatar" />
             <div className="sidebar__name">Permyakov <span>Nikita</span></div>
             <div className="sidebar__item sidebar__title"><p>Full-Stack</p><p>Python, JavaScript, C++</p></div>
@@ -42,9 +61,9 @@ const Sidebar = () => {
                 <div className="sidebar__item">+7(977)991-80-74</div>
             </div>
             <a><div className="sidebar__item sidebar__btn sidebar__email" onClick={handleEmailMe}>Email me</div></a>
-            <hr/>
+            <br/>
             <a href="https://nikit34.github.io/nikit34.github.io_v2/"><div className="sidebar__item sidebar__btn sidebar__prev-version">Previous version</div></a>
-        </div>
+        </motion.div>
     )
 }
 

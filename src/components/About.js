@@ -1,38 +1,29 @@
 import React from 'react'
-import api from '../assets/icons/api.svg'
-import Skillcard from './Skillcard'
+import { motion } from 'framer-motion'
 
-const skills = [
-    {
-        icon: api,
-        title: "English, German",
-        about: "Quick read and thinking of any documentations"
-    },{
-        icon: api,
-        title: "English, German",
-        about: "Quick retest cumentations"
-    },{
-        icon: api,
-        title: "English, German",
-        about: "Quicretestions"
-    },{
-        icon: api,
-        title: "English, Dotch",
-        about: "Quick rearetestdocumentations"
-    },{
-        icon: api,
-        title: "English, Dotch",
-        about: "Quick read and knoretestretestretestretestretest of any documentations"
-    },{
-        icon: api,
-        title: "English, Dotch",
-        about: "Quick readretestretestretestretestretestr etestretestretestretestrete stretestretestretestish of any documentations"
-    },
-]
+import Skillcard from './Skillcard'
+import skills from './data/about_data'
+
 
 const About = () => {
+    const about_variants = {
+        hidden: {
+            opacity: 0
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                dealy: 0.2, duration: 1.2
+            }
+        }
+    }
+
     return (
-        <div className="about">
+        <motion.div className="about"
+            variants={about_variants}
+            initial='hidden'
+            animate='visible'
+        >
             <h6 className="about__intro">
                 I want to be professional in development.
             </h6>
@@ -46,7 +37,7 @@ const About = () => {
                     }
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

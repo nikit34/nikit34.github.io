@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 import Bar from './Bar'
 import Experience from './Experience'
@@ -6,8 +7,24 @@ import experiens, { languages, tools } from './data/resume_data'
 
 
 const Resume = () => {
+    const resume_variants = {
+        hidden: {
+            opacity: 0
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                dealy: 0.2, duration: 1.2
+            }
+        }
+    }
+
     return (
-        <div className="container resume">
+        <motion.div className="container resume"
+            variants={resume_variants}
+            initial='hidden'
+            animate='visible'
+        >
             <div className="row">
                 <div className="resume-card">
                     <h4 className="resume-title">
@@ -40,7 +57,7 @@ const Resume = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
