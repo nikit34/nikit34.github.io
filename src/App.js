@@ -1,5 +1,6 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch, Redirect, useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
 
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
@@ -9,17 +10,20 @@ import Resume from './components/Resume'
 
 
 function App() {
+
+  const location = useLocation();
+
   return (
-    <Router>
-      <div className="app">
-        <div className="container app__container">
-          <div className="row app__row">
-            <div className="col-lg-3">
-              <Sidebar />
-            </div>
-            <div className="col-lg-9 app__main-content">
-              <Navbar />
-              <Switch>
+    <div className="app">
+      <div className="container app__container">
+        <div className="row app__row">
+          <div className="col-lg-3">
+            <Sidebar />
+          </div>
+          <div className="col-lg-9 app__main-content">
+            <Navbar />
+            <AnimatePresence exitBeforeEnter>
+              <Switch location={location} key={location.key}>
                 <Route exact path="/">
                   <About />
                 </Route>
@@ -31,11 +35,11 @@ function App() {
                   <Redirect to="/" />
                 </Route>
               </Switch>
-            </div>
+            </AnimatePresence>
           </div>
         </div>
       </div>
-    </Router>
+    </div>
   );
 }
 
