@@ -78,27 +78,27 @@ export const languages = [
         level: '80'
     },{
         icon: django,
-        name: 'Django',
+        name: 'Django  > 20 projects',
         level: '100'
     },{
         icon: react,
-        name: 'React',
+        name: 'React  > 20 projects',
         level: '80'
     },{
         icon: nodejs,
-        name: 'Node',
+        name: 'Node  > 10 projects',
         level: '60'
     },{
         icon: opencv,
-        name: 'OpenCV',
+        name: 'OpenCV  > 10 projects',
         level: '40'
     },{
         icon: sql,
-        name: 'SQL',
+        name: 'SQL  two seleсt deep',
         level: '70'
     },{
         icon: flask,
-        name: 'Flask',
+        name: 'Flask  - 2 projects',
         level: '50'
     }
 ]
@@ -106,7 +106,7 @@ export const languages = [
 export const tools = [
     {
         icon: git,
-        name: 'Git',
+        name: 'Git (merge, reset thought Bash)',
         level: '80'
     },{
         icon: bitbucket,
@@ -134,15 +134,15 @@ export const tools = [
         level: '60'
     },{
         icon: macos,
-        name: 'MacOS',
+        name: 'MacOS user',
         level: '40'
     },{
         icon: qa,
-        name: 'QA (pytest, selenium)',
+        name: 'QA (Pytest, Selenium, etc...)',
         level: '100'
     },{
         icon: wireshark,
-        name: 'Wireshark, etc...',
+        name: 'Wireshark, SQLmap, etc...',
         level: '80'
     }
 ]
