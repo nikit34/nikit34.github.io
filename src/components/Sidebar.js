@@ -52,7 +52,7 @@ const Sidebar = () => {
                         <img src={github} alt="github" className="sidebar__icon mb-2 mr-3"/>GitHub
                     </div>
                 </a>
-            <div className="sidebar__contact pt-3">
+            <div className="sidebar__contact">
                 <div className="sidebar__location">
                     <img src={pin} alt="location" className="sidebar__icon mr-3"/>
                     Russia, Moscow

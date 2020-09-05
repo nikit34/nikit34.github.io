@@ -97,11 +97,6 @@ a:hover {
     transition: all 0.3s;
 }
 
-
-.sidebar__contact {
-    margin: 20px 0;
-}
-
 .sidebar__btn {
     display: inline-block;
     line-height: 1.5;
@@ -146,6 +141,7 @@ a:hover {
     border-right: 1px solid lightgreen;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    margin: 20px 0;
     transition: all 0.3s;
 }
 
@@ -270,8 +266,8 @@ a:hover {
     font-weight: 700;
     color: seagreen;
     text-align: center;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+    padding-top: 2vh;
+    padding-bottom: 3vh;
 }
 
 .resume-card__heading {

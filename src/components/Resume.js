@@ -44,7 +44,7 @@ const Resume = () => {
             </div>
             <div className="row">
                 <div className="col-lg-6 resume-languages">
-                    <h4 className="resume-title my-3">
+                    <h4 className="resume-title">
                         Languages and Frameworks
                     </h4>
                     <div className="resume-language__body">
@@ -54,7 +54,7 @@ const Resume = () => {
                     </div>
                 </div>
                 <div className="col-lg-6 resume-languages">
-                    <h4 className="resume-title my-3">
+                    <h4 className="resume-title">
                         Tools and Sofrwares
                     </h4>
                     <div className="resume-language__body">
