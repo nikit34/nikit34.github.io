@@ -35,7 +35,7 @@ a:hover {
 
 .app__main-content {
     background-color: white;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 25px 15px;
     box-shadow: 0 0 1px black;
 }
@@ -44,7 +44,7 @@ a:hover {
     background-color: white;
     height: 100%;
     min-width: 225px;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 25px 15px;
     box-shadow: 0 0 1px black;
     text-align: center;
@@ -75,9 +75,8 @@ a:hover {
 
 .sidebar__title {
     background-image: linear-gradient(0deg, white 0%, whitesmoke 100%);
+    padding-top: 10px;
     border-top: 2px solid lightgreen;
-    border-left: 1px solid lightgreen;
-    border-right: 1px solid lightgreen;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     min-height: 80px;
@@ -263,10 +262,6 @@ a:hover {
     color: seagreen;
 }
 
-.resume {
-    padding-top: 20px;
-}
-
 .resume-card__body{
     margin: 15px 25px;
     padding: 10px 15px;
@@ -286,8 +281,6 @@ a:hover {
     font-weight: 700;
     color: seagreen;
     text-align: center;
-    padding-top: 2vh;
-    padding-bottom: 3vh;
 }
 
 .resume-card__heading {

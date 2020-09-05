@@ -26,7 +26,7 @@ const Resume = () => {
     }
 
     return (
-        <motion.div className="container resume"
+        <motion.div className="container"
             variants={resume_variants}
             initial='hidden'
             animate='visible'
