@@ -9,9 +9,9 @@ const Navbar = () => {
     useEffect(() => {
         let currentUrl = window.location.href
         if(currentUrl.endsWith('/'))
-            setActive('About');
-        else if (currentUrl.endsWith('/projects'))
             setActive('Projects');
+        else if (currentUrl.endsWith('/about'))
+            setActive('About');
         else if (currentUrl.endsWith('/resume'))
             setActive('Resume');
     }, [active])
@@ -40,8 +40,14 @@ const Navbar = () => {
                 {active}
             </div>
             <div className="navbar__items">
-            {active !== 'About' &&
+            {
+                active !== 'Projects' &&
                 <Link to="/">
+                    <div className="navbar__item" onClick={() => setActive('Projects')}>Projects</div>
+                </Link>
+            }{
+                active !== 'About' &&
+                <Link to="/about">
                 <div className="navbar__item" onClick={() => setActive('About')}>About</div>
                 </Link>
             }{
@@ -49,11 +55,6 @@ const Navbar = () => {
                 <Link to="/resume">
                     <div className="navbar__item" onClick={() => setActive('Resume')}>Resume</div>
                 </Link> : null
-            }{
-                active !== 'Projects' &&
-                <Link to="/projects">
-                    <div className="navbar__item" onClick={() => setActive('Projects')}>Projects</div>
-                </Link>
             }
             </div>
         </motion.div>

@@ -35,7 +35,6 @@ const About = () => {
                 I want to be professional in development.
             </h6>
             <div className="contaimer about__container">
-                <h6 className="about__heading">What I offer</h6>
                 <div className="row">
                     {
                         skills.map((skill, index) =>

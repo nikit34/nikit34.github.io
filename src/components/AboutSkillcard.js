@@ -4,10 +4,18 @@ import React from 'react'
 const AboutSkillcard = ({ skill: { icon, title, about } }) =>
     <div className="col-lg-6">
         <div className="skill-card">
-            <img src={icon} alt="icon" className="skill-card__icon" />
-            <div className="skill-card-body">
-                <h6 className="skill-card__title">{title}</h6>
-                <p className="skill-card__content">{about}</p>
+            <div className="row">
+                <div className="col-2">
+                    <img src={icon} alt="icon" className="skill-card__icon" />
+                </div>
+                <div className="col-10">
+                    <h6 className="skill-card__title">{title}</h6>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col">
+                    <p className="skill-card__content">{about}</p>
+                </div>
             </div>
         </div>
     </div>
