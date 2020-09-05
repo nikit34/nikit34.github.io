@@ -15,6 +15,12 @@ const About = () => {
             transition: {
                 dealy: 0.2, duration: 1.2
             }
+        },
+        exit: {
+            opacity: 0,
+            transition: {
+                ease: 'easeInOut'
+            }
         }
     }
 
@@ -23,6 +29,7 @@ const About = () => {
             variants={about_variants}
             initial='hidden'
             animate='visible'
+            exit='exit'
         >
             <h6 className="about__intro">
                 I want to be professional in development.

@@ -60,9 +60,9 @@ const Sidebar = () => {
                 <div className="sidebar__item">permikov134@yandex.ru</div>
                 <div className="sidebar__item">+7(977)991-80-74</div>
             </div>
-            <a><div className="sidebar__item sidebar__btn sidebar__email" onClick={handleEmailMe}>Email me</div></a>
+            <a><div className="sidebar__item sidebar__btn" onClick={handleEmailMe}>Email me</div></a>
             <br/>
-            <a href="https://nikit34.github.io/nikit34.github.io_v2/"><div className="sidebar__item sidebar__btn sidebar__prev-version">Previous version</div></a>
+            <a href="https://nikit34.github.io/nikit34.github.io_v2/"><div className="sidebar__item sidebar__btn">Previous version</div></a>
         </motion.div>
     )
 }

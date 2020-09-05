@@ -16,6 +16,12 @@ const Resume = () => {
             transition: {
                 dealy: 0.2, duration: 1.2
             }
+        },
+        exit: {
+            opacity: 0,
+            transition: {
+                ease: 'easeInOut'
+            }
         }
     }
 
@@ -24,6 +30,7 @@ const Resume = () => {
             variants={resume_variants}
             initial='hidden'
             animate='visible'
+            exit='exit'
         >
             <div className="row">
                 <div className="resume-card">
