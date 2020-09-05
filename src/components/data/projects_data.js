@@ -87,7 +87,7 @@ const data_projects = [
     }
 ]
 
-export const categories = [
+const categories = [
     {
         category: 'All'
     },{
@@ -108,4 +108,4 @@ export const categories = [
 ]
 
 
-export default data_projects;
+export { data_projects, categories };

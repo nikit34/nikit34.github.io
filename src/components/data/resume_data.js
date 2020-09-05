@@ -63,7 +63,7 @@ const experiens = [
     }
 ]
 
-export const languages = [
+const languages = [
     {
         icon: python,
         name: 'Python',
@@ -103,7 +103,7 @@ export const languages = [
     }
 ]
 
-export const tools = [
+const tools = [
     {
         icon: git,
         name: 'Git (merge, reset thought Bash)',
@@ -147,4 +147,4 @@ export const tools = [
     }
 ]
 
-export default experiens;
+export { experiens, languages, tools };
