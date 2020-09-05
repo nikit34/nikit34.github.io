@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Skillcard = ({skill: { icon, title, about } }) =>
+const AboutSkillcard = ({ skill: { icon, title, about } }) =>
     <div className="col-lg-6">
         <div className="skill-card">
             <img src={icon} alt="icon" className="skill-card__icon" />
@@ -12,4 +12,4 @@ const Skillcard = ({skill: { icon, title, about } }) =>
         </div>
     </div>
 
-export default Skillcard;
+export default AboutSkillcard;
