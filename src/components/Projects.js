@@ -1,26 +1,8 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
-import data_projects from './data/projects_data'
+import data_projects, { categories } from './data/projects_data'
 import ProjectCard from './ProjectCard'
-
-const categories = [
-    {
-        category: 'Python'
-    },{
-        category: 'JavaScript'
-    },{
-        category: 'C++'
-    },{
-        category: 'Django'
-    },{
-        category: 'React'
-    },{
-        category: 'Node'
-    },{
-        category: 'OpenCV'
-    }
-]
 
 
 const Tab = ({ value: { category }, handle: handleFilterCategory }) => {
@@ -34,8 +16,12 @@ const Projects = () => {
     // const [active, setActive] = useState(0);
 
     const handleFilterCategory = (name) => {
-        const new_data = data_projects.filter(project => project.category.includes(name))
-        setProjects(new_data)
+        if (name.toLowerCase() === 'all'){
+            setProjects(data_projects)
+        } else {
+            const new_data = data_projects.filter(project => project.category.includes(name))
+            setProjects(new_data)
+        }
     }
 
     const project_variants = {
@@ -64,7 +50,6 @@ const Projects = () => {
             exit='exit'
         >
             <div className="projects__navbar">
-                <div className="sidebar__btn" onClick={() => setProjects(data_projects)}>All</div>
                 {
                     categories.map((category, index) => <Tab value={category} handle={handleFilterCategory} key={index}/>)
                 }

@@ -8,6 +8,7 @@ import blinking from '../../assets/projects_images/blinking.JPG'
 import COVID from '../../assets/projects_images/COVID.jpg'
 import Dev_talks from '../../assets/projects_images/Dev_talks.jpg'
 
+
 const data_projects = [
     {
         name: 'COVID 19 tracker',
@@ -85,5 +86,26 @@ const data_projects = [
         category: ['OpenCV']
     }
 ]
+
+export const categories = [
+    {
+        category: 'All'
+    },{
+        category: 'Python'
+    },{
+        category: 'JavaScript'
+    },{
+        category: 'C++'
+    },{
+        category: 'Django'
+    },{
+        category: 'React'
+    },{
+        category: 'Node'
+    },{
+        category: 'OpenCV'
+    }
+]
+
 
 export default data_projects;
