@@ -68,7 +68,7 @@ const Sidebar = () => {
                     Russia, Moscow
                 </a>
                 <a><div className="sidebar__btn" onClick={handleEmailMe}>Email me</div></a>
-                <a><div className="sidebar__btn" onClick={handleEmailMe}>+7(977)991-80-74</div></a>
+                <a href="tel:+79779918074"><div className="sidebar__btn">+7(977)991-80-74</div></a>
             </div>
             <a href="https://nikit34.github.io/nikit34.github.io_v2/"><div className="sidebar_previous">Previous version</div></a>
         </motion.div>

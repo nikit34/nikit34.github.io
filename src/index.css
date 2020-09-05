@@ -52,8 +52,8 @@ a:hover {
 }
 
 .sidebar__avatar {
-    height: 96px;
-    width: 96px;
+    height: 125px;
+    width: 125px;
     object-fit: contain;
     border-radius: 50%;
 }
