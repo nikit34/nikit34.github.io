@@ -2,18 +2,13 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 import data_projects, { categories } from './data/projects_data'
-import ProjectCard from './ProjectCard'
+import ProjectCard from './ProjectsCard'
+import Tab from './ProjectsTab'
 
-
-const Tab = ({ value: { category }, handle: handleFilterCategory }) => {
-    return (
-        <div className="sidebar__btn" onClick={() => handleFilterCategory(category)}>{category}</div>
-    );
-};
 
 const Projects = () => {
     const [projects, setProjects] = useState(data_projects);
-    // const [active, setActive] = useState(0);
+    const [active, setActive] = useState(0);
 
     const handleFilterCategory = (name) => {
         if (name.toLowerCase() === 'all'){
@@ -51,7 +46,7 @@ const Projects = () => {
         >
             <div className="projects__navbar">
                 {
-                    categories.map((category, index) => <Tab value={category} handle={handleFilterCategory} key={index}/>)
+                    categories.map((category, index) => <Tab value={category} handle={handleFilterCategory} key={index} onItemClicked={() => setActive(index)} isActive={active === index} />)
                 }
             </div>
             <div className="row">

@@ -101,7 +101,12 @@ a:hover {
     padding-bottom: 5px;
     text-decoration: none;
     cursor: pointer;
+    font-weight: 600;
     position: relative;
+}
+
+.sidebar__btn.active{
+    color: black !important;
 }
 
 .sidebar__btn:after {
