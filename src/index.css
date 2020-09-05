@@ -48,7 +48,7 @@ a:hover {
     padding: 25px 15px;
     box-shadow: 0 0 1px black;
     text-align: center;
-    height: 80vh;
+    height: 90vh;
 }
 
 .sidebar__avatar {
@@ -83,23 +83,23 @@ a:hover {
     min-height: 80px;
 }
 
-.sidebar__item {
-    margin-bottom: 6px;
-    padding-top: 6px;
-    height: 40px;
-    font-size: 1.05rem;
-}
-
 .sidebar__resume {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    border-bottom: 3px solid whitesmoke;
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
     transition: all 0.3s;
 }
 
 .sidebar__btn {
     display: inline-block;
     line-height: 1.5;
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-decoration: none;
     cursor: pointer;
     position: relative;
@@ -122,13 +122,19 @@ a:hover {
     width: 100%;
 }
 
-.sidebar__github {
+.sidebar__profile {
     border-radius: 15px;
-    border: 2px solid whitesmoke;
+    border-left: 2px solid whitesmoke;
     transition: all 0.3s;
+    text-align: left;
+    padding-left: 20%;
+    margin-bottom: 6px;
+    padding-top: 6px;
+    height: 40px;
+    font-size: 1.05rem;
 }
 
-.sidebar__github:hover,
+.sidebar__profile:hover,
 .sidebar__resume:hover {
     background-color: whitesmoke;
     border-color: lightgreen;
@@ -136,19 +142,33 @@ a:hover {
 
 .sidebar__contact {
     background-image: linear-gradient(white 0%, whitesmoke 100%);
+    opacity: 0.5;
     border-bottom: 2px solid lightgreen;
-    border-left: 1px solid lightgreen;
-    border-right: 1px solid lightgreen;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    margin: 20px 0;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: grid;
     transition: all 0.3s;
 }
 
 .sidebar__contact:hover {
-    border-top: 2px solid lightgreen;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    opacity: 1;
+}
+
+.sidebar__location{
+    cursor:help;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.sidebar_previous{
+    color: lightgray;
+    transition: color 0.3s;
+}
+
+.sidebar_previous:hover {
+    color:black;
 }
 
 @media(max-width:991px){
@@ -368,7 +388,6 @@ a:hover {
 
 .projects {
     height: 70vh;
-    padding-top: 30px;
     overflow-y: auto;
 }
 
