@@ -51,7 +51,7 @@ const Projects = () => {
             </div>
             <div className="row">
                 {
-                    projects.map(project => <ProjectCard key={project.name} projects={project} />)
+                    projects.map((project, index) => <ProjectCard key={index} projects={project} />)
                 }
             </div>
         </motion.div>

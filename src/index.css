@@ -397,15 +397,12 @@ a:hover {
 }
 
 .projectCard__wrapper {
-    margin: 10px 0;
     width:100%;
     height:100%;
-    min-height: 160px;
 }
 
 .projectCard__video {
     width: 100%;
-    height: 80%;
     border-radius: 20px;
     border: 1px solid seagreen;
     transition: transform 0.3s linear;
@@ -421,17 +418,23 @@ a:hover {
     margin-right: 5px;
 }
 
-.projectCard__title {
-    margin-top: 12px;
-    font: size 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.projectCard__context {
+    color: lightgrey;
+    padding-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.projectCard__description {
+    text-align: center;
+    color: seagreen;
+    font-weight: 600;
 }
 
 .projects__navbar {
     display: flex;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
 }
 
 .projects__navbar .sidebar__btn {

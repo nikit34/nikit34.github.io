@@ -1,79 +1,57 @@
 const data_projects = [
     {
-        name: 'COVID 19 tracker',
-        id_video: 'M7lc1UVf-VE',
-        deployed_url: 'https://covid-19-tracker-by-sumit.web.app/',
-        github_url: 'https://github.com/Dey-Sumit/covid-19-tracker',
-        category: ['react.js']
+        name: 'Space Shooter: setup ➡ play!',
+        id_video: 'hCFJztzs2vY',
+        deployed_url: 'https://nikit34.github.io/Space_shooter/',
+        github_url: 'https://github.com/nikit34/Space_shooter',
+        category: ['C++']
     },
 
     {
-        name: 'Dev Talks',
-        id_video: 'M7lc1UVf-VE',
-        deployed_url: 'https://dev-talks.herokuapp.com/',
-        github_url: 'https://github.com/Dey-Sumit/Dev-talks',
-        category: ['node.js', 'OpenCV', 'react.js']
+        name: 'Online Store',
+        id_video: '7Yrl9mgb7Bs',
+        deployed_url: 'http://olyastudio.pythonanywhere.com/ru/',
+        github_url: 'https://github.com/nikit34/eCommerce_Django',
+        category: ['Django', 'Python', 'JavaScript']
     },
 
     {
-        name: 'Realtime Chat App',
-        id_video: 'M7lc1UVf-VE',
-        deployed_url: 'https://sumit-chat.netlify.app/',
-        github_url: 'https://github.com/Dey-Sumit/chat-app-socket.io-react-node',
-        category: ['node', 'Django', 'react']
+        name: 'Map Market Place',
+        id_video: 'bQ9iaNWJ404',
+        deployed_url: 'http://nikit34test.pythonanywhere.com/main/',
+        github_url: 'https://github.com/nikit34/mapMarketPlace',
+        category: ['Django', 'Python', 'JavaScript']
     },
 
     {
-        name: 'Tweeter Clone',
-        id_video: 'M7lc1UVf-VE',
-        deployed_url: 'http://sumaxtweetme.pythonanywhere.com/',
-        github_url: 'https://github.com/Dey-Sumit/tweetme',
-        category: ['django', 'react']
+        name: 'Previous Portfolio v2',
+        id_video: 'ErIs2gI8yk0',
+        deployed_url: 'https://nikit34.github.io/nikit34.github.io_v2/',
+        github_url: 'https://github.com/nikit34/nikit34.github.io_v2',
+        category: ['JavaScript', 'React']
     },
 
     {
-        name: 'Shop Website',
-        id_video: 'M7lc1UVf-VE',
-        deployed_url: '!#',
+        name: 'Tools for Graph theory',
+        id_video: '9oUhFav3YIE',
+        deployed_url: 'https://nikit34.github.io/tool_for_calc_graph/',
+        github_url: 'https://github.com/nikit34/tool_for_calc_graph',
+        category: ['JavaScript', 'Node']
+    },
+
+    {
+        name: 'Digital Education',
+        id_video: 'XhD2iMbgBlE',
+        github_url: 'https://github.com/nikit34/Django_HackMoscow',
         category: ['Django', 'Python']
     },
 
     {
-        name: 'Dev Portfolio',
-        id_video: 'M7lc1UVf-VE',
-        deployed_url: 'http://suprateem.herokuapp.com/',
-        category: ['Python']
+        name: 'Accounting traffic flow from surveillance cameras',
+        id_video: 'V-YdzegvIOM',
+        github_url: 'https://github.com/nikit34/accounting_of_traffic_flow_from_surveillance_cameras',
+        category: ['Python', 'C++', 'OpenCV']
     },
-
-    {
-        name: 'Bengali New Year',
-        id_video: 'M7lc1UVf-VE',
-        deployed_url: 'https://dey-sumit.github.io/NewYear/',
-        category: ['OpenCV']
-    },
-
-    {
-        name: 'Color Classification using tf.js',
-        id_video: 'M7lc1UVf-VE',
-        deployed_url: '!#',
-        github_url: 'https://github.com/Dey-Sumit/color-classification',
-        category: ['Django', 'machine_learning']
-    },
-
-    {
-        name: 'Dev Port',
-        id_video: 'M7lc1UVf-VE',
-        deployed_url: 'http://suprateem.herokuapp.com/',
-        category: ['Python']
-    },
-
-    {
-        name: 'Blinking bubbles',
-        id_video: 'M7lc1UVf-VE',
-        deployed_url: 'https://dey-sumit.github.io/Blinking_Bubbles/',
-        github_url: 'https://github.com/Dey-Sumit/Blinking_Bubbles',
-        category: ['OpenCV']
-    }
 ]
 
 const categories = [
