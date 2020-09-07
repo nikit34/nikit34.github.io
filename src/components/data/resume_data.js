@@ -21,14 +21,6 @@ import wireshark from '../../assets/icons/wireshark.svg'
 
 const experiens = [
     {
-        head: 'Internship in Mail.Ru Group - QA engineer',
-        subhead: 'Odnoklassniki, OK.ru',
-        date: 'September 2018 - February 2019',
-        text1: 'Conducted',
-        text2: 'functional testing, interaction testing, security and user interface design.',
-        text3: 'He made bug reports, made up checklists and test cases (he was involved in test design). I tested such products as Odnoklassniki, my circle, instagram. Used site parsing, traffic sniffing, reducing the dimension of test data. Used fat live charles. Used tools like',
-        text4: 'Jira, Confluence, Git, Charles, Wireshark, JavaScript.'
-    },{
         head: 'Data - Engineer (Intern in Sberbank)',
         subhead: 'TeraData, departament Big Data',
         date: 'March 2019 - May 2019',
@@ -46,7 +38,7 @@ const experiens = [
         text4: 'C++, OpenCV, Win32api, Python, AsyncIO, BeautifulSoup, Matplotlib, Plotly, Keras, TensorFlow, Django, Flask, JavaScript, Node.js, Vue.js, Bootstrap and so on...'
     },{
         head: 'QA - Engineer (Python)',
-        subhead: 'AT Consulting (project of Sberbank: SberCloud)',
+        subhead: 'Sberbank - SberCloud',
         date: 'November 2019 - January 2020',
         text1: 'I carry out ',
         text2: 'unit tests, functional, implement automation.',
