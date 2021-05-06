@@ -5,9 +5,8 @@ import django from '../../assets/icons/django.svg'
 import react from '../../assets/icons/react.svg'
 import nodejs from '../../assets/icons/nodejs.svg'
 import opencv from '../../assets/icons/opencv.svg'
-import sql from '../../assets/icons/sql.svg'
 import flask from '../../assets/icons/flask.svg'
-import git from '../../assets/icons/git.svg'
+import git from '../../assets/icons/gitlab.svg'
 import bitbucket from '../../assets/icons/bitbucket.svg'
 import docker from '../../assets/icons/docker.svg'
 import postgresql from '../../assets/icons/postgresql.svg'
@@ -93,10 +92,6 @@ const languages = [
         name: 'OpenCV  > 10 projects',
         level: '40'
     },{
-        icon: sql,
-        name: 'SQL  two seleсt deep',
-        level: '70'
-    },{
         icon: flask,
         name: 'Flask  - 2 projects',
         level: '50'
@@ -106,7 +101,7 @@ const languages = [
 const tools = [
     {
         icon: git,
-        name: 'Git (merge, reset thought Bash)',
+        name: 'GitLab',
         level: '80'
     },{
         icon: bitbucket,
