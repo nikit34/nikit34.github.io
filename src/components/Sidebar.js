@@ -23,7 +23,7 @@ const Sidebar = function() {
         visible: {
             x: 0,
             transition: {
-                delay: 0.2, duration: 0.7, type: 'spring'
+                duration: 0.5, type: 'spring'
             }
         }
     }
