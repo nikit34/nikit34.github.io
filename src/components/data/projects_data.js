@@ -1,5 +1,12 @@
 const data_projects = [
     {
+        name: 'NodeNetwork Multiplayer: setup ➡ play!',
+        id_video: 'v=CHHReqf70VA',
+        github_url: 'https://github.com/nikit34/NodeNetwork_game_sfml',
+        category: ['C++']
+    },
+
+    {
         name: 'Space Shooter: setup ➡ play!',
         id_video: 'hCFJztzs2vY',
         deployed_url: 'https://nikit34.github.io/Space_shooter/',
