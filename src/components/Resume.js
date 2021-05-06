@@ -14,7 +14,7 @@ const Resume = () => {
         visible: {
             opacity: 1,
             transition: {
-                dealy: 0.2, duration: 1.2
+                delay: 0.2, duration: 1.2
             }
         },
         exit: {

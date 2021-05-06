@@ -11,7 +11,7 @@ const skills = [
         icon: compass,
         title: "Olympiads and Sports",
         about: ['I do it for myself, with interest and desire, constantly alternating classes.',
-                    <li>Low-Level Programming</li>, <li>Machine Learning</li>, <li>Gaming (shooters)</li>, <li>Sport Orienteering</li>, <li>Strength training</li>, <li>and Running</li>]
+                    <li>Low-Level Programming</li>, <li>Mathematics</li>, <li>Motorcycle Riding</li>, <li>Sport Orienteering</li>, <li>Skateboarding</li>, <li>Strength training</li>, <li>and Running</li>]
     },{
         icon: creating,
         title: "Product creation",

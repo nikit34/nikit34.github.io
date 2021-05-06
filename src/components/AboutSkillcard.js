@@ -1,8 +1,8 @@
 import React from 'react'
 
 
-const AboutSkillcard = ({ skill: { icon, title, about } }) =>
-    <div className="col-lg-6">
+const AboutSkillcard = function({ skill: { icon, title, about } }) {
+    return <div className="col-lg-6">
         <div className="skill-card">
             <div className="row">
                 <div className="col-2">
@@ -19,5 +19,6 @@ const AboutSkillcard = ({ skill: { icon, title, about } }) =>
             </div>
         </div>
     </div>
+}
 
 export default AboutSkillcard;

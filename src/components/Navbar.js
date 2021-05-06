@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 
-const Navbar = () => {
+const Navbar = function() {
     const [active, setActive] = useState('')
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const Navbar = () => {
             y: 0,
             opacity: 1,
             transition: {
-                dealy: 0.2, duration: 0.7, type: 'spring'
+                delay: 0.2, duration: 0.7, type: 'spring'
             }
         }
     }
