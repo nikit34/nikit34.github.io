@@ -6,7 +6,7 @@ import ResumeExperience from './ResumeExperience'
 import { experiens, languages, tools } from './data/resume_data'
 
 
-const Resume = () => {
+const Resume = function() {
     const resume_variants = {
         hidden: {
             opacity: 0

@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const ResumeBar = ({ value: { icon, name, level } }) => {
+const ResumeBar = function({ value: { icon, name, level } }) {
     const bar_width = `${level}%`
     return (
         <div className="ResumeBar">
@@ -12,7 +12,7 @@ const ResumeBar = ({ value: { icon, name, level } }) => {
                 </span>
             </div>
         </div>
-    );
+    )
 };
 
 export default ResumeBar;

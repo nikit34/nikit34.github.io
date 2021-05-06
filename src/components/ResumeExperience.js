@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const ResumeExperience = ({ value: { head, subhead, date, text1, text2, text3, text4 } }) => {
+const ResumeExperience = function({ value: { head, subhead, date, text1, text2, text3, text4 } }) {
     return (
         <div className="row resume-card__body">
             <div className="col">
@@ -26,7 +26,7 @@ const ResumeExperience = ({ value: { head, subhead, date, text1, text2, text3, t
                 </div>
             </div>
         </div>
-    );
+    )
 };
 
 export default ResumeExperience;

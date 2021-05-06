@@ -58,7 +58,7 @@ const Navbar = function() {
             }
             </div>
         </motion.div>
-    );
+    )
  };
 
 

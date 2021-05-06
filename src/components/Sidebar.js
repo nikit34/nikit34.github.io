@@ -11,7 +11,7 @@ import avatar from '../assets/avatar.png'
 import resume from '../assets/NikitaPermyakov_CV.pdf';
 
 
-const Sidebar = () => {
+const Sidebar = function() {
     const handleEmailMe = () => {
         window.open('mailto:permikov134@yandex.ru')
     }

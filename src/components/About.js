@@ -5,7 +5,7 @@ import AboutSkillcard from './AboutSkillcard'
 import { skills } from './data/about_data'
 
 
-const About = () => {
+const About = function() {
     const about_variants = {
         hidden: {
             opacity: 0

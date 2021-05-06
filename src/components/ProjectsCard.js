@@ -4,7 +4,7 @@ import joystick from '../assets/icons/joystick.svg'
 import secretly from '../assets/icons/secretly.svg'
 
 
-const ProjectCard = ({ projects: { name, id_video, deployed_url, github_url } }) => {
+const ProjectCard = function({ projects: { name, id_video, deployed_url, github_url } }) {
     return (
         <div className="projectCard col-md-6 col-lg-4">
             <figure className="projectCard__wrapper">
@@ -38,7 +38,7 @@ const ProjectCard = ({ projects: { name, id_video, deployed_url, github_url } })
                 </div>
             </figure>
         </div>
-    );
+    )
 };
 
 export default ProjectCard;

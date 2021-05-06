@@ -6,7 +6,7 @@ import ProjectCard from './ProjectsCard'
 import Tab from './ProjectsTab'
 
 
-const Projects = () => {
+const Projects = function() {
     const [projects, setProjects] = useState(data_projects);
     const [active, setActive] = useState(0);
 
@@ -55,7 +55,7 @@ const Projects = () => {
                 }
             </div>
         </motion.div>
-    );
+    )
 };
 
 export default Projects;
