@@ -28,8 +28,23 @@ const experiens = [
         text2: 'Rewrote unit tests and covered ui on 50% by coverage tools. There is no similar experience in teams.',
         text3: 'Used tools like',
         text4: 'Python, GitLab, Docker, Kubernetes, YandexTank, PostgreSQL, Wireshark'
-    },
-    {
+    },{
+        head: 'PYTHON SOFTWARE ENGINEER, SBERBANK',
+        subhead: 'SberUser - Custom Solutions Department',
+        date: 'January 2020 - March 2020',
+        text1: 'Built automation,',
+        text2: 'set up a test environment, conducted unit, load, stress, performance, bulk and functional testing, tested api and security.',
+        text3: 'Used tools like',
+        text4: 'Python, Django (pytest, unittest), JavaScript, Kubernetes, Docker, Selenium, Behave, Appium, Emulators, Jenkins, BitBucket, Allure, Wireshark.'
+    },{
+        head: 'PYTHON AUTOMATION, SBERBANK',
+        subhead: 'SberCloud',
+        date: 'November 2019 - January 2020',
+        text1: 'I carry out ',
+        text2: 'unit tests, functional, implement automation.',
+        text3: 'I am on a trial period, and the project is close to completion :(. But the team and the project are cool :) Used tools like',
+        text4: 'Python, Selenium, Jira v2, Confluence, Jenkins, Git, Emulators, Security and Web Services.'
+    },{
         head: 'DATA ENGINEER, SBERBANK',
         subhead: 'TeraData, Departament Big Data',
         date: 'March 2019 - May 2019',
@@ -45,22 +60,6 @@ const experiens = [
         text2: 'Full development cycle.',
         text3: 'Used tools like',
         text4: 'C++, OpenCV, Threads, Python, AsyncIO, Django, JavaScript, React, Docker, Matplotlib, Plotly, Keras, TensorFlow, Flask, Node.js, Win32api and so on...'
-    },{
-        head: 'PYTHON AUTOMATION, SBERBANK',
-        subhead: 'SberCloud',
-        date: 'November 2019 - January 2020',
-        text1: 'I carry out ',
-        text2: 'unit tests, functional, implement automation.',
-        text3: 'I am on a trial period, and the project is close to completion :(. But the team and the project are cool :) Used tools like',
-        text4: 'Python, Selenium, Jira v2, Confluence, Jenkins, Git, Emulators, Security and Web Services.'
-    },{
-        head: 'PYTHON SOFTWARE ENGINEER, SBERBANK',
-        subhead: 'SberUser - Custom Solutions Department',
-        date: 'January 2020 - March 2020',
-        text1: 'Built automation,',
-        text2: 'set up a test environment, conducted unit, load, stress, performance, bulk and functional testing, tested api and security.',
-        text3: 'Used tools like',
-        text4: 'Python, Django (pytest, unittest), JavaScript, Kubernetes, Docker, Selenium, Behave, Appium, Emulators, Jenkins, BitBucket, Allure, Wireshark.'
     }
 ]
 
