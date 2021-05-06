@@ -1,7 +1,7 @@
 const data_projects = [
     {
-        name: 'NodeNetwork Multiplayer: setup ➡ play!',
-        id_video: 'v=CHHReqf70VA',
+        name: 'NodeNetwork Multiplayer',
+        id_video: 'CHHReqf70VA',
         github_url: 'https://github.com/nikit34/NodeNetwork_game_sfml',
         category: ['C++']
     },

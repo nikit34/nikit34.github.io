@@ -21,37 +21,46 @@ import wireshark from '../../assets/icons/wireshark.svg'
 
 const experiens = [
     {
-        head: 'Data - Engineer (Intern in Sberbank)',
-        subhead: 'TeraData, departament Big Data',
+        head: 'PYTHON SOFTWARE ENGINEER, RAMBLER',
+        subhead: 'Kassa, Afisha',
+        date: 'November 2020 - now',
+        text1: 'Created pipeline for building iOS and Android applications and running tests with generating report on server.',
+        text2: 'Rewrote unit tests and covered ui on 50% by coverage tools. There is no similar experience in teams.',
+        text3: 'Used tools like',
+        text4: 'Python, GitLab, Docker, Kubernetes, YandexTank, PostgreSQL, Wireshark'
+    },
+    {
+        head: 'DATA ENGINEER, SBERBANK',
+        subhead: 'TeraData, Departament Big Data',
         date: 'March 2019 - May 2019',
         text1: 'Performed tasks on writing',
-        text2: 'complex SQL queries, (up to two selects). He was engaged in automation and unit testing for Python.',
-        text3: 'worked in internal systems of the bank. Used tools like',
-        text4: 'Jira, DBeaver, Python, Selenium, Various visualization tools.'
+        text2: 'complex SQL queries, parsing sites (OSINT). Data collection, cleaning and analysis.',
+        text3: 'Studying the database device using example MYSQL, PostgreSQL. Used tools like',
+        text4: 'Python, Selenium, Jira, DBeaver, MYSQL, PostgreSQL, various visualization tools.'
     },{
-        head: 'Web & ML & NN - projects, hackathons, challenges, championships',
+        head: 'Web & ML - projects, hackathons, challenges, championships',
         subhead: 'Freelance ~ Full-Stack',
         date: 'May 2019 - now',
         text1: ' ',
-        text2: 'I independently developed a software product in a short time (there were also long-term projects and teamwork, but in smaller quantities).',
-        text3: 'I proceeded in most cases from the task, raised the question not “as I can,” but “as needed”. Some projects are not subject to disclosure. The projects are aimed at applying machine learning, introducing new systems into the market, and integrating into existing solutions. More information about some projects is written in the articles on Linkedin by the link. Used tools like',
-        text4: 'C++, OpenCV, Win32api, Python, AsyncIO, BeautifulSoup, Matplotlib, Plotly, Keras, TensorFlow, Django, Flask, JavaScript, Node.js, Vue.js, Bootstrap and so on...'
+        text2: 'Full development cycle.',
+        text3: 'Used tools like',
+        text4: 'C++, OpenCV, Threads, Python, AsyncIO, Django, JavaScript, React, Docker, Matplotlib, Plotly, Keras, TensorFlow, Flask, Node.js, Win32api and so on...'
     },{
-        head: 'QA - Engineer (Python)',
-        subhead: 'Sberbank - SberCloud',
+        head: 'PYTHON AUTOMATION, SBERBANK',
+        subhead: 'SberCloud',
         date: 'November 2019 - January 2020',
         text1: 'I carry out ',
         text2: 'unit tests, functional, implement automation.',
         text3: 'I am on a trial period, and the project is close to completion :(. But the team and the project are cool :) Used tools like',
-        text4: 'Python, Selenium, Jira, Jira v2, Confluence, Jenkins, Git, Emulators, Security and Web Services.'
+        text4: 'Python, Selenium, Jira v2, Confluence, Jenkins, Git, Emulators, Security and Web Services.'
     },{
-        head: 'Python Software Engineer',
-        subhead: 'Sberbank - Custom Solutions Department',
+        head: 'PYTHON SOFTWARE ENGINEER, SBERBANK',
+        subhead: 'SberUser - Custom Solutions Department',
         date: 'January 2020 - March 2020',
-        text1: 'I do code',
-        text2: 'web development and network engineering, refactoring, automation of testing processes and rolling out releases, version control.',
+        text1: 'Built automation,',
+        text2: 'set up a test environment, conducted unit, load, stress, performance, bulk and functional testing, tested api and security.',
         text3: 'Used tools like',
-        text4: 'Python, JavaScript, Selenium, Behave, BitBucket, Security and Parsing.'
+        text4: 'Python, Django (pytest, unittest), JavaScript, Kubernetes, Docker, Selenium, Behave, Appium, Emulators, Jenkins, BitBucket, Allure, Wireshark.'
     }
 ]
 
