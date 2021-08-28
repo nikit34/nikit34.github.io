@@ -256,7 +256,7 @@ a:hover {
     margin-left:-20px;
 }
 
-.skill-card__title{
+.skill-card__title {
     position: absolute;
     top: 10px;
     right: 30px;
@@ -271,7 +271,7 @@ a:hover {
     padding-right: 10px;
 }
 
-.resume-card__body{
+.resume-card__body {
     margin: 15px 25px;
     padding: 10px 15px;
     box-shadow: none;
@@ -280,9 +280,9 @@ a:hover {
 }
 
 .resume-card__body:hover{
-    box-shadow: 0 0 1vh 1vw lightgrey;
-    margin: 0;
-    padding: 25px 40px;
+    box-shadow: 0 0 0.5vh 0.5vw lightgrey;
+    margin: 14px 24px;
+    padding: 11px 16px;
 }
 
 .resume-title {
@@ -353,6 +353,25 @@ a:hover {
     text-overflow: ellipsis;
     animation: Loading 4s both infinite ease-in;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @keyframes Loading {
     0% {

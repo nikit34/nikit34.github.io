@@ -1,5 +1,10 @@
 const data_projects = [
     {
+        name: 'Testing environment',
+        id_video: 'WcPHnpveLcw',
+        category: ['Python', 'JavaScript']
+    },
+    {
         name: 'NodeNetwork Multiplayer',
         id_video: 'CHHReqf70VA',
         github_url: 'https://github.com/nikit34/NodeNetwork_game_sfml',

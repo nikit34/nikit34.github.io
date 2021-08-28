@@ -20,11 +20,19 @@ import wireshark from '../../assets/icons/wireshark.svg'
 
 const experiens = [
     {
+        head: 'SDET, KASPERSKY',
+        subhead: 'KasperskyOS, APROTECH',
+        date: 'July 2021 - now',
+        text1: 'IoT in Industry, creating environment for testing physical devices',
+        text2: 'Working with the operating system loader',
+        text3: 'Development of utilities for developers for Linux, Windows',
+        text4: 'C++, Python, Arduino, CMake, Wireshark'
+    },{
         head: 'PYTHON SOFTWARE ENGINEER, RAMBLER',
         subhead: 'Kassa, Afisha',
-        date: 'November 2020 - now',
-        text1: 'Created pipeline for building iOS and Android applications and running tests with generating report on server.',
-        text2: 'Rewrote unit tests and covered ui on 50% by coverage tools. There is no similar experience in teams.',
+        date: 'November 2020 - July 2021',
+        text1: 'Created pipeline for building iOS and Android applications and running tests with generating report on server',
+        text2: 'Rewrote unit tests and covered ui on 50% by coverage tools. There is no similar experience in teams',
         text3: 'Used tools like',
         text4: 'Python, GitLab, Docker, Kubernetes, YandexTank, PostgreSQL, Wireshark'
     },{
@@ -32,31 +40,31 @@ const experiens = [
         subhead: 'SberUser - Custom Solutions Department',
         date: 'January 2020 - March 2020',
         text1: 'Built automation,',
-        text2: 'set up a test environment, conducted unit, load, stress, performance, bulk and functional testing, tested api and security.',
+        text2: 'set up a test environment, conducted unit, load, stress, performance, bulk and functional testing, tested api and security',
         text3: 'Used tools like',
-        text4: 'Python, Django (pytest, unittest), JavaScript, Kubernetes, Docker, Selenium, Behave, Appium, Emulators, Jenkins, BitBucket, Allure, Wireshark.'
+        text4: 'Python, Django (pytest, unittest), JavaScript, Kubernetes, Docker, Selenium, Behave, Appium, Emulators, Jenkins, BitBucket, Allure, Wireshark'
     },{
         head: 'PYTHON AUTOMATION, SBERBANK',
         subhead: 'SberCloud',
         date: 'November 2019 - January 2020',
-        text1: 'I carry out ',
-        text2: 'unit tests, functional, implement automation.',
+        text1: 'I carry out',
+        text2: 'unit tests, functional, implement automation',
         text3: 'I am on a trial period, and the project is close to completion :(. But the team and the project are cool :) Used tools like',
-        text4: 'Python, Selenium, Jira v2, Confluence, Jenkins, Git, Emulators, Security and Web Services.'
+        text4: 'Python, Selenium, Jira v2, Confluence, Jenkins, Git, Emulators, Security and Web Services'
     },{
         head: 'DATA ENGINEER, SBERBANK',
         subhead: 'TeraData, Departament Big Data',
         date: 'March 2019 - May 2019',
         text1: 'Performed tasks on writing',
-        text2: 'complex SQL queries, parsing sites (OSINT). Data collection, cleaning and analysis.',
+        text2: 'complex SQL queries, parsing sites (OSINT). Data collection, cleaning and analysis',
         text3: 'Studying the database device using example MYSQL, PostgreSQL. Used tools like',
-        text4: 'Python, Selenium, Jira, DBeaver, MYSQL, PostgreSQL, various visualization tools.'
+        text4: 'Python, Selenium, Jira, DBeaver, MYSQL, PostgreSQL, various visualization tools'
     },{
         head: 'Web & ML - projects, hackathons, challenges, championships',
         subhead: 'Freelance ~ Full-Stack',
         date: 'May 2019 - now',
         text1: ' ',
-        text2: 'Full development cycle.',
+        text2: 'Full development cycle',
         text3: 'Used tools like',
         text4: 'C++, OpenCV, Threads, Python, AsyncIO, Django, JavaScript, React, Docker, Matplotlib, Plotly, Keras, TensorFlow, Flask, Node.js, Win32api and so on...'
     }
