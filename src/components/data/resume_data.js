@@ -4,6 +4,8 @@ import cpp from '../../assets/icons/cpp.svg'
 import django from '../../assets/icons/django.svg'
 import react from '../../assets/icons/react.svg'
 import nodejs from '../../assets/icons/nodejs.svg'
+import golang from '../../assets/icons/golang.svg'
+import arduino from '../../assets/icons/arduino.svg'
 import opencv from '../../assets/icons/opencv.svg'
 import flask from '../../assets/icons/flask.svg'
 import git from '../../assets/icons/gitlab.svg'
@@ -25,7 +27,7 @@ const experiens = [
         date: 'July 2021 - now',
         text1: 'IoT in Industry, creating environment for testing physical devices',
         text2: 'Working with the operating system loader',
-        text3: 'Development of utilities for developers for Linux, Windows',
+        text3: 'Development of utilities for developers for Linux',
         text4: 'C++, Python, Arduino, CMake, Wireshark'
     },{
         head: 'PYTHON SOFTWARE ENGINEER, RAMBLER',
@@ -72,6 +74,10 @@ const experiens = [
 
 const languages = [
     {
+        icon: golang,
+        name: 'Golang',
+        level: '80'
+    },{
         icon: python,
         name: 'Python',
         level: '100'
@@ -83,6 +89,10 @@ const languages = [
         icon: cpp,
         name: 'C++',
         level: '80'
+    },{
+        icon: arduino,
+        name: 'Arduino',
+        level: '60'
     },{
         icon: django,
         name: 'Django  > 20 projects',

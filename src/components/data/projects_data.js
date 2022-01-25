@@ -1,7 +1,26 @@
 const data_projects = [
     {
+        name: 'Keystroke counter using shift register',
+        id_video: 'CXmuTDaVrSU',
+        github_url: 'https://github.com/nikit34/arduino_iskra_uno',
+        category: ['Arduino', 'C++']
+    },
+    {
+        name: 'Hight Light',
+        id_video: 'XLM3ph2ih9w',
+        github_url: 'https://github.com/nikit34/arduino_iskra_uno',
+        category: ['Arduino', 'C++']
+    },
+    {
+        name: 'Golang - RPG, training course',
+        id_video: '0gQuOGz19G8',
+        github_url: 'https://github.com/nikit34/rpg_go',
+        category: ['Golang']
+    },
+    {
         name: 'Testing environment',
-        id_video: 'WcPHnpveLcw',
+        id_video: 'QUR22Ynsf5w',
+        github_url: 'https://github.com/nikit34/kassa-android-ui-tests',
         category: ['Python', 'JavaScript']
     },
     {
@@ -70,11 +89,15 @@ const categories = [
     {
         category: 'All'
     },{
+        category: 'Golang'
+    },{
         category: 'Python'
     },{
         category: 'JavaScript'
     },{
         category: 'C++'
+    },{
+        category: 'Arduino'
     },{
         category: 'Django'
     },{
