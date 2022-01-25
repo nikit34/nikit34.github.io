@@ -65,7 +65,7 @@ const Sidebar = function() {
             <div className="sidebar__contact">
                 <a className="sidebar__location" href="https://goo.gl/maps/59Bs5qjw4ujNjauJ7">
                     <img src={pin} alt="location" className="sidebar__icon mr-3"/>
-                    Russia, Moscow
+                    Russia, Saint Petersburg
                 </a>
                 <a><div className="sidebar__btn" onClick={handleEmailMe}>Email me</div></a>
                 <a href="tel:+79779918074"><div className="sidebar__btn">+7(977)991-80-74</div></a>
