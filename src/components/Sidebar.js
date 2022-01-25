@@ -64,7 +64,7 @@ const Sidebar = function() {
                 </a>
             <div className="sidebar__contact">
                 <a className="sidebar__location" href="https://goo.gl/maps/59Bs5qjw4ujNjauJ7">
-                    <img src={pin} alt="location" className="sidebar__icon mr-3"/>
+                    <img src={pin} alt="location" className="sidebar__icon mr-6"/>
                     Russia, Saint Petersburg
                 </a>
                 <a><div className="sidebar__btn" onClick={handleEmailMe}>Email me</div></a>
