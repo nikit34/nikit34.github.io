@@ -1,7 +1,18 @@
 import React from 'react'
 
 
-const ResumeExperience = function({ value: { head, subhead, date, text1, text2, text3, text4 } }) {
+const ResumeExperience = function({ value: { head, subhead, date, texts } }) {
+    const textItems = texts.map((textItem) => {
+        let lines = [];
+        if (textItem.newline)
+            lines.push(<br/>)
+        if (textItem.bold) {
+            lines.push(<span className="resume-card__text"> {textItem.text} </span>)
+        } else {
+            lines.push(textItem.text)
+        }
+        return lines;
+    });
     return (
         <div className="row resume-card__body">
             <div className="col">
@@ -16,12 +27,7 @@ const ResumeExperience = function({ value: { head, subhead, date, text1, text2, 
                 </div>
                 <div className="row">
                     <div className="col">
-                        <p>
-                            {text1}
-                            <span className="resume-card__text"> {text2} </span>
-                            {text3}
-                            <span className="resume-card__text"> {text4} </span>
-                        </p>
+                        <p>{textItems}</p>
                     </div>
                 </div>
             </div>

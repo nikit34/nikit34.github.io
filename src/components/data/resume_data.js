@@ -22,53 +22,112 @@ import wireshark from '../../assets/icons/wireshark.svg'
 
 const experiens = [
     {
+        head: 'Middle QA Automation, Skyeng',
+        subhead: 'Student Cabinet',
+        date: 'October 2022 - Mart 2023',
+        texts: [
+            {
+                text: 'Automating web and mobile applications.',
+                bold: true,
+                newline: false
+            },
+            {
+                text: 'Supported pipelines in Jenkins and Gitlab CI/CD. Independently added ID for applications on Android and iOS.',
+                bold: false,
+                newline: false
+            },
+            {
+                text: 'InfluxDB · TypeScript · Grafana · Jenkins · JavaScript · Docker',
+                bold: true,
+                newline: true
+            }
+        ]
+    },
+    {
         head: 'SDET, KASPERSKY',
         subhead: 'KasperskyOS, APROTECH',
-        date: 'July 2021 - now',
-        text1: 'IoT in Industry, creating environment for testing physical devices',
-        text2: 'Working with the operating system loader',
-        text3: 'Development of utilities for developers for Linux',
-        text4: 'C++, Python, Arduino, CMake, Wireshark'
-    },{
-        head: 'PYTHON SOFTWARE ENGINEER, RAMBLER',
-        subhead: 'Kassa, Afisha',
-        date: 'November 2020 - July 2021',
-        text1: 'Created pipeline for building iOS and Android applications and running tests with generating report on server',
-        text2: 'Rewrote unit tests and covered ui on 50% by coverage tools. There is no similar experience in teams',
-        text3: 'Used tools like',
-        text4: 'Python, GitLab, Docker, Kubernetes, YandexTank, PostgreSQL, Wireshark'
-    },{
-        head: 'PYTHON SOFTWARE ENGINEER, SBERBANK',
-        subhead: 'SberUser - Custom Solutions Department',
-        date: 'January 2020 - March 2020',
-        text1: 'Built automation,',
-        text2: 'set up a test environment, conducted unit, load, stress, performance, bulk and functional testing, tested api and security',
-        text3: 'Used tools like',
-        text4: 'Python, Django (pytest, unittest), JavaScript, Kubernetes, Docker, Selenium, Behave, Appium, Emulators, Jenkins, BitBucket, Allure, Wireshark'
-    },{
-        head: 'PYTHON AUTOMATION, SBERBANK',
-        subhead: 'SberCloud',
-        date: 'November 2019 - January 2020',
-        text1: 'I carry out',
-        text2: 'unit tests, functional, implement automation',
-        text3: 'I am on a trial period, and the project is close to completion :(. But the team and the project are cool :) Used tools like',
-        text4: 'Python, Selenium, Jira v2, Confluence, Jenkins, Git, Emulators, Security and Web Services'
-    },{
-        head: 'DATA ENGINEER, SBERBANK',
-        subhead: 'TeraData, Departament Big Data',
-        date: 'March 2019 - May 2019',
-        text1: 'Performed tasks on writing',
-        text2: 'complex SQL queries, parsing sites (OSINT). Data collection, cleaning and analysis',
-        text3: 'Studying the database device using example MYSQL, PostgreSQL. Used tools like',
-        text4: 'Python, Selenium, Jira, DBeaver, MYSQL, PostgreSQL, various visualization tools'
-    },{
-        head: 'Web & ML - projects, hackathons, challenges, championships',
-        subhead: 'Freelance ~ Full-Stack',
-        date: 'May 2019 - now',
-        text1: ' ',
-        text2: 'Full development cycle',
-        text3: 'Used tools like',
-        text4: 'C++, OpenCV, Threads, Python, AsyncIO, Django, JavaScript, React, Docker, Matplotlib, Plotly, Keras, TensorFlow, Flask, Node.js, Win32api and so on...'
+        date: 'July 2021 - October 2022',
+        texts: [
+            {
+                text: 'IoT in Industry, creating an environment for testing physical devices - gateways.',
+                bold: true,
+                newline: false
+            },
+            {
+                text: 'Conducted performance testing. Prepared test plans. Implemented servers, sniffers, data generators, deployers. Parallelized tests on several physical devices. Working with the operating system loader. Development of utilities for developers for Linux and Windows.',
+                bold: false,
+                newline: false
+            },
+            {
+                text: 'Worked with protocols via socket: MQTT, DHCP, DNS, OPCUA, TCP. Worked with memory markup, set up communication through network equipment on the base MikroTik, COM port, PoE mode.',
+                bold: true,
+                newline: false
+            },
+            {
+                text: 'Organized a device farm and a power management system. Wrote multithreaded and multiprocessor modules. Planned the backlog. Handled sprint planning, decomposition, and tight time tracking.',
+                bold: false,
+                newline: false
+            },
+            {
+                text: 'Arduino · MySQL · Mikrotik · FTP · Bash · pytest · CMake · Mqtt · OPC UA · Azure DevOps Server · DHCP · Fuzzing · Python · C++ · Docker',
+                bold: true,
+                newline: true
+            }
+        ]
+    },
+    {
+        head: 'Middle QA Automation, Rambler',
+        subhead: 'Afisha',
+        date: 'October 2020 - July 2021',
+        texts: [
+            {
+                text: 'Created unit tests, integration and mAPI tests.',
+                bold: true,
+                newline: false
+            },
+            {
+                text: 'Created a pipeline for building iOS and Android applications and running tests with generating reports on the server. Conducted performance testing.',
+                bold: false,
+                newline: false
+            },
+            {
+                text: 'Conducted code reviews and improved past developments as needed.',
+                bold: true,
+                newline: false
+            },
+            {
+                text: 'Conducted team meetings for the exchange of experience and in activities to improve the level of English.',
+                bold: false,
+                newline: false
+            },
+            {
+                text: 'GitLab CI · Redis · PostgreSQL · MITMproxy · Grafana · Allure · Python',
+                bold: true,
+                newline: true
+            }
+        ]
+    },
+    {
+        head: 'Junior QA Automation, Sberbank',
+        subhead: 'SberUser',
+        date: 'Mar 2019 - Mar 2020',
+        texts: [
+            {
+                text: 'Built automation, set up a test environment, conducted unit, performance, bulk and functional testing, exploratory, tested api.',
+                bold: false,
+                newline: false
+            },
+            {
+                text: 'Created, prioritized and implemented plans for automated test coverage.',
+                bold: true,
+                newline: false
+            },
+            {
+                text: 'Python · Kubernetes · Docker · Grafana · Selenium · Behave · Appium · Jenkins · Allure · Wireshark · Jira',
+                bold: true,
+                newline: true
+            }
+        ]
     }
 ]
 
