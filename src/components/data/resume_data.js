@@ -1,21 +1,12 @@
 import python from '../../assets/icons/python.svg'
 import js from '../../assets/icons/js.svg'
 import cpp from '../../assets/icons/cpp.svg'
-import django from '../../assets/icons/django.svg'
-import react from '../../assets/icons/react.svg'
-import nodejs from '../../assets/icons/nodejs.svg'
 import golang from '../../assets/icons/golang.svg'
 import arduino from '../../assets/icons/arduino.svg'
-import opencv from '../../assets/icons/opencv.svg'
-import flask from '../../assets/icons/flask.svg'
 import git from '../../assets/icons/gitlab.svg'
-import bitbucket from '../../assets/icons/bitbucket.svg'
 import docker from '../../assets/icons/docker.svg'
 import postgresql from '../../assets/icons/postgresql.svg'
-import sqlite from '../../assets/icons/sqlite.svg'
 import linux from '../../assets/icons/linux.svg'
-import windows from '../../assets/icons/windows.svg'
-import macos from '../../assets/icons/macos.svg'
 import qa from '../../assets/icons/qa.svg'
 import wireshark from '../../assets/icons/wireshark.svg'
 
@@ -152,26 +143,6 @@ const languages = [
         icon: arduino,
         name: 'Arduino',
         level: '60'
-    },{
-        icon: django,
-        name: 'Django  > 20 projects',
-        level: '100'
-    },{
-        icon: react,
-        name: 'React  > 20 projects',
-        level: '80'
-    },{
-        icon: nodejs,
-        name: 'Node  > 10 projects',
-        level: '60'
-    },{
-        icon: opencv,
-        name: 'OpenCV  > 10 projects',
-        level: '40'
-    },{
-        icon: flask,
-        name: 'Flask  - 2 projects',
-        level: '50'
     }
 ]
 
@@ -181,16 +152,8 @@ const tools = [
         name: 'GitLab',
         level: '80'
     },{
-        icon: bitbucket,
-        name: 'Bitbucket',
-        level: '60'
-    },{
         icon: docker,
         name: 'Docker',
-        level: '40'
-    },{
-        icon: sqlite,
-        name: 'SQLite3',
         level: '100'
     },{
         icon: postgresql,
@@ -199,15 +162,7 @@ const tools = [
     },{
         icon: linux,
         name: 'Linux Server',
-        level: '80'
-    },{
-        icon: windows,
-        name: 'Windows Server',
-        level: '60'
-    },{
-        icon: macos,
-        name: 'MacOS user',
-        level: '40'
+        level: '100'
     },{
         icon: qa,
         name: 'QA (Pytest, Selenium, etc...)',
