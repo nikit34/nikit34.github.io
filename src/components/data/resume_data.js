@@ -15,7 +15,7 @@ const experiens = [
     {
         head: 'Middle QA Automation, Skyeng',
         subhead: 'Student Cabinet',
-        date: 'October 2022 - Mart 2023',
+        date: 'October 2022 - March 2023',
         texts: [
             {
                 text: 'Automating web and mobile applications.',
@@ -101,7 +101,7 @@ const experiens = [
     {
         head: 'Junior QA Automation, Sberbank',
         subhead: 'SberUser',
-        date: 'Mart 2019 - Mart 2020',
+        date: 'March 2019 - March 2020',
         texts: [
             {
                 text: 'Built automation, set up a test environment, conducted unit, performance, bulk and functional testing, exploratory, tested api.',
