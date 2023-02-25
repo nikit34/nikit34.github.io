@@ -17,11 +17,11 @@ const ResumeExperience = function({ value: { head, subhead, date, texts } }) {
         <div className="row resume-card__body">
             <div className="col">
                 <div className="row">
-                    <div className="col-9">
+                    <div className="col-8">
                         <h3 className="resume-card__heading">{head}</h3>
                         <div className="resume-card__subheading">{subhead}</div>
                     </div>
-                    <div className="col-3 resume-card__date">
+                    <div className="col-4 resume-card__date">
                         <h6>{date}</h6>
                     </div>
                 </div>

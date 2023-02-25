@@ -9,21 +9,33 @@ import api from '../../assets/icons/api.svg'
 const skills = [
     {
         icon: compass,
-        title: "Olympiads and Sports",
-        about: ['I do it for myself, with interest and desire, constantly alternating classes.',
-                    <li>Low-Level Programming</li>, <li>Mathematics</li>, <li>Motorcycle Riding</li>, <li>Sport Orienteering</li>, <li>Skateboarding</li>, <li>Strength training</li>, <li>and Running</li>]
+        title: "Hobbies",
+        about: [
+            'I do it for myself, with interest and desire, constantly alternating classes.',
+            <li>Communication with people</li>,
+            <li>Programming</li>,
+            <li>Mathematics and Physics</li>,
+            <li>Driving</li>,
+            <li>Sport Orienteering</li>,
+            <li>Strength training</li>,
+            <li>and Running</li>
+        ]
     },{
         icon: creating,
         title: "Product creation",
-        about: [<p>I write my own code and am responsible for it.</p>, <p>I understand the balance of business requirements and developer debt.</p>, <b>I like to create a product <s>and craking</s> and I have spent a lot of time on it for a long time.</b>]
+        about: [
+            <p>I write my own code and am responsible for it.</p>,
+            <p>I understand the balance of business requirements and developer debt.</p>,
+            <b>I like to create a product <s>and craking</s> and I have spent a lot of time on it for a long time.</b>
+        ]
     },{
         icon: api,
         title: "Research",
         about: "I quickly understand someone else's code and test it. I'm not afraid to make changes and ask colleagues. I know the value of technical mistakes and personal conflicts."
     },{
         icon: code,
-        title: "Explorations with code",
-        about: "I quickly read and understand the documentation in English, learn German. Spend more time on the practice of using new functionality."
+        title: "Communications",
+        about: "I have worked closely with people for a long time. I'm ready to take responsibility for the team."
     }
 ]
 

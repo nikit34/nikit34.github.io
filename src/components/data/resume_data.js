@@ -110,7 +110,7 @@ const experiens = [
     {
         head: 'Junior QA Automation, Sberbank',
         subhead: 'SberUser',
-        date: 'Mar 2019 - Mar 2020',
+        date: 'Mart 2019 - Mart 2020',
         texts: [
             {
                 text: 'Built automation, set up a test environment, conducted unit, performance, bulk and functional testing, exploratory, tested api.',

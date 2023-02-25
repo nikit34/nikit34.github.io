@@ -63,12 +63,12 @@ const Sidebar = function() {
                     </div>
                 </a>
             <div className="sidebar__contact">
-                <a className="sidebar__location" href="https://goo.gl/maps/59Bs5qjw4ujNjauJ7">
+                <a className="sidebar__location" href="https://goo.gl/maps/hLZ7aiQgXijCMumi8">
                     <img src={pin} alt="location" className="sidebar__icon mr-6"/>
-                    Russia, Saint Petersburg
+                    Portugal, Lisbon
                 </a>
                 <a><div className="sidebar__btn" onClick={handleEmailMe}>Email me</div></a>
-                <a href="tel:+79779918074"><div className="sidebar__btn">+7(977)991-80-74</div></a>
+                <a href="https://telegram.me/nikit34"><div className="sidebar__btn">tg: @nikit34</div></a>
             </div>
             <a href="https://nikit34.github.io/nikit34.github.io_v2/"><div className="sidebar_previous">Previous version</div></a>
         </motion.div>
