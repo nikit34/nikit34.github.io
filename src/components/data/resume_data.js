@@ -13,31 +13,9 @@ import wireshark from '../../assets/icons/wireshark.svg'
 
 const experiens = [
     {
-        head: 'Middle QA Automation, Skyeng',
-        subhead: 'Student Cabinet',
-        date: 'October 2022 - March 2023',
-        texts: [
-            {
-                text: 'Automating web and mobile applications.',
-                bold: true,
-                newline: false
-            },
-            {
-                text: 'Supported pipelines in Jenkins and Gitlab CI/CD. Independently added ID for applications on Android and iOS.',
-                bold: false,
-                newline: false
-            },
-            {
-                text: 'InfluxDB · TypeScript · Grafana · Jenkins · JavaScript · Docker',
-                bold: true,
-                newline: true
-            }
-        ]
-    },
-    {
-        head: 'SDET, KASPERSKY',
+        head: 'SDET (Python), KASPERSKY',
         subhead: 'KasperskyOS, APROTECH',
-        date: 'July 2021 - October 2022',
+        date: 'July 2021 - now',
         texts: [
             {
                 text: 'IoT in Industry, creating an environment for testing physical devices - gateways.',
@@ -67,7 +45,7 @@ const experiens = [
         ]
     },
     {
-        head: 'Middle QA Automation, Rambler',
+        head: 'Python developer, Rambler',
         subhead: 'Afisha',
         date: 'October 2020 - July 2021',
         texts: [
@@ -99,7 +77,7 @@ const experiens = [
         ]
     },
     {
-        head: 'Junior QA Automation, Sberbank',
+        head: 'Junior Python developer, Sberbank',
         subhead: 'SberUser',
         date: 'March 2019 - March 2020',
         texts: [
