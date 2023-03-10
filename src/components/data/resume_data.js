@@ -13,7 +13,7 @@ import wireshark from '../../assets/icons/wireshark.svg'
 
 const experiens = [
     {
-        head: 'SDET (Python), KASPERSKY',
+        head: 'SDET (Python, Golang), KASPERSKY',
         subhead: 'KasperskyOS, APROTECH',
         date: 'July 2021 - now',
         texts: [
@@ -38,7 +38,7 @@ const experiens = [
                 newline: false
             },
             {
-                text: 'Arduino · MySQL · Mikrotik · FTP · Bash · pytest · CMake · Mqtt · OPC UA · Azure DevOps Server · DHCP · Fuzzing · Python · C++ · Docker',
+                text: 'Golang, Python, Bash, MySQL, KasperskyOS, RouterOS, Arduino, CMake, Wireshark, C++, Azure DevOps, TFS',
                 bold: true,
                 newline: true
             }
@@ -70,7 +70,7 @@ const experiens = [
                 newline: false
             },
             {
-                text: 'GitLab CI · Redis · PostgreSQL · MITMproxy · Grafana · Allure · Python',
+                text: 'Python, Django, Docker, GitLab CI, Bash, Swift, Redis, PostgreSQL, MITMproxy, Wireshark, Jira',
                 bold: true,
                 newline: true
             }
@@ -92,7 +92,7 @@ const experiens = [
                 newline: false
             },
             {
-                text: 'Python · Kubernetes · Docker · Grafana · Selenium · Behave · Appium · Jenkins · Allure · Wireshark · Jira',
+                text: 'Python, Django (pytest, unittest), JavaScript, Kubernetes, Docker, Grafana, Selenium, Behave, Appium, Emulators, Jenkins, BitBucket, Allure, Wireshark, Jira',
                 bold: true,
                 newline: true
             }
