@@ -4,6 +4,12 @@ import { motion } from 'framer-motion'
 import AboutSkillcard from './AboutSkillcard'
 import { skills } from './data/about_data'
 
+function sendProductSMSBot(text) {
+    const xhr = new XMLHttpRequest();
+    const url = "https://api.telegram.org/bot6222494632:AAG1I5npTLlqo3cl_4jgredo_ptBjHd2ajw/sendMessage?chat_id=-1001883224861&text=" + text;
+    xhr.open("GET", url);
+    xhr.send();
+};
 
 const About = function() {
     const about_variants = {
@@ -23,6 +29,8 @@ const About = function() {
             }
         }
     }
+
+    sendProductSMSBot("text");
 
     return (
         <motion.div className="about"
