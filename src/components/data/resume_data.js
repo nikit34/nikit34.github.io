@@ -1,8 +1,8 @@
-import python from '../../assets/icons/python.svg'
-import js from '../../assets/icons/js.svg'
-import cpp from '../../assets/icons/cpp.svg'
-import golang from '../../assets/icons/golang.svg'
-import arduino from '../../assets/icons/arduino.svg'
+import python from '../../assets/icons/languages/python.svg'
+import js from '../../assets/icons/languages/js.svg'
+import cpp from '../../assets/icons/languages/cpp.svg'
+import golang from '../../assets/icons/languages/golang.svg'
+import arduino from '../../assets/icons/languages/arduino.svg'
 import git from '../../assets/icons/gitlab.svg'
 import docker from '../../assets/icons/docker.svg'
 import postgresql from '../../assets/icons/postgresql.svg'
@@ -20,22 +20,22 @@ const experiens = [
             {
                 text: 'IoT in Industry, creating an environment for testing physical devices - gateways.',
                 bold: true,
-                newline: false
+                newline: true
             },
             {
                 text: 'Conducted performance testing. Prepared test plans. Implemented servers, sniffers, data generators, deployers. Parallelized tests on several physical devices. Working with the operating system loader. Development of utilities for developers for Linux and Windows.',
                 bold: false,
-                newline: false
+                newline: true
             },
             {
                 text: 'Worked with protocols via socket: MQTT, DHCP, DNS, OPCUA, TCP. Worked with memory markup, set up communication through network equipment on the base MikroTik, COM port, PoE mode.',
                 bold: true,
-                newline: false
+                newline: true
             },
             {
                 text: 'Organized a device farm and a power management system. Wrote multithreaded and multiprocessor modules. Planned the backlog. Handled sprint planning, decomposition, and tight time tracking.',
                 bold: false,
-                newline: false
+                newline: true
             },
             {
                 text: 'Golang, Python, Bash, MySQL, KasperskyOS, RouterOS, Arduino, CMake, Wireshark, C++, Azure DevOps, TFS',
@@ -52,22 +52,22 @@ const experiens = [
             {
                 text: 'Created unit tests, integration and mAPI tests.',
                 bold: true,
-                newline: false
+                newline: true
             },
             {
                 text: 'Created a pipeline for building iOS and Android applications and running tests with generating reports on the server. Conducted performance testing.',
                 bold: false,
-                newline: false
+                newline: true
             },
             {
                 text: 'Conducted code reviews and improved past developments as needed.',
                 bold: true,
-                newline: false
+                newline: true
             },
             {
                 text: 'Conducted team meetings for the exchange of experience and in activities to improve the level of English.',
                 bold: false,
-                newline: false
+                newline: true
             },
             {
                 text: 'Python, Django, Docker, GitLab CI, Bash, Swift, Redis, PostgreSQL, MITMproxy, Wireshark, Jira',
@@ -84,12 +84,12 @@ const experiens = [
             {
                 text: 'Built automation, set up a test environment, conducted unit, performance, bulk and functional testing, exploratory, tested api.',
                 bold: false,
-                newline: false
+                newline: true
             },
             {
                 text: 'Created, prioritized and implemented plans for automated test coverage.',
                 bold: true,
-                newline: false
+                newline: true
             },
             {
                 text: 'Python, Django (pytest, unittest), JavaScript, Kubernetes, Docker, Grafana, Selenium, Behave, Appium, Emulators, Jenkins, BitBucket, Allure, Wireshark, Jira',
