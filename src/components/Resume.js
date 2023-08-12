@@ -55,7 +55,7 @@ const Resume = function() {
                 </div>
                 <div className="col-lg-6 resume-languages">
                     <h4 className="resume-title">
-                        Tools and Sofrwares
+                        Tools and Softwares
                     </h4>
                     <div className="resume-language__body">
                         {
