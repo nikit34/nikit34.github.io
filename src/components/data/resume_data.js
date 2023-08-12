@@ -122,28 +122,73 @@ const experiens = [
         date: 'July 2021 - October 2022',
         texts: [
             {
-                text: 'IoT in Industry, creating an environment for testing physical devices - gateways.',
+                text: 'IoT in Industry, creating an environment for testing physical devices - gateways',
                 bold: true,
                 newline: true
             },
             {
-                text: 'Conducted performance testing. Prepared test plans. Implemented servers, sniffers, data generators, deployers. Parallelized tests on several physical devices. Working with the operating system loader. Development of utilities for developers for Linux and Windows.',
+                text: 'Conducted performance testing',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Prepared test plans',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Implemented servers, sniffers, data generators, deployers',
                 bold: false,
                 newline: true
             },
             {
-                text: 'Worked with protocols via socket: MQTT, DHCP, DNS, OPCUA, TCP. Worked with memory markup, set up communication through network equipment on the base MikroTik, COM port, PoE mode.',
+                text: 'Parallelized tests on several physical devices',
                 bold: true,
                 newline: true
             },
             {
-                text: 'Organized a device farm and a power management system. Wrote multithreaded and multiprocessor modules. Planned the backlog. Handled sprint planning, decomposition, and tight time tracking.',
+                text: 'Working with the operating system loader',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Development of utilities for developers',
                 bold: false,
                 newline: true
             },
             {
-                text: 'Golang, Python, Bash, MySQL, KasperskyOS, RouterOS, Arduino, CMake, Wireshark, C++, Azure DevOps, TFS',
+                text: 'Worked with protocols via socket: MQTT, DHCP, DNS, OPCUA, TCP',
+                bold: false,
+                newline: true
+            },
+            {
+                text: 'Worked with memory markup, set up communication through network equipment on the base MikroTik, COM port, PoE mode',
+                bold: false,
+                newline: true
+            },
+            {
+                text: 'Organized a device farm and a power management system',
                 bold: true,
+                newline: true
+            },
+            {
+                text: 'Wrote multithreaded and multiprocessor modules',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Planned the backlog',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Handled sprint planning, decomposition, and tight time tracking',
+                bold: false,
+                newline: true
+            },
+            {
+                text: 'Used tools like Python, Bash, MySQL, KasperskyOS, RouterOS, Arduino, CMake, Wireshark, C++, Azure DevOps, TFS',
+                bold: false,
                 newline: true
             }
         ]
@@ -154,28 +199,38 @@ const experiens = [
         date: 'October 2020 - July 2021',
         texts: [
             {
-                text: 'Created unit tests, integration and mAPI tests.',
+                text: 'Created unit tests, integration and mAPI tests',
                 bold: true,
                 newline: true
             },
             {
-                text: 'Created a pipeline for building iOS and Android applications and running tests with generating reports on the server. Conducted performance testing.',
+                text: 'Created a pipeline for building iOS and Android applications and running tests with generating reports on the server',
                 bold: false,
                 newline: true
             },
             {
-                text: 'Conducted code reviews and improved past developments as needed.',
+                text: 'Conducted performance testing',
                 bold: true,
                 newline: true
             },
             {
-                text: 'Conducted team meetings for the exchange of experience and in activities to improve the level of English.',
+                text: 'Conducted code reviews and improved past developments as needed',
                 bold: false,
                 newline: true
             },
             {
-                text: 'Python, Django, Docker, GitLab CI, Bash, Swift, Redis, PostgreSQL, MITMproxy, Wireshark, Jira',
-                bold: true,
+                text: 'Conducted team meetings for the exchange of experience and in activities to improve the level of English',
+                bold: false,
+                newline: true
+            },
+            {
+                text: 'Writing a request proxying tool',
+                bold: false,
+                newline: true
+            },
+            {
+                text: 'Used tools like Python, Docker, GitLab CI, Bash, Swift, Redis, PostgreSQL, MITMproxy, Wireshark, Jira',
+                bold: false,
                 newline: true
             }
         ]
@@ -186,18 +241,28 @@ const experiens = [
         date: 'March 2019 - March 2020',
         texts: [
             {
-                text: 'Built automation, set up a test environment, conducted unit, performance, bulk and functional testing, exploratory, tested api.',
+                text: 'Built automation',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Carrying out load testing on Yandex tank',
                 bold: false,
                 newline: true
             },
             {
-                text: 'Created, prioritized and implemented plans for automated test coverage.',
+                text: 'Automated testing of Android and iOS applications on Appium',
                 bold: true,
                 newline: true
             },
             {
-                text: 'Python, Django (pytest, unittest), JavaScript, Kubernetes, Docker, Grafana, Selenium, Behave, Appium, Emulators, Jenkins, BitBucket, Allure, Wireshark, Jira',
+                text: 'Created, prioritized and implemented plans for automated test coverage',
                 bold: true,
+                newline: true
+            },
+            {
+                text: 'Used tools like Python, Django (pytest, unittest), JavaScript, Kubernetes, Docker, Grafana, Selenium, Behave, Appium, Emulators, Jenkins, BitBucket, Allure, Wireshark, Jira',
+                bold: false,
                 newline: true
             }
         ]
