@@ -13,8 +13,8 @@ import wireshark from '../../assets/icons/wireshark.svg'
 
 const experiens = [
     {
-        head: 'Senior Quality Assurance Automation Engineer, UZUM / KazanExpress',
-        subhead: 'B2C',
+        head: 'Senior Quality Assurance Automation Engineer',
+        subhead: 'B2C, UZUM / KazanExpress',
         date: 'March 2023 - now',
         texts: [
             {
@@ -75,20 +75,50 @@ const experiens = [
         ]
     },
     {
-        head: 'Middle Quality Assurance Automation Engineer, Skyeng',
-        subhead: 'Student Cabinet',
+        head: 'Middle Quality Assurance Automation Engineer',
+        subhead: 'Student Cabinet, Skyeng',
         date: 'October 2022 - March 2023',
         texts: [
             {
-                text: 'Automating web, api and mobile applications',
+                text: 'Technical assessment of the project status, audit',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Code review for entire team of the Student\'s Cabinet Skyeng',
                 bold: false,
                 newline: true
             },
+            {
+                text: 'Training other autotesters to automate testing',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Self-adding id in mobile on Android/iOS and web application',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Developing pipelines in Jenkins and Gitlab CI/CD',
+                bold: false,
+                newline: true
+            },
+            {
+                text: 'Automating web and mobile applications',
+                bold: false,
+                newline: true
+            },
+            {
+                text: 'He went into the Uzum for a good reason, not alone and not immediately',
+                bold: true,
+                newline: true
+            }
         ]
     },
     {
-        head: 'SDET (Python, Golang), KASPERSKY',
-        subhead: 'KasperskyOS, APROTECH',
+        head: 'Software Development Engineer In Test',
+        subhead: 'KasperskyOS, KASPERSKY',
         date: 'July 2021 - October 2022',
         texts: [
             {
@@ -119,8 +149,8 @@ const experiens = [
         ]
     },
     {
-        head: 'Python developer, Rambler',
-        subhead: 'Afisha',
+        head: 'Middle Quality Assurance Automation Engineer',
+        subhead: 'Afisha, Rambler',
         date: 'October 2020 - July 2021',
         texts: [
             {
@@ -151,8 +181,8 @@ const experiens = [
         ]
     },
     {
-        head: 'Junior Python developer, Sberbank',
-        subhead: 'SberUser',
+        head: 'Junior Quality Assurance Automation Engineer',
+        subhead: 'SberUser, Sberbank',
         date: 'March 2019 - March 2020',
         texts: [
             {
