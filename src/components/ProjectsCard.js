@@ -1,5 +1,5 @@
 import React from 'react'
-import github from '../assets/icons/github.svg'
+import github from '../assets/icons/networks/github.svg'
 import joystick from '../assets/icons/joystick.svg'
 import secretly from '../assets/icons/secretly.svg'
 
