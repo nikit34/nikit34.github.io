@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { data_projects, categories } from './data/projects_data'
 import ProjectCard from './ProjectsCard'
 import Tab from './ProjectsTab'
+import { AnimatePresence } from 'framer-motion'
 
 
 const Projects = function() {
@@ -50,9 +51,11 @@ const Projects = function() {
                 }
             </div>
             <div className="row">
-                {
-                    projects.map((project, index) => <ProjectCard key={index} projects={project} />)
-                }
+                <AnimatePresence initial={false}>
+                    {
+                        projects.map((project, index) => <ProjectCard key={index} projects={project} />)
+                    }
+                </AnimatePresence>
             </div>
         </motion.div>
     )

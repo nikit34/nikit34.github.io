@@ -23,7 +23,7 @@ function App() {
           </div>
           <div className="col-lg-9 app__main-content">
             <Navbar />
-            <AnimatePresence exitBeforeEnter>
+            <AnimatePresence mode='wait'>
               <Switch location={location} key={location.key}>
                 <Route exact path="/">
                   <Projects />
