@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.8a77919f.css",
   "main.css.map": "static/css/main.8a77919f.css.map",
-  "main.js": "static/js/main.7640c793.js",
-  "main.js.map": "static/js/main.7640c793.js.map",
+  "main.js": "static/js/main.8de59c0b.js",
+  "main.js.map": "static/js/main.8de59c0b.js.map",
   "static/media/NikitaPermyakov_CV.pdf": "static/media/NikitaPermyakov_CV.50365b3f.pdf",
   "static/media/api.svg": "static/media/api.63f68ccc.svg",
   "static/media/arduino.svg": "static/media/arduino.020095a2.svg",
@@ -12,7 +12,6 @@
   "static/media/cpp.svg": "static/media/cpp.6b188daa.svg",
   "static/media/creating.svg": "static/media/creating.08f8976c.svg",
   "static/media/docker.svg": "static/media/docker.2e0fcd7b.svg",
-  "static/media/facebook.svg": "static/media/facebook.133bfce1.svg",
   "static/media/github.svg": "static/media/github.b38f1845.svg",
   "static/media/gitlab.svg": "static/media/gitlab.6671ee59.svg",
   "static/media/golang.svg": "static/media/golang.c589c114.svg",
@@ -25,6 +24,7 @@
   "static/media/python.svg": "static/media/python.26c488dd.svg",
   "static/media/qa.svg": "static/media/qa.7c6db867.svg",
   "static/media/secretly.svg": "static/media/secretly.5dd3b036.svg",
+  "static/media/telegram.svg": "static/media/telegram.39790284.svg",
   "static/media/tie.svg": "static/media/tie.c69bbc52.svg",
   "static/media/wireshark.svg": "static/media/wireshark.17791cf0.svg",
   "static/media/youtube.svg": "static/media/youtube.20af35d1.svg"
