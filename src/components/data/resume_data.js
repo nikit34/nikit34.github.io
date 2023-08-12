@@ -7,12 +7,12 @@ import kotlin from '../../assets/icons/languages/kotlin.svg'
 import swift from '../../assets/icons/languages/swift.svg'
 import java from '../../assets/icons/languages/java.svg'
 import arduino from '../../assets/icons/languages/arduino.svg'
-import git from '../../assets/icons/gitlab.svg'
-import docker from '../../assets/icons/docker.svg'
-import postgresql from '../../assets/icons/postgresql.svg'
-import linux from '../../assets/icons/linux.svg'
-import qa from '../../assets/icons/qa.svg'
-import wireshark from '../../assets/icons/wireshark.svg'
+import git from '../../assets/icons/softwares/gitlab.svg'
+import docker from '../../assets/icons/softwares/docker.svg'
+import postgresql from '../../assets/icons/softwares/postgresql.svg'
+import linux from '../../assets/icons/softwares/linux.svg'
+import qa from '../../assets/icons/softwares/qa.svg'
+import wireshark from '../../assets/icons/softwares/wireshark.svg'
 
 
 const experiens = [
