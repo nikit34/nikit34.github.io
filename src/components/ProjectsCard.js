@@ -1,7 +1,7 @@
 import React from 'react'
 import github from '../assets/icons/networks/github.svg'
-import joystick from '../assets/icons/joystick.svg'
-import secretly from '../assets/icons/secretly.svg'
+import joystick from '../assets/icons/status/joystick.svg'
+import secretly from '../assets/icons/status/secretly.svg'
 
 
 const ProjectCard = function({ projects: { name, id_video, deployed_url, github_url } }) {
