@@ -5,8 +5,8 @@ import telegram from '../assets/icons/networks/telegram.svg'
 import youtube from '../assets/icons/networks/youtube.svg'
 import linkedin from '../assets/icons/networks/linkedin.svg'
 import github from '../assets/icons/networks/github.svg'
-import pin from '../assets/icons/pin.svg'
-import resume from '../assets/icons/resume.svg'
+import pin from '../assets/icons/info/pin.svg'
+import resume from '../assets/icons/info/resume.svg'
 import avatar from '../assets/avatar.png'
 import resumeFile from '../assets/NikitaPermyakov_CV.pdf';
 
