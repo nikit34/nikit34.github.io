@@ -13,9 +13,33 @@ import wireshark from '../../assets/icons/wireshark.svg'
 
 const experiens = [
     {
+        head: 'Senior Quality Assurance Automation Engineer, UZUM / KazanExpress',
+        subhead: 'B2C',
+        date: 'March 2023 - now',
+        texts: [
+            {
+                text: 'Automating web, api and mobile applications',
+                bold: false,
+                newline: true
+            },
+        ]
+    },
+    {
+        head: 'Middle Quality Assurance Automation Engineer, Skyeng',
+        subhead: 'Student Cabinet',
+        date: 'October 2022 - March 2023',
+        texts: [
+            {
+                text: 'Automating web, api and mobile applications',
+                bold: false,
+                newline: true
+            },
+        ]
+    },
+    {
         head: 'SDET (Python, Golang), KASPERSKY',
         subhead: 'KasperskyOS, APROTECH',
-        date: 'July 2021 - now',
+        date: 'July 2021 - October 2022',
         texts: [
             {
                 text: 'IoT in Industry, creating an environment for testing physical devices - gateways.',
