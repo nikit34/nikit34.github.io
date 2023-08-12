@@ -2,6 +2,10 @@ import python from '../../assets/icons/languages/python.svg'
 import js from '../../assets/icons/languages/js.svg'
 import cpp from '../../assets/icons/languages/cpp.svg'
 import golang from '../../assets/icons/languages/golang.svg'
+import bash from '../../assets/icons/languages/bash.svg'
+import kotlin from '../../assets/icons/languages/kotlin.svg'
+import swift from '../../assets/icons/languages/swift.svg'
+import java from '../../assets/icons/languages/java.svg'
 import arduino from '../../assets/icons/languages/arduino.svg'
 import git from '../../assets/icons/gitlab.svg'
 import docker from '../../assets/icons/docker.svg'
@@ -278,11 +282,27 @@ const languages = [
     {
         icon: golang,
         name: 'Golang',
-        level: '80'
+        level: '85'
     },{
         icon: python,
         name: 'Python',
         level: '100'
+    },{
+        icon: java,
+        name: 'Java',
+        level: '80'
+    },{
+        icon: kotlin,
+        name: 'Kotlin',
+        level: '40'
+    },{
+        icon: swift,
+        name: 'Swift',
+        level: '40'
+    },{
+        icon: bash,
+        name: 'Bash',
+        level: '90'
     },{
         icon: js,
         name: 'JavaScript',
@@ -290,7 +310,7 @@ const languages = [
     },{
         icon: cpp,
         name: 'C++',
-        level: '80'
+        level: '50'
     },{
         icon: arduino,
         name: 'Arduino',
