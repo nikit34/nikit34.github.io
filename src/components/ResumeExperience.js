@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const ResumeExperience = function({ value: { head, subhead, date, texts } }) {
+const ResumeExperience = function({ value: { head, subhead, date_start, date_end, texts } }) {
     const textItems = texts.map((textItem) => {
         let lines = [];
         if (textItem.newline)
@@ -17,12 +17,16 @@ const ResumeExperience = function({ value: { head, subhead, date, texts } }) {
         <div className="row resume-card__body">
             <div className="col">
                 <div className="row">
-                    <div className="col-10">
+                    <div className="col">
                         <h5 className="resume-card__heading">{head}</h5>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-8">
                         <div className="resume-card__subheading">{subhead}</div>
                     </div>
-                    <div className="col-2 resume-card__date">
-                        <h6>{date}</h6>
+                    <div className="col-4 resume-card__date text-right">
+                        <h6>{date_start} - {date_end}</h6>
                     </div>
                 </div>
                 <div className="row">

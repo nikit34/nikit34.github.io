@@ -15,7 +15,8 @@ const experiens = [
     {
         head: 'Senior Quality Assurance Automation Engineer',
         subhead: 'B2C, UZUM / KazanExpress',
-        date: 'March 2023 - now',
+        date_start: 'March 2023',
+        date_end: 'now',
         texts: [
             {
                 text: 'Code review for the whole team of B2C',
@@ -77,7 +78,8 @@ const experiens = [
     {
         head: 'Middle Quality Assurance Automation Engineer',
         subhead: 'Student Cabinet, Skyeng',
-        date: 'October 2022 - March 2023',
+        date_start: 'October 2022',
+        date_end: 'March 2023',
         texts: [
             {
                 text: 'Technical assessment of the project status, audit',
@@ -119,7 +121,8 @@ const experiens = [
     {
         head: 'Software Development Engineer In Test',
         subhead: 'KasperskyOS, KASPERSKY',
-        date: 'July 2021 - October 2022',
+        date_start: 'July 2021',
+        date_end: 'October 2022',
         texts: [
             {
                 text: 'IoT in Industry, creating an environment for testing physical devices - gateways',
@@ -196,7 +199,8 @@ const experiens = [
     {
         head: 'Middle Quality Assurance Automation Engineer',
         subhead: 'Afisha, Rambler',
-        date: 'October 2020 - July 2021',
+        date_start: 'October 2020',
+        date_end: 'July 2021',
         texts: [
             {
                 text: 'Created unit tests, integration and mAPI tests',
@@ -238,7 +242,8 @@ const experiens = [
     {
         head: 'Junior Quality Assurance Automation Engineer',
         subhead: 'SberUser, Sberbank',
-        date: 'March 2019 - March 2020',
+        date_start: 'March 2019',
+        date_end: 'March 2020',
         texts: [
             {
                 text: 'Built automation',
