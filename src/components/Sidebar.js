@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-import facebook from '../assets/icons/facebook.svg'
+import telegram from '../assets/icons/telegram.svg'
 import youtube from '../assets/icons/youtube.svg'
 import linkedin from '../assets/icons/linkedin.svg'
 import github from '../assets/icons/github.svg'
@@ -36,20 +36,15 @@ const Sidebar = function() {
         >
             <img src={avatar} alt="avatar" className="sidebar__avatar" />
             <div className="sidebar__name">Permyakov <span>Nikita</span></div>
-            <div className="sidebar__title"><p>Full-Stack</p><p>Python, JavaScript, C++</p></div>
+            <div className="sidebar__title"><p>Full-Stack</p><p>SDET</p></div>
             <a href={resume} download="NikitaPermyakov_CV.pdf">
                 <div className="sidebar__resume">
                     <img src={tie} alt="resume" className="sidebar__icon"/>Download Resume
                 </div>
             </a>
-            <a href="https://github.com/nikit34">
-                <div className="sidebar__profile">
-                    <img src={github} alt="github" className="sidebar__icon mb-2 mr-3"/>GitHub
-                </div>
-            </a>
             <a href="https://www.youtube.com/channel/UCSdYMimys_AWyo015UK2gWA">
                 <div className="sidebar__profile">
-                <img src={youtube} alt="youtube" className="sidebar__icon mb-2 mr-3"/>Demo
+                <img src={youtube} alt="youtube" className="sidebar__icon mb-2 mr-3"/><b>Demo</b>
                 </div>
             </a>
             <a href="https://www.linkedin.com/in/nikitapermikov/">
@@ -57,9 +52,14 @@ const Sidebar = function() {
                     <img src={linkedin} alt="linkedin" className="sidebar__icon mb-2 mr-3"/>Articles
                 </div>
             </a>
-            <a href="https://www.facebook.com/nikitapermikov/">
+            <a href="https://github.com/nikit34">
+                <div className="sidebar__profile">
+                    <img src={github} alt="github" className="sidebar__icon mb-2 mr-3"/>GitHub
+                </div>
+            </a>
+            <a href="https://t.me/nikit34">
                     <div className="sidebar__profile">
-                        <img src={facebook} alt="facebook" className="sidebar__icon mb-2 mr-3"/>Write me
+                        <img src={telegram} alt="telegram" className="sidebar__icon mb-2 mr-3"/>Write me
                     </div>
                 </a>
             <div className="sidebar__contact">
