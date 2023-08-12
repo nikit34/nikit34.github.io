@@ -1,5 +1,12 @@
 const data_projects = [
     {
+        name: 'Portfolio',
+        id_video: '16Rlj9pGhJU',
+        deployed_url: 'https://nikit34.github.io/nastya',
+        github_url: 'https://github.com/nikit34/nastya',
+        category: ['JavaScript', 'React']
+    },
+    {
         name: 'Keystroke counter using shift register',
         id_video: 'CXmuTDaVrSU',
         github_url: 'https://github.com/nikit34/arduino_iskra_uno',
