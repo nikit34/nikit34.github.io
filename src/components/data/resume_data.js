@@ -18,10 +18,60 @@ const experiens = [
         date: 'March 2023 - now',
         texts: [
             {
-                text: 'Automating web, api and mobile applications',
+                text: 'Code review for the whole team of B2C',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Sprint planning for the automation team',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Interviewing candidates',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Technical assessment of the project status, audit',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Developing pipelines in GitHub',
                 bold: false,
                 newline: true
             },
+            {
+                text: 'Filling Confluence of company with useful articles and training videos',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Training other autotesters to automate testing',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Self-adding id in mobile on Android/iOS and web application',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Writing a request proxying tool',
+                bold: false,
+                newline: true
+            },
+            {
+                text: 'Fixing unit and integration tests in Golang',
+                bold: false,
+                newline: true
+            },
+            {
+                text: 'Writing fixtures for communication with API in Java and Kotlin',
+                bold: false,
+                newline: true
+            }
         ]
     },
     {
