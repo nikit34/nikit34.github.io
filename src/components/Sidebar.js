@@ -6,9 +6,9 @@ import youtube from '../assets/icons/networks/youtube.svg'
 import linkedin from '../assets/icons/networks/linkedin.svg'
 import github from '../assets/icons/networks/github.svg'
 import pin from '../assets/icons/pin.svg'
-import tie from '../assets/icons/tie.svg'
+import resume from '../assets/icons/resume.svg'
 import avatar from '../assets/avatar.png'
-import resume from '../assets/NikitaPermyakov_CV.pdf';
+import resumeFile from '../assets/NikitaPermyakov_CV.pdf';
 
 
 const Sidebar = function() {
@@ -37,9 +37,9 @@ const Sidebar = function() {
             <img src={avatar} alt="avatar" className="sidebar__avatar" />
             <div className="sidebar__name">Permyakov <span>Nikita</span></div>
             <div className="sidebar__title"><p>Full-Stack</p><p>SDET</p></div>
-            <a href={resume} download="NikitaPermyakov_CV.pdf">
+            <a href={resumeFile} download="NikitaPermyakov_CV.pdf">
                 <div className="sidebar__resume">
-                    <img src={tie} alt="resume" className="sidebar__icon"/>Download Resume
+                    <img src={resume} alt="resume" className="sidebar__icon"/>Download Resume
                 </div>
             </a>
             <a href="https://www.youtube.com/channel/UCSdYMimys_AWyo015UK2gWA">
