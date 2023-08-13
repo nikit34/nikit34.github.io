@@ -2,12 +2,12 @@ import React from 'react'
 
 
 const ResumeExperience = function({ value: { head, subhead, date_start, date_end, texts } }) {
-    const textItems = texts.map((textItem) => {
+    const textItems = texts.map((textItem, index) => {
         let lines = [];
         if (textItem.newline)
-            lines.push(<br/>)
+            lines.push(<br key={`br_${index}`}/>)
         if (textItem.bold) {
-            lines.push(<span className="resume-card__text"> {textItem.text} </span>)
+            lines.push(<span className="resume-card__text" key={`span_${index}`}> {textItem.text} </span>)
         } else {
             lines.push(textItem.text)
         }
