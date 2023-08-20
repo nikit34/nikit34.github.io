@@ -11,7 +11,30 @@ import avatar from '../assets/avatar.png'
 import resumeFile from '../assets/NikitaPermyakov_CV.pdf';
 
 
+const getStorageTheme = () => {
+    let theme = 'light-theme';
+    if (localStorage.getItem('theme')) {
+        theme = localStorage.getItem('theme');
+    }
+    return theme;
+};
+
 const Sidebar = function() {
+    const [theme, setTheme] = useState(getStorageTheme());
+
+    const toggleTheme = () => {
+        if (theme === 'light-theme') {
+            setTheme('dark-theme');
+        } else {
+            setTheme('light-theme');
+        }
+    }
+
+    useEffect(() => {
+        document.documentElement.className = theme;
+        localStorage.setItem('theme', theme);
+    }, [theme]);
+
     const handleEmailMe = () => {
         window.open('mailto:permikov134@yandex.ru')
     }
