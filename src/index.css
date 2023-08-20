@@ -51,6 +51,11 @@ a:hover {
     height: 100vh;
 }
 
+.sidebar__light_mode {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
 .sidebar__avatar {
     height: 125px;
     width: 125px;

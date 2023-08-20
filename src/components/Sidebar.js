@@ -34,6 +34,9 @@ const Sidebar = function() {
             initial='hidden'
             animate='visible'
         >
+            <div className="sidebar__light_mode">
+                test
+            </div>
             <img src={avatar} alt="avatar" className="sidebar__avatar" />
             <div className="sidebar__name">Permyakov <span>Nikita</span></div>
             <div className="sidebar__title"><p>Full-Stack</p><p>SDET</p></div>
