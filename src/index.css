@@ -74,6 +74,8 @@ a:hover {
     box-shadow: 0 0 0.5px black;
     text-align: center;
     height: 100vh;
+    position: sticky;
+    top: 0;
 }
 
 .dark-theme .sidebar {
