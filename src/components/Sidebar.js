@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
+import { BsSun, BsMoon } from 'react-icons/bs';
 import telegram from '../assets/icons/networks/telegram.svg'
 import youtube from '../assets/icons/networks/youtube.svg'
 import linkedin from '../assets/icons/networks/linkedin.svg'
@@ -58,7 +59,9 @@ const Sidebar = function() {
             animate='visible'
         >
             <div className="sidebar__light_mode">
-                test
+                <div className="theme__toggler" onClick={toggleTheme}>
+                    {theme === 'light-theme' ? <BsMoon /> : <BsSun />}
+                </div>
             </div>
             <img src={avatar} alt="avatar" className="sidebar__avatar" />
             <div className="sidebar__name">Permyakov <span>Nikita</span></div>
