@@ -164,7 +164,7 @@ a:hover {
     color: black !important;
 }
 
-.sidebar__btn.active {
+.dark-theme .sidebar__btn.active {
     color: whitesmoke !important;
 }
 
@@ -524,7 +524,7 @@ a:hover {
 }
 
 .dark-theme .projectCard__context {
-    color: rgb(46, 46, 46);
+    color: rgb(100, 100, 100);
 }
 
 .projectCard__description {
