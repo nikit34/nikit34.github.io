@@ -4,10 +4,21 @@ body {
     background-image: linear-gradient(white, rgb(210, 210, 210));
     background-attachment: fixed;
     font-family: sans-serif;
+    color: rgba(33, 37, 41, 1);
+}
+
+.dark-theme body {
+    background-image: linear-gradient(rgb(46, 46, 46), rgb(100, 100, 100));
+    color: rgba(222, 218, 214, 1);
 }
 
 ::-webkit-scrollbar {
     width: 7.5px;
+    background-color: whitesmoke;
+}
+
+.dark-theme ::-webkit-scrollbar {
+    background-color: rgb(46, 46, 46);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -21,10 +32,19 @@ a {
     transition: color 0.3s;
 }
 
+.dark-theme a {
+    color: rgb(100, 100, 100);
+}
+
 a:hover {
     text-decoration: none;
     color: black;
 }
+
+.dark-theme a:hover {
+    color: whitesmoke;
+}
+
 
 .app__container {
     padding-top: 30px;
@@ -41,6 +61,11 @@ a:hover {
     box-shadow: 0 0 0.5px black;
 }
 
+.dark-theme .app__main-content {
+    background-color: rgb(46, 46, 46);
+    box-shadow: 0 0 0.5px whitesmoke;
+}
+
 .sidebar {
     background-color: white;
     min-width: 225px;
@@ -51,11 +76,31 @@ a:hover {
     height: 100vh;
 }
 
+.dark-theme .sidebar {
+    background-color: rgb(46, 46, 46);
+    box-shadow: 0 0 0.5px whitesmoke;
+}
+
+.sidebar__light_mode {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.theme__toggler {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
 .sidebar__avatar {
     height: 125px;
     width: 125px;
     object-fit: contain;
     border-radius: 50%;
+    user-select: none;
 }
 
 .sidebar__icon {
@@ -82,6 +127,10 @@ a:hover {
     min-height: 80px;
 }
 
+.dark-theme .sidebar__title {
+    background-image: linear-gradient(0deg, rgb(46, 46, 46) 0%, rgb(100, 100, 100) 100%);
+}
+
 .sidebar__resume {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -92,6 +141,12 @@ a:hover {
     padding-bottom: 10px;
     margin-bottom: 10px;
     transition: all 0.3s;
+}
+
+.dark-theme .sidebar__resume {
+    border-left: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-bottom: 2px solid rgb(30, 30, 30);
 }
 
 .sidebar__btn {
@@ -105,8 +160,12 @@ a:hover {
     position: relative;
 }
 
-.sidebar__btn.active{
+.sidebar__btn.active {
     color: black !important;
+}
+
+.sidebar__btn.active {
+    color: whitesmoke !important;
 }
 
 .sidebar__btn:after {
@@ -138,10 +197,19 @@ a:hover {
     font-size: 1.05rem;
 }
 
+.dark-theme .sidebar__profile {
+    border-left: 2px solid rgb(30, 30, 30);
+}
+
 .sidebar__profile:hover,
 .sidebar__resume:hover {
     background-color: whitesmoke;
     border-color: lightgreen;
+}
+
+.dark-theme .sidebar__profile:hover,
+.dark-theme .sidebar__resume:hover {
+    background-color: rgb(30, 30, 30);
 }
 
 .sidebar__contact {
@@ -156,26 +224,38 @@ a:hover {
     transition: all 0.3s;
 }
 
+.dark-theme .sidebar__contact {
+    background-image: linear-gradient(rgb(46, 46, 46) 0%, rgb(30, 30, 30) 100%);
+}
+
 .sidebar__contact:hover {
     opacity: 1;
 }
 
-.sidebar__location{
+.sidebar__location {
     cursor:help;
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
-.sidebar_previous{
+.sidebar_previous {
     color: lightgray;
     transition: color 0.3s;
 }
 
 .sidebar_previous:hover {
-    color:black;
+    color: black;
 }
 
-@media(max-width:991px){
+.dark-theme .sidebar_previous {
+    color: rgb(46, 46, 46);
+}
+
+.dark-theme .sidebar_previous:hover {
+    color: whitesmoke;
+}
+
+@media(max-width:991px) {
     .app__main-content {
         margin: 30px 0;
     }
@@ -242,11 +322,19 @@ a:hover {
     padding: 20px;
 }
 
+.dark-theme .about__container {
+    background-color: rgb(46, 46, 46);
+}
+
 .skill-card {
     background-color: whitesmoke;
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
+}
+
+.dark-theme .skill-card {
+    background-color: rgb(30, 30, 30);
 }
 
 .skill-card__icon {
@@ -282,6 +370,10 @@ a:hover {
     box-shadow: 0 0 0.25vh 0.25vw lightgrey;
 }
 
+.dark-theme resume-card__body:hover {
+    box-shadow: 0 0 0.25vh 0.25vw rgb(46, 46, 46);
+}
+
 .resume-title {
     font-size: 1.8rem;
     font-weight: 700;
@@ -306,31 +398,39 @@ a:hover {
     transition: color 1s;
 }
 
-.resume-card__body:hover .resume-card__subheading{
+.resume-card__body:hover .resume-card__subheading {
     color: seagreen;
 }
 
-.resume-card__date{
+.resume-card__date {
     transition: color 1s;
 }
 
-.resume-card__body:hover .resume-card__date{
+.resume-card__body:hover .resume-card__date {
     color:orange;
 }
 
-.resume-card__text{
+.resume-card__text {
     transition: color 1s;
 }
 
-.resume-card__body:hover .resume-card__text{
-    color:black;
+.resume-card__body:hover .resume-card__text {
+    color: black;
 }
 
-.ResumeBar{
+.dark-theme .resume-card__body:hover .resume-card__text {
+    color: whitesmoke;
+}
+
+.ResumeBar {
     width: 90%;
     border-radius: 20px;
     margin-bottom: 12px;
-    background-color:whitesmoke;
+    background-color: whitesmoke;
+}
+
+.dark-theme .ResumeBar {
+    background-color: rgb(30, 30, 30);
 }
 
 .bar__icon {
@@ -349,6 +449,10 @@ a:hover {
     overflow: hidden;
     text-overflow: ellipsis;
     animation: Loading 8s both infinite ease-in;
+}
+
+.dark-theme .bar__wrapper {
+    color: rgb(46, 46, 46);
 }
 
 @keyframes Loading {
@@ -419,6 +523,10 @@ a:hover {
     text-overflow: ellipsis;
 }
 
+.dark-theme .projectCard__context {
+    color: rgb(46, 46, 46);
+}
+
 .projectCard__description {
     text-align: center;
     color: seagreen;
@@ -435,6 +543,10 @@ a:hover {
     padding-bottom: 10px;
 }
 
+.dark-theme .projects__navbar {
+    background-color: rgb(46, 46, 46);
+}
+
 .projects__navbar .sidebar__btn {
     margin: 0 5px;
     font-size: 1rem;
@@ -443,8 +555,16 @@ a:hover {
     transition: color .3s ease-in-out;
 }
 
+.dark-theme .projects__navbar .sidebar__btn {
+    color: rgb(100, 100, 100);
+}
+
 .projects__navbar .sidebar__btn:hover {
-    color:black;
+    color: black;
+}
+
+.dark-theme .projects__navbar .sidebar__btn:hover {
+    color: whitesmoke;
 }
 
 @media (max-width: 600px){

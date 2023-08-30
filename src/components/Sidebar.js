@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
+import { BsSun, BsMoon } from 'react-icons/bs';
 import telegram from '../assets/icons/networks/telegram.svg'
 import youtube from '../assets/icons/networks/youtube.svg'
 import linkedin from '../assets/icons/networks/linkedin.svg'
@@ -11,7 +12,30 @@ import avatar from '../assets/avatar.png'
 import resumeFile from '../assets/NikitaPermyakov_CV.pdf';
 
 
+const getStorageTheme = () => {
+    let theme = 'light-theme';
+    if (localStorage.getItem('theme')) {
+        theme = localStorage.getItem('theme');
+    }
+    return theme;
+};
+
 const Sidebar = function() {
+    const [theme, setTheme] = useState(getStorageTheme());
+
+    const toggleTheme = () => {
+        if (theme === 'light-theme') {
+            setTheme('dark-theme');
+        } else {
+            setTheme('light-theme');
+        }
+    }
+
+    useEffect(() => {
+        document.documentElement.className = theme;
+        localStorage.setItem('theme', theme);
+    }, [theme]);
+
     const handleEmailMe = () => {
         window.open('mailto:permikov134@yandex.ru')
     }
@@ -34,6 +58,11 @@ const Sidebar = function() {
             initial='hidden'
             animate='visible'
         >
+            <div className="sidebar__light_mode">
+                <div className="theme__toggler" onClick={toggleTheme}>
+                    {theme === 'light-theme' ? <BsMoon /> : <BsSun />}
+                </div>
+            </div>
             <img src={avatar} alt="avatar" className="sidebar__avatar" />
             <div className="sidebar__name">Permyakov <span>Nikita</span></div>
             <div className="sidebar__title"><p>Full-Stack</p><p>SDET</p></div>
