@@ -5,6 +5,7 @@ import { AnimatePresence } from 'framer-motion'
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
 import About from './components/About'
+import Contact from './components/Contact'
 import Projects from './components/Projects'
 import Resume from './components/Resume'
 
@@ -30,6 +31,9 @@ function App() {
                 </Route>
                 <Route path="/resume">
                   <Resume />
+                </Route>
+                <Route path="/contact">
+                  <Contact />
                 </Route>
                 <Route path="/about" component={About}/>
                 <Route>

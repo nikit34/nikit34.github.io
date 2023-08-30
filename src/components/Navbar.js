@@ -14,6 +14,8 @@ const Navbar = function() {
             setActive('About');
         else if (currentUrl.endsWith('/resume'))
             setActive('Resume');
+        else if (currentUrl.endsWith('/contact'))
+            setActive('Contact');
     }, [active])
 
     const navbar_variant = {
@@ -54,6 +56,11 @@ const Navbar = function() {
                 active !== 'Resume' ?
                 <Link to="/resume">
                     <div className="navbar__item" onClick={() => setActive('Resume')}>Resume</div>
+                </Link> : null
+            }{
+                active !== 'Contact' ?
+                <Link to="/contact">
+                    <div className="navbar__item" onClick={() => setActive('Contact')}>Contact</div>
                 </Link> : null
             }
             </div>
