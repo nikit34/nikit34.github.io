@@ -81,11 +81,6 @@ a:hover {
     box-shadow: 0 0 0.5px whitesmoke;
 }
 
-.sidebar__light_mode {
-    display: flex;
-    flex-wrap: nowrap;
-}
-
 .theme__toggler {
     font-size: 28px;
     display: flex;

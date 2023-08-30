@@ -58,10 +58,8 @@ const Sidebar = function() {
             initial='hidden'
             animate='visible'
         >
-            <div className="sidebar__light_mode">
-                <div className="theme__toggler" onClick={toggleTheme}>
-                    {theme === 'light-theme' ? <BsMoon /> : <BsSun />}
-                </div>
+            <div className="theme__toggler" onClick={toggleTheme}>
+                {theme === 'light-theme' ? <BsMoon /> : <BsSun />}
             </div>
             <img src={avatar} alt="avatar" className="sidebar__avatar" />
             <div className="sidebar__name">Permyakov <span>Nikita</span></div>
