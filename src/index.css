@@ -72,28 +72,6 @@ a:hover {
     }
 }
 
-.about {
-    padding: 20px;
-    margin: -35px;
-}
-
-.about__intro {
-    font-size: 1.2rem;
-    padding-left: 2rem;
-    padding-top: 0.5rem;
-    font-style: italic;
-    text-align: center;
-}
-
-.about__container {
-    background-color: white;
-    padding: 20px;
-}
-
-.dark-theme .about__container {
-    background-color: rgb(46, 46, 46);
-}
-
 .skill-card {
     background-color: whitesmoke;
     margin: 10px;
