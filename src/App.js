@@ -11,9 +11,7 @@ import Resume from './components/resume/Resume'
 
 
 function App() {
-
   const location = useLocation();
-
 
   return (
     <div className="app">
