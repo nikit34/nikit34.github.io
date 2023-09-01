@@ -5,6 +5,7 @@ import { data_projects, categories } from '../../data/projects'
 import ProjectCard from './ProjectsCard'
 import Tab from './ProjectsTab'
 import { AnimatePresence } from 'framer-motion'
+import './projects.css'
 
 
 const Projects = function() {
