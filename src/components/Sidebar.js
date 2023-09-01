@@ -5,6 +5,7 @@ import { BsSun, BsMoon } from 'react-icons/bs';
 import telegram from '../assets/icons/networks/telegram.svg'
 import youtube from '../assets/icons/networks/youtube.svg'
 import linkedin from '../assets/icons/networks/linkedin.svg'
+import githubWhite from '../assets/icons/networks/github-white.svg'
 import github from '../assets/icons/networks/github.svg'
 import pin from '../assets/icons/info/pin.svg'
 import resume from '../assets/icons/info/resume.svg'
@@ -81,7 +82,7 @@ const Sidebar = function() {
             </a>
             <a href="https://github.com/nikit34">
                 <div className="sidebar__profile">
-                    <img src={github} alt="github" className="sidebar__icon mb-2 mr-3"/>GitHub
+                    <img src={theme === 'light-theme' ? github : githubWhite} alt="github" className="sidebar__icon mb-2 mr-3"/>GitHub
                 </div>
             </a>
             <a href="https://t.me/nikit34">
