@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-import AboutSkillcard from './AboutSkillcard'
+import AboutSkillcard from './about/AboutSkillcard'
 import { skills } from '../data/about'
 
 

@@ -4,7 +4,7 @@ import { AnimatePresence } from 'framer-motion'
 
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
-import About from './components/About'
+import About from './components/about/About'
 import Contact from './components/Contact'
 import Projects from './components/Projects'
 import Resume from './components/Resume'
