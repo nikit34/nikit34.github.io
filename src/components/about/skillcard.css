@@ -1,0 +1,31 @@
+.skill-card {
+    background-color: whitesmoke;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.dark-theme .skill-card {
+    background-color: rgb(30, 30, 30);
+}
+
+.skill-card__icon {
+    width: 40px;
+    height: 40px;
+    margin-left:-20px;
+}
+
+.skill-card__title {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    left:auto;
+    color: seagreen;
+    font-weight: 700;
+}
+
+.skill-card__content {
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-right: 10px;
+}

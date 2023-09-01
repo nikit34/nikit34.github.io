@@ -1,4 +1,5 @@
 import React from 'react'
+import './skillcard.css'
 
 
 const AboutSkillcard = function({ skill: { icon, title, about } }) {
