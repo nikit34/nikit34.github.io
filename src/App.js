@@ -3,7 +3,7 @@ import { Route, Switch, Redirect, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 
 import Sidebar from './components/Sidebar'
-import Navbar from './components/Navbar'
+import Navbar from './components/navbar/Navbar'
 import About from './components/about/About'
 import Contact from './components/Contact'
 import Projects from './components/projects/Projects'
