@@ -6,7 +6,7 @@ import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
 import About from './components/about/About'
 import Contact from './components/Contact'
-import Projects from './components/Projects'
+import Projects from './components/projects/Projects'
 import Resume from './components/Resume'
 
 

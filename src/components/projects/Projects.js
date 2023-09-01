@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
-import { data_projects, categories } from '../data/projects'
+import { data_projects, categories } from '../../data/projects'
 import ProjectCard from './ProjectsCard'
 import Tab from './ProjectsTab'
 import { AnimatePresence } from 'framer-motion'

@@ -1,7 +1,7 @@
 import React from 'react'
-import github from '../assets/icons/networks/github.svg'
-import joystick from '../assets/icons/status/joystick.svg'
-import secretly from '../assets/icons/status/secretly.svg'
+import github from '../../assets/icons/networks/github.svg'
+import joystick from '../../assets/icons/status/joystick.svg'
+import secretly from '../../assets/icons/status/secretly.svg'
 import { motion } from 'framer-motion'
 
 
