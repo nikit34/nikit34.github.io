@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 
 import AboutSkillcard from '../about/AboutSkillcard'
 import { skills } from '../../data/about'
+import './contact.css'
 
 
 const Contact = function() {
