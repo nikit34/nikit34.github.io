@@ -1,5 +1,6 @@
 .contact {
-    background-image: var(--second-gradient);
+    padding: 20px;
+    margin: -35px;
 }
 
 .contact__container {
