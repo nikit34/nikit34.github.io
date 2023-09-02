@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "portfolio-nikit34",
+    "private_key_id": "8a466ce574ff6d28b2b8b48dbfb0ade8c1b873b6",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCcIFjZ5pgufHDP\n07HFcZOi0XeYKi2fwYNx8OIEn5I3js7wkt9zgY1QWUhqhgXmwctMnzh14TdgNrCU\ny57xTlQt3DoHsmN0LVlNoHiMZsEefhyjg3hOxhDWsWgVOjKIPeV9NophxRE7PMGm\nDVQoHioT3N+5p5LZVD9Wad1TxTS3CoAE7LBguATXSx3bqdAlxBHn54IikyZBsCAQ\nB3zRSgHzr8hPkF+hJAN3l2XtGBsaiT2fX8U8Hrvw8YLTpgVer2ZC/38y/0ROUeEQ\n6Y8RFJ1kYLUd9AvyejOdtDBx4RwF4ZTko/WdjHVG0K9D7UCtWosyFuuMjjJN+NIz\ng5s+qtj9AgMBAAECggEASra2HmzaJeDaUbKCb7TXDINGQrToiXufTi8S0liUre6y\n/HCk608zk6BuZb/GYjQaeIv3hn3lNK9nWIWLBfpQkXPC93z4WBf9lQb2uWXRBCkg\nxmU7dSMW2s8iOopTtVw9jurDVV9rzBfaqf7V567rvv6jt+JIBaXp+44E4zpL7E2k\nAjRy0POQVkITh4FM/1ONkOXlPRYrSj+gt4xlEUnlwmpabTflrDvi1w2ZJWtYSoJi\nvqIar6c7YihK89+wvQRSLQJiFgBgUPuk5RqwNu5iR16Q6Xyhjd8gDV3hVMnkue29\nWelbPJe2Lz/tdEJ369/vApaUtsKcei6q5jcghlgClwKBgQDRXsrotsnlJj2INVXe\nkRmIMTgrMqKh4drxBTMSR++seglIf9i9n+P8bQSUiQ7mlY14mlGlFG4U4jXBbxI0\nkDuz/K3jbZUJH15XVfpzQQg+QiHW37O06/r8EFcvU4JcCcoq1aAeWQ0sk5DZqzSB\npnsGg8Pl4nPO+47upjE31gBtEwKBgQC+5dymjINZsUlSAFrSFpxJchc4UccB0nkn\nlqFDocvNT+O4XIUP7w8qXZJMSGnrDZRNZHPweqv+2O2YcI8XuLfvLFpf1YIDsv12\n+X3alZIPsGYWUvBqVYJ0P90o7i8y0V5dk6fiPRDIzwSE4QfjsdDWuSSitudKynbP\nQ8rzxvSzrwKBgQCS6tWv3zRlXCQphGOxPliQPRmRFoMQ3Y/pOSDRXzFL8oa5HR1W\nUvCEnWttX4/ZNnCDhKZuFJv6g5H9HpfD0sJSVqkewjKmqCBnYKnSXnwOVBGy2l8c\nQctpPX4wc4UyWJxI2ob1RL/92771PzIlGFGUDLpWgkWJpPRzeqNm7wB1iQKBgQCH\n7hFiHqfhFBZLZ6lD84mx2qWiGskECSTwBZgrGmiOd5aFTowJPoaj+iEUZHPXRcIW\nIbNUx2T1gO4eH/gkQgnnKsPnfZaon6lQMHNnVB2/QjJPLxu1+9F6iYcngALnwqHZ\nLCzdMfJjqtVi8QG3JoS4gPkPTAICBYz4JSO81iykTQKBgQC3IAOkSoukLizFdxyc\nHPXM5BluZq3tNgkrIKqD0mvR7vSC9uz+59EBhOr20bZ7654M6nN8lKlM7hlOeQIp\no2goc8wiJ1tJhVpOQ2HhresOoOJNO7F4yvO0KU7qMP4MWnJMyW3jfwV0msnTyVRG\ngLvtIw+n7QKE4EScEO0S6Ij6rQ==\n-----END PRIVATE KEY-----\n",
+    "client_email": "nikit34@portfolio-nikit34.iam.gserviceaccount.com",
+    "client_id": "105296266941381418662",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nikit34%40portfolio-nikit34.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }
