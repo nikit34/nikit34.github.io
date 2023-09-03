@@ -130,3 +130,10 @@
     font-size: 20px;
     padding-block: 6px;
 }
+
+@media (max-width: 600px) {
+    .grid {
+        display: contents;
+        gap: 24px;
+    }
+}
