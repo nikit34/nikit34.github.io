@@ -36,6 +36,15 @@
     padding-inline: 30px;
 }
 
+.contact__form-input:focus {
+    border: 2px solid seagreen !important;
+    outline: none !important;
+}
+
+.dark-theme .contact__form-input:focus {
+    border: 2px solid lightgreen !important;
+}
+
 .contact__form-area .contact__form-input {
     height: 140px;
     padding-block: 20px;
@@ -67,6 +76,7 @@
 
 .dark-theme .contact__submit .btn {
     background-color: rgb(100, 100, 100);
+    border: 2px solid seagreen;
 }
 
 .btn::before {
@@ -107,6 +117,7 @@
 
 .dark-theme .contact__card-icon,
 .dark-theme .contact__form-input {
+    border: 2px solid seagreen;
     background-color: rgb(100, 100, 100);
 }
 

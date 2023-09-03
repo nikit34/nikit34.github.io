@@ -22,7 +22,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-image: linear-gradient(green, lightgreen, green);
+    background-image: linear-gradient(seagreen, lightgreen, seagreen);
     border-radius: 5px;
 }
 
