@@ -2,17 +2,16 @@ import React from 'react'
 import { Route, Switch, Redirect, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 
-import Sidebar from './components/Sidebar'
-import Navbar from './components/Navbar'
-import About from './components/About'
-import Projects from './components/Projects'
-import Resume from './components/Resume'
+import Sidebar from './components/sidebar/Sidebar'
+import Navbar from './components/navbar/Navbar'
+import About from './components/about/About'
+import Contact from './components/contact/Contact'
+import Projects from './components/projects/Projects'
+import Resume from './components/resume/Resume'
 
 
 function App() {
-
   const location = useLocation();
-
 
   return (
     <div className="app">
@@ -31,7 +30,12 @@ function App() {
                 <Route path="/resume">
                   <Resume />
                 </Route>
-                <Route path="/about" component={About}/>
+                <Route path="/contact">
+                  <Contact />
+                </Route>
+                <Route path="/about">
+                  <About />
+                </Route>
                 <Route>
                   <Redirect to="/" />
                 </Route>

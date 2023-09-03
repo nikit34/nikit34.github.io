@@ -3,7 +3,8 @@ import { motion } from 'framer-motion'
 
 import ResumeBar from './ResumeBar'
 import ResumeExperience from './ResumeExperience'
-import { experiens, languages, tools } from './data/resume_data'
+import { experiens, languages, tools } from '../../data/resume'
+import './resume.css'
 
 
 const Resume = function() {

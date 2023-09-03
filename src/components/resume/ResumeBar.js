@@ -1,4 +1,5 @@
 import React from 'react'
+import './bar.css'
 
 
 const GENERAL_EXPERIENCE = 5

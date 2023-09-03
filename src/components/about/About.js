@@ -2,7 +2,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 import AboutSkillcard from './AboutSkillcard'
-import { skills } from './data/about_data'
+import { skills } from '../../data/about'
+import './about.css'
 
 
 const About = function() {

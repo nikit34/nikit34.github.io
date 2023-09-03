@@ -1,9 +1,9 @@
 import React from 'react'
 
-import creating from '../../assets/icons/about/creating.svg'
-import compass from '../../assets/icons/about/compass.svg'
-import code from '../../assets/icons/about/code.svg'
-import api from '../../assets/icons/about/api.svg'
+import creating from '../assets/icons/about/creating.svg'
+import compass from '../assets/icons/about/compass.svg'
+import code from '../assets/icons/about/code.svg'
+import api from '../assets/icons/about/api.svg'
 
 
 const skills = [
