@@ -53,14 +53,6 @@
     background-color: rgb(46, 46, 46);
 }
 
-.projects__navbar .sidebar__btn {
-    margin: 0 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    color: darkgray;
-    transition: color .3s ease-in-out;
-}
-
 .dark-theme .projects__navbar .sidebar__btn {
     color: rgb(100, 100, 100);
 }
