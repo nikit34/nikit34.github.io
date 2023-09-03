@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { FaRegAddressBook, FaRegEnvelope } from 'react-icons/fa';
+import { FaRegAddressBook, FaRegEnvelope } from 'react-icons/fa'
 
 import './contact.css'
+import Snackbar from '../snackbar/Snackbar'
 
 
 const Contact = function() {
@@ -51,6 +52,8 @@ const Contact = function() {
         }).catch((error) => console.log(error));
         console.log('Data sent successfully!');
     };
+
+    const snackbarRef = useRef(null);
 
     return (
         <motion.div className="contact"
@@ -110,7 +113,13 @@ const Contact = function() {
                         />
                     </div>
                     <div className="contact__submit">
-                        <button type="submit" className="btn text-cs">
+                        <button
+                            type="submit"
+                            className="btn text-cs"
+                            onClick={() => {
+                                snackbarRef.current.show();
+                            }}
+                        >
                             Send Message
                         </button>
                     </div>
@@ -131,6 +140,11 @@ const Contact = function() {
                         <p className="contact__card-data">+7 977 991 80 74</p>
                     </div>
                 </div>
+                <Snackbar
+                    ref={snackbarRef}
+                    message="Message sent"
+                    type="success"
+                />
             </div>
         </motion.div>
     )
