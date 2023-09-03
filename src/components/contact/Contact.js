@@ -126,7 +126,12 @@ const Contact = function() {
                             <label className="contact__form-tag text-cs">
                                 Your Subject <b>*</b>
                             </label>
-                            <input type="text" className="contact__form-input" />
+                            <textarea
+                                name="subject"
+                                onChange={handleChange}
+                                value={form.subject}
+                                className='contact__form-input'
+                            />
                         </div>
                         <div className="contact__form-div contact__form-area">
                             <label className="contact__form-tag text-cs">
