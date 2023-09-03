@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaRegAddressBook, FaRegEnvelope, FaRegMap, FaRegUser } from 'react-icons/fa';
+import { FaRegAddressBook, FaRegEnvelope } from 'react-icons/fa';
 
 import './contact.css'
 
@@ -116,20 +116,6 @@ const Contact = function() {
                     </div>
                 </form>
                 <div className="contact__content grid">
-                    <div className="contact__card">
-                        <span className="contact__card-icon">
-                            <FaRegMap />
-                        </span>
-                        <h3 className="contact__card-title">Address</h3>
-                        <p className="contact__card-data">North Tower, Toronto, Canada</p>
-                    </div>
-                    <div className="contact__card">
-                        <span className="contact__card-icon">
-                            <FaRegUser />
-                        </span>
-                        <h3 className="contact__card-title">Freelance</h3>
-                        <p className="contact__card-data">Available Right Now</p>
-                    </div>
                     <div className="contact__card">
                         <span className="contact__card-icon">
                             <FaRegEnvelope />
