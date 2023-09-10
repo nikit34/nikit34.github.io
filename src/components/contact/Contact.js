@@ -42,11 +42,9 @@ const Contact = function() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (form.name == "" || form.email == "" || form.subject == "") {
-            setSnackbarType("failed");
-        } else {
+        if (form.name != "" && form.email != "" && form.subject != "" && form.email.includes("@", 1) && form.email.includes(".", 2)) {
             setSnackbarType("success");
-            
+
             fetch(
                 'https://script.google.com/macros/s/AKfycbyPtJyU5gNNyu9PdVj4NIW7MbVJDIa-6WX3CKa3Gaw9PtUdDtMJSYVadDI4L3LdZLaTUA/exec?name='
                 + form.name + '&email=' + form.email + '&subject=' + form.subject + '&message=' + form.message,
@@ -59,9 +57,9 @@ const Contact = function() {
             }).catch(
                 (error) => console.log(error)
             );
+        } else {
+            setSnackbarType("failed");
         }
-
-        console.log('Data sent successfully!');
     };
 
     const snackbarRef = useRef(null);
