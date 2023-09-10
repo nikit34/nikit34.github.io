@@ -49,6 +49,11 @@
     border: 2px solid lightgreen !important;
 }
 
+.contact__form-input:-webkit-autofill,
+.contact__form-input:-webkit-autofill:focus {
+  transition: background-color 0s 1000000s, color 0s 1000000s;
+}
+
 .contact__form-area .contact__form-input {
     height: 140px;
     padding-block: 20px;
