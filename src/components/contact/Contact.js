@@ -42,7 +42,12 @@ const Contact = function() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (form.name != "" && form.email != "" && form.subject != "" && form.email.includes("@", 1) && form.email.includes(".", 2)) {
+        if (form.name.trim().length > 0
+            && form.email.trim().length > 0
+            && form.subject.trim().length > 0
+            && form.email.trim().includes("@", 1)
+            && form.email.trim().includes(".", 2)
+        ) {
             setSnackbarType("success");
 
             fetch(
