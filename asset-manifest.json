@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.bd5e8a72.css",
-    "main.js": "/static/js/main.a908d87a.js",
+    "main.css": "/static/css/main.de925f55.css",
+    "main.js": "/static/js/main.1698dd2e.js",
     "static/media/NikitaPermyakov_CV.pdf": "/static/media/NikitaPermyakov_CV.f88bf18c705b70d8de53.pdf",
     "static/media/gitlab.svg": "/static/media/gitlab.48d4892de40f7110fa8a13e8b2a44e1a.svg",
     "static/media/avatar.png": "/static/media/avatar.06d3895c571cf1ca02e1.png",
@@ -33,11 +33,11 @@
     "static/media/github-white.svg": "/static/media/github-white.97ed8e7eef60d61ca469881dd6f34511.svg",
     "static/media/youtube.svg": "/static/media/youtube.caede822564791b6f8cdebc436ec33a7.svg",
     "static/media/swift.svg": "/static/media/swift.2147cd18927dd57245484f4f4d880cc3.svg",
-    "main.bd5e8a72.css.map": "/static/css/main.bd5e8a72.css.map",
-    "main.a908d87a.js.map": "/static/js/main.a908d87a.js.map"
+    "main.de925f55.css.map": "/static/css/main.de925f55.css.map",
+    "main.1698dd2e.js.map": "/static/js/main.1698dd2e.js.map"
   },
   "entrypoints": [
-    "static/css/main.bd5e8a72.css",
-    "static/js/main.a908d87a.js"
+    "static/css/main.de925f55.css",
+    "static/js/main.1698dd2e.js"
   ]
 }
