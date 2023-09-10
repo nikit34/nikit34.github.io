@@ -49,7 +49,10 @@ const Contact = function() {
             }
         ).then(() => {
             setForm({name: '', email: '', subject: '', message: ''});
-        }).catch((error) => console.log(error));
+        }).catch(
+            (error) => console.log(error)
+        );
+
         console.log('Data sent successfully!');
     };
 
