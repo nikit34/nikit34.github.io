@@ -38,7 +38,7 @@ const Contact = function() {
         setForm({...form, [name]: value});
     };
 
-    const [snackbarType, setSnackbarType] = useState("success");
+    const [snackbarType, setSnackbarType] = useState("failed");
 
     const handleSubmit = async (event) => {
         event.preventDefault();
