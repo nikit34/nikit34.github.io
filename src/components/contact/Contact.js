@@ -38,20 +38,28 @@ const Contact = function() {
         setForm({...form, [name]: value});
     };
 
+    const [snackbarType, setSnackbarType] = useState("success");
+
     const handleSubmit = async (event) => {
         event.preventDefault();
-        fetch(
-            'https://script.google.com/macros/s/AKfycbyPtJyU5gNNyu9PdVj4NIW7MbVJDIa-6WX3CKa3Gaw9PtUdDtMJSYVadDI4L3LdZLaTUA/exec?name='
-            + form.name + '&email=' + form.email + '&subject=' + form.subject + '&message=' + form.message,
-            {
-                method: 'GET',
-                mode: 'no-cors'
-            }
-        ).then(() => {
-            setForm({name: '', email: '', subject: '', message: ''});
-        }).catch(
-            (error) => console.log(error)
-        );
+        if (form.name == "" || form.email == "" || form.subject == "") {
+            setSnackbarType("failed");
+        } else {
+            setSnackbarType("success");
+            
+            fetch(
+                'https://script.google.com/macros/s/AKfycbyPtJyU5gNNyu9PdVj4NIW7MbVJDIa-6WX3CKa3Gaw9PtUdDtMJSYVadDI4L3LdZLaTUA/exec?name='
+                + form.name + '&email=' + form.email + '&subject=' + form.subject + '&message=' + form.message,
+                {
+                    method: 'GET',
+                    mode: 'no-cors'
+                }
+            ).then(() => {
+                setForm({name: '', email: '', subject: '', message: ''});
+            }).catch(
+                (error) => console.log(error)
+            );
+        }
 
         console.log('Data sent successfully!');
     };
@@ -145,8 +153,8 @@ const Contact = function() {
                 </div>
                 <Snackbar
                     ref={snackbarRef}
-                    message="Message sent"
-                    type="success"
+                    message={snackbarType == "success" ? "Message sent" : "Message not sent"}
+                    type={snackbarType}
                 />
             </div>
         </motion.div>

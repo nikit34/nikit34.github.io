@@ -16,9 +16,8 @@ const Snackbar = forwardRef((props, ref) => {
     }));
     return (
         <div
-            className="snackbar"
+            className={props.type == "success" ? "snackbar success" : "snackbar failed"}
             id={showSnackbar ? "show" : "hide"}
-            style={{borderColor: props.type == "success" ? "green" : "red"}}
         >
             <div className="symbol">
                 {props.type == "success" ? <TiTick/> :  <TiTimes/> }
