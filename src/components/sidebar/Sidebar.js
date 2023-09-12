@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 import { BsSun, BsMoon } from 'react-icons/bs'
@@ -63,8 +64,10 @@ const Sidebar = function() {
             <div className="theme__toggler" onClick={toggleTheme}>
                 {theme === 'light-theme' ? <BsMoon /> : <BsSun />}
             </div>
-            <img src={avatar} alt="avatar" className="sidebar__avatar" />
-            <div className="sidebar__name">Permyakov <span>Nikita</span></div>
+            <Link to="/">
+                <img src={avatar} alt="avatar" className="sidebar__avatar" />
+                <div className="sidebar__name">Permyakov <span>Nikita</span></div>
+            </Link>
             <div className="sidebar__title"><p>Full-Stack</p><p>SDET</p></div>
             <a href={resumeFile} download="NikitaPermyakov_CV.pdf">
                 <div className="sidebar__resume">

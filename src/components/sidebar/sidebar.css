@@ -41,6 +41,11 @@
     font-family: 'Kaushan Script';
     margin: 20px 0;
     font-size: 1.7rem;
+    color: black;
+}
+
+.dark-theme .sidebar__name {
+    color: whitesmoke;
 }
 
 .sidebar__name > span {
