@@ -42,6 +42,7 @@ const Contact = function() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
         if (form.name.trim().length > 0
             && form.email.trim().length > 0
             && form.subject.trim().length > 0
@@ -49,10 +50,15 @@ const Contact = function() {
             && form.email.trim().includes(".", 2)
         ) {
             setSnackbarType("success");
+            const datetime = (new Date()).toUTCString();
 
             fetch(
-                'https://script.google.com/macros/s/AKfycbyPtJyU5gNNyu9PdVj4NIW7MbVJDIa-6WX3CKa3Gaw9PtUdDtMJSYVadDI4L3LdZLaTUA/exec?name='
-                + form.name + '&email=' + form.email + '&subject=' + form.subject + '&message=' + form.message,
+                'https://script.google.com/macros/s/AKfycbyPtJyU5gNNyu9PdVj4NIW7MbVJDIa-6WX3CKa3Gaw9PtUdDtMJSYVadDI4L3LdZLaTUA/exec?datatime='
+                 + datetime
+                 + '&name=' + form.name
+                 + '&email=' + form.email
+                 + '&subject=' + form.subject
+                 + '&message=' + form.message,
                 {
                     method: 'GET',
                     mode: 'no-cors'
