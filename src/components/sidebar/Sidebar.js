@@ -72,22 +72,22 @@ const Sidebar = function() {
             </a>
             <a href="https://www.youtube.com/channel/UCSdYMimys_AWyo015UK2gWA">
                 <div className="sidebar__profile">
-                <img src={youtube} alt="youtube" className="sidebar__icon mb-2 mr-3"/><b>Demo</b>
+                <img src={youtube} alt="youtube" className="sidebar__icon mb-2 mr-2"/><b>Demo</b>
                 </div>
             </a>
             <a href="https://www.linkedin.com/in/nikitapermikov/">
                 <div className="sidebar__profile">
-                    <img src={linkedin} alt="linkedin" className="sidebar__icon mb-2 mr-3"/>Articles
+                    <img src={linkedin} alt="linkedin" className="sidebar__icon mb-2 mr-2 ml-1"/>Articles
                 </div>
             </a>
             <a href="https://github.com/nikit34">
                 <div className="sidebar__profile">
-                    <img src={theme === 'light-theme' ? github : githubWhite} alt="github" className="sidebar__icon mb-2 mr-3"/>GitHub
+                    <img src={theme === 'light-theme' ? github : githubWhite} alt="github" className="sidebar__icon mb-2 mr-2"/>GitHub
                 </div>
             </a>
             <a href="https://t.me/nikit34">
                 <div className="sidebar__profile">
-                    <img src={telegram} alt="telegram" className="sidebar__icon mb-2 mr-3"/>Write me
+                    <img src={telegram} alt="telegram" className="sidebar__icon mb-2 mr-2 ml-3"/>Write me
                 </div>
             </a>
             <div className="sidebar__contact">
