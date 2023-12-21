@@ -1,6 +1,8 @@
 import './blog.css'
 import { motion } from 'framer-motion'
 
+import Post from './Post'
+
 
 const Blog = function() {
     const blog_variants = {
@@ -28,8 +30,14 @@ const Blog = function() {
             animate='visible'
             exit='exit'
         >
-        <div>
-            blog
+        <div className="blog__container container">
+            <div className="row">
+                <AnimatePresence initial={false}>
+                    {
+                        posts.map((post, index) => <Post key={index} post={post} />)
+                    }
+                </AnimatePresence>
+            </div>
         </div>
         </motion.div>
     )
