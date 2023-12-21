@@ -5,7 +5,7 @@ import secretly from '../../assets/icons/status/secretly.svg'
 import { motion } from 'framer-motion'
 
 
-const ProjectCard = function({ projects: { name, id_video, deployed_url, github_url } }) {
+const Card = function({ projects: { name, id_video, deployed_url, github_url } }) {
     return (
         <motion.div
             layout
@@ -50,4 +50,4 @@ const ProjectCard = function({ projects: { name, id_video, deployed_url, github_
     )
 };
 
-export default ProjectCard;
+export default Card;
