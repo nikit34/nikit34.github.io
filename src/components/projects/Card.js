@@ -13,7 +13,7 @@ const Card = function({ project: { name, id_video, deployed_url, github_url } })
             initial={{ opacity: 1, scale: 0.9 }}
             exit={{ opacity: 1, scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="projectCard col-md-6 col-lg-4"
+            className="project-card col-md-6 col-lg-4"
             key={name}
         >
             <figure className="project-card__wrapper">
