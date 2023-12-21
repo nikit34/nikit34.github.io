@@ -5,7 +5,7 @@ import secretly from '../../assets/icons/status/secretly.svg'
 import { motion } from 'framer-motion'
 
 
-const Card = function({ projects: { name, id_video, deployed_url, github_url } }) {
+const Card = function({ project: { name, id_video, deployed_url, github_url } }) {
     return (
         <motion.div
             layout

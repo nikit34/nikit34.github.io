@@ -54,7 +54,7 @@ const Projects = function() {
             <div className="row">
                 <AnimatePresence initial={false}>
                     {
-                        projects.map((project, index) => <Card key={index} projects={project} />)
+                        projects.map((project, index) => <Card key={index} project={project} />)
                     }
                 </AnimatePresence>
             </div>
