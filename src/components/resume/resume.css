@@ -62,13 +62,13 @@
     color: whitesmoke;
 }
 
-.ResumeBar {
+.resume-bar {
     width: 90%;
     border-radius: 20px;
     margin-bottom: 12px;
     background-color: whitesmoke;
 }
 
-.dark-theme .ResumeBar {
+.dark-theme .resume-bar {
     background-color: rgb(30, 30, 30);
 }

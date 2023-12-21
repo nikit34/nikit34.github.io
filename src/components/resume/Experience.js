@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const ResumeExperience = function({ value: { head, subhead, date_start, date_end, texts } }) {
+const Experience = function({ value: { head, subhead, date_start, date_end, texts } }) {
     const textItems = texts.map((textItem, index) => {
         let lines = [];
         if (textItem.newline)
@@ -39,4 +39,4 @@ const ResumeExperience = function({ value: { head, subhead, date_start, date_end
     )
 };
 
-export default ResumeExperience;
+export default Experience;
