@@ -2,7 +2,7 @@ import React from 'react'
 import './skillcard.css'
 
 
-const AboutSkillcard = function({ skill: { icon, title, about } }) {
+const Skillcard = function({ skill: { icon, title, about } }) {
     return (
         <div className="col-lg-6">
             <div className="skill-card">
@@ -24,4 +24,4 @@ const AboutSkillcard = function({ skill: { icon, title, about } }) {
     )
 }
 
-export default AboutSkillcard;
+export default Skillcard;

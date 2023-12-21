@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-import AboutSkillcard from './AboutSkillcard'
+import Skillcard from './Skillcard'
 import { skills } from '../../data/about'
 import './about.css'
 
@@ -39,7 +39,7 @@ const About = function() {
                 <div className="row">
                     {
                         skills.map((skill, index) =>
-                            <AboutSkillcard skill={skill} key={index} />
+                            <Skillcard skill={skill} key={index} />
                         )
                     }
                 </div>
