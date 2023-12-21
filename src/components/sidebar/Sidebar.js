@@ -39,10 +39,6 @@ const Sidebar = function() {
         localStorage.setItem('theme', theme);
     }, [theme]);
 
-    const handleEmailMe = () => {
-        window.open('mailto:permikov134@yandex.ru')
-    }
-
     const sidebar_variant = {
         hidden: {
             x: '-20vw'
@@ -99,8 +95,6 @@ const Sidebar = function() {
                     <img src={pin} alt="location" className="sidebar__icon mr-6"/>
                     Portugal, Lisbon
                 </a>
-                <a><div className="sidebar__btn" onClick={handleEmailMe}>Email me</div></a>
-                <a href="https://telegram.me/nikit34"><div className="sidebar__btn">tg: @nikit34</div></a>
             </div>
             <a href="https://nikit34.github.io/nikit34.github.io_v2/"><div className="sidebar_previous">Previous version</div></a>
         </motion.div>
