@@ -58,7 +58,7 @@
     border-top: 2px solid lightgreen;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    min-height: 80px;
+    min-height: 40px;
 }
 
 .dark-theme .sidebar__title {

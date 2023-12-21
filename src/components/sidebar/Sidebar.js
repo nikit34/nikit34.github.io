@@ -68,7 +68,7 @@ const Sidebar = function() {
                 <img src={avatar} alt="avatar" className="sidebar__avatar" />
                 <div className="sidebar__name">Permyakov <span>Nikita</span></div>
             </Link>
-            <div className="sidebar__title"><p>Full-Stack</p><p>SDET</p></div>
+            <div className="sidebar__title"><p>SDET</p></div>
             <a href={resumeFile} download="NikitaPermyakov_CV.pdf">
                 <div className="sidebar__resume">
                     <img src={resume} alt="resume" className="sidebar__icon"/>Download Resume
