@@ -86,10 +86,10 @@ const Sidebar = function() {
                 </div>
             </a>
             <a href="https://t.me/nikit34">
-                    <div className="sidebar__profile">
-                        <img src={telegram} alt="telegram" className="sidebar__icon mb-2 mr-3"/>Write me
-                    </div>
-                </a>
+                <div className="sidebar__profile">
+                    <img src={telegram} alt="telegram" className="sidebar__icon mb-2 mr-3"/>Write me
+                </div>
+            </a>
             <div className="sidebar__contact">
                 <a className="sidebar__location" href="https://goo.gl/maps/hLZ7aiQgXijCMumi8">
                     <img src={pin} alt="location" className="sidebar__icon mr-6"/>
