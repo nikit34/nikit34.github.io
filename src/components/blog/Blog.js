@@ -1,7 +1,8 @@
 import './blog.css'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 import Post from './Post'
+import { posts } from '../../data/posts'
 
 
 const Blog = function() {
