@@ -24,7 +24,7 @@ const ProjectCard = function({ projects: { name, id_video, deployed_url, github_
                             !!(github_url) ?
                                 <div className="col">
                                     <a href={github_url} target="_blank" rel="noopener noreferrer">
-                                        <img src={github} alt="github link" className="projectCard__icon" /> GitHub
+                                        <img src={github} alt="github link" className="projectCard__icon" /> Code
                                     </a>
                                 </div>
                             : <div className="col"><img src={secretly} alt="secretly link" className="projectCard__icon" />Secretly</div>

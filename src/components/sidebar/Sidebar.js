@@ -39,10 +39,6 @@ const Sidebar = function() {
         localStorage.setItem('theme', theme);
     }, [theme]);
 
-    const handleEmailMe = () => {
-        window.open('mailto:permikov134@yandex.ru')
-    }
-
     const sidebar_variant = {
         hidden: {
             x: '-20vw'
@@ -68,7 +64,7 @@ const Sidebar = function() {
                 <img src={avatar} alt="avatar" className="sidebar__avatar" />
                 <div className="sidebar__name">Permyakov <span>Nikita</span></div>
             </Link>
-            <div className="sidebar__title"><p>Full-Stack</p><p>SDET</p></div>
+            <div className="sidebar__title"><p>SDET</p></div>
             <a href={resumeFile} download="NikitaPermyakov_CV.pdf">
                 <div className="sidebar__resume">
                     <img src={resume} alt="resume" className="sidebar__icon"/>Download Resume
@@ -76,31 +72,29 @@ const Sidebar = function() {
             </a>
             <a href="https://www.youtube.com/channel/UCSdYMimys_AWyo015UK2gWA">
                 <div className="sidebar__profile">
-                <img src={youtube} alt="youtube" className="sidebar__icon mb-2 mr-3"/><b>Demo</b>
+                <img src={youtube} alt="youtube" className="sidebar__icon mb-2 mr-2"/><b>Demo</b>
                 </div>
             </a>
             <a href="https://www.linkedin.com/in/nikitapermikov/">
                 <div className="sidebar__profile">
-                    <img src={linkedin} alt="linkedin" className="sidebar__icon mb-2 mr-3"/>Articles
+                    <img src={linkedin} alt="linkedin" className="sidebar__icon mb-2 mr-2 ml-1"/>Articles
                 </div>
             </a>
             <a href="https://github.com/nikit34">
                 <div className="sidebar__profile">
-                    <img src={theme === 'light-theme' ? github : githubWhite} alt="github" className="sidebar__icon mb-2 mr-3"/>GitHub
+                    <img src={theme === 'light-theme' ? github : githubWhite} alt="github" className="sidebar__icon mb-2 mr-2"/>GitHub
                 </div>
             </a>
             <a href="https://t.me/nikit34">
-                    <div className="sidebar__profile">
-                        <img src={telegram} alt="telegram" className="sidebar__icon mb-2 mr-3"/>Write me
-                    </div>
-                </a>
+                <div className="sidebar__profile">
+                    <img src={telegram} alt="telegram" className="sidebar__icon mb-2 mr-2 ml-3"/>Write me
+                </div>
+            </a>
             <div className="sidebar__contact">
-                <a className="sidebar__location" href="https://goo.gl/maps/hLZ7aiQgXijCMumi8">
+                <a className="sidebar__location" href="https://maps.app.goo.gl/EzhZ2mZ9Cg2pbPdAA">
                     <img src={pin} alt="location" className="sidebar__icon mr-6"/>
-                    Portugal, Lisbon
+                    Portugal, Porto
                 </a>
-                <a><div className="sidebar__btn" onClick={handleEmailMe}>Email me</div></a>
-                <a href="https://telegram.me/nikit34"><div className="sidebar__btn">tg: @nikit34</div></a>
             </div>
             <a href="https://nikit34.github.io/nikit34.github.io_v2/"><div className="sidebar_previous">Previous version</div></a>
         </motion.div>
