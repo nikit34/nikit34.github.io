@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.8876a054.css",
-    "main.js": "/static/js/main.33e42af5.js",
-    "static/media/NikitaPermyakov_CV.pdf": "/static/media/NikitaPermyakov_CV.f88bf18c705b70d8de53.pdf",
+    "main.js": "/static/js/main.5089492c.js",
+    "static/media/NikitaPermyakov_CV.pdf": "/static/media/NikitaPermyakov_CV.97a4bb729f5287079697.pdf",
     "static/media/gitlab.svg": "/static/media/gitlab.48d4892de40f7110fa8a13e8b2a44e1a.svg",
     "static/media/avatar.png": "/static/media/avatar.06d3895c571cf1ca02e1.png",
     "static/media/arduino.svg": "/static/media/arduino.36ee980745d3f6a594bb032b30f67d0a.svg",
@@ -34,10 +34,10 @@
     "static/media/youtube.svg": "/static/media/youtube.caede822564791b6f8cdebc436ec33a7.svg",
     "static/media/swift.svg": "/static/media/swift.2147cd18927dd57245484f4f4d880cc3.svg",
     "main.8876a054.css.map": "/static/css/main.8876a054.css.map",
-    "main.33e42af5.js.map": "/static/js/main.33e42af5.js.map"
+    "main.5089492c.js.map": "/static/js/main.5089492c.js.map"
   },
   "entrypoints": [
     "static/css/main.8876a054.css",
-    "static/js/main.33e42af5.js"
+    "static/js/main.5089492c.js"
   ]
 }
