@@ -91,9 +91,9 @@ const Sidebar = function() {
                 </div>
             </a>
             <div className="sidebar__contact">
-                <a className="sidebar__location" href="https://goo.gl/maps/hLZ7aiQgXijCMumi8">
+                <a className="sidebar__location" href="https://maps.app.goo.gl/EzhZ2mZ9Cg2pbPdAA">
                     <img src={pin} alt="location" className="sidebar__icon mr-6"/>
-                    Portugal, Lisbon
+                    Portugal, Porto
                 </a>
             </div>
             <a href="https://nikit34.github.io/nikit34.github.io_v2/"><div className="sidebar_previous">Previous version</div></a>
