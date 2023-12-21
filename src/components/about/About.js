@@ -35,7 +35,7 @@ const About = function() {
             <h6 className="about__intro">
                 I want to be professional in development.
             </h6>
-            <div className="contaimer about__container">
+            <div className="about__container container">
                 <div className="row">
                     {
                         skills.map((skill, index) =>
