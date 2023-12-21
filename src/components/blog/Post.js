@@ -13,13 +13,12 @@ const Post = function({ post: { title, link, img } }) {
             className="blog-post"
             key={title}
         >
-            <div className="post__container">
+            <a className="post__container" href="link">
                 <div className="row">
-                    <div className="col">
-
-                    </div>
+                    <p>{title}</p>
+                    <img src={`posts/${img}`}></img>
                 </div>
-            </div>
+            </a>
         </motion.div>
     )
 }
