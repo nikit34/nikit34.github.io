@@ -8,6 +8,7 @@
 
 .resume-card__body:hover{
     box-shadow: 0 0 0.25vh 0.25vw lightgrey;
+    border-radius: 5px;
 }
 
 .dark-theme resume-card__body:hover {
