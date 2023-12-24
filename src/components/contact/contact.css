@@ -36,7 +36,7 @@
 
 .contact__form-input {
     height: 60px;
-    border-radius: 30px;
+    border-radius: 10px;
     padding-inline: 30px;
 }
 
@@ -80,7 +80,7 @@
     z-index: 1;
     border: 2px solid lightgreen;
     padding-inline: 40px;
-    border-radius: 30px;
+    border-radius: 10px;
 }
 
 .dark-theme .contact__submit .btn {
