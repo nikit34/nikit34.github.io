@@ -10,13 +10,13 @@ const Post = function({ post: { title, link, img } }) {
             initial={{ opacity: 1, scale: 0.9 }}
             exit={{ opacity: 1, scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="blog-post"
+            className="blog-post container"
             key={title}
         >
             <a className="post__container container" href={link}>
                 <div className="row">
                     <div className="col">
-                        <p>{title}</p>
+                        <p className="post_title">{title}</p>
                     </div>
                     <div className="col">
                         <img className="post_img" src={`posts/${img}`}></img>
