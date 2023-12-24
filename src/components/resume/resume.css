@@ -25,7 +25,6 @@
     font-weight: 700;
     color: seagreen;
     text-transform: uppercase;
-    transition: color 1s;
 }
 
 .resume-card__body:hover .resume-card__heading {
