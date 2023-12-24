@@ -16,12 +16,10 @@ const Post = function({ post: { title, link, img } }) {
             <a className="post__container container" href={link}>
                 <div className="row">
                     <div className="col">
-                        <img className="post_img" src={`posts/${img}`}></img>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col">
                         <p>{title}</p>
+                    </div>
+                    <div className="col">
+                        <img className="post_img" src={`posts/${img}`}></img>
                     </div>
                 </div>
             </a>
