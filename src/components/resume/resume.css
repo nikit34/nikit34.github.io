@@ -1,7 +1,6 @@
 .resume-card__body {
     margin: 15px 25px;
     padding: 10px 15px;
-    box-shadow: none;
     transition: all 0.5s;
     color: grey;
 }
