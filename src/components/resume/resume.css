@@ -1,13 +1,13 @@
 .resume-card__body {
     margin: 15px 25px;
     padding: 10px 15px;
-    box-shadow: none;
     transition: all 0.5s;
     color: grey;
 }
 
 .resume-card__body:hover{
     box-shadow: 0 0 0.25vh 0.25vw lightgrey;
+    border-radius: 5px;
 }
 
 .dark-theme resume-card__body:hover {
@@ -25,7 +25,6 @@
     font-weight: 700;
     color: seagreen;
     text-transform: uppercase;
-    transition: color 1s;
 }
 
 .resume-card__body:hover .resume-card__heading {
@@ -62,13 +61,13 @@
     color: whitesmoke;
 }
 
-.ResumeBar {
+.resume-bar {
     width: 90%;
     border-radius: 20px;
     margin-bottom: 12px;
     background-color: whitesmoke;
 }
 
-.dark-theme .ResumeBar {
+.dark-theme .resume-bar {
     background-color: rgb(30, 30, 30);
 }

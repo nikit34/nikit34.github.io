@@ -1,0 +1,46 @@
+.blog-post {
+    float: none;
+    overflow: hidden;
+    width: 100%;
+    margin: 15px 25px;
+    padding: 10px 15px;
+    transition: all 0.5s;
+    color: grey;
+    cursor: pointer;
+}
+
+.blog-post:hover{
+    box-shadow: 0 0 0.25vh 0.25vw lightgrey;
+    border-radius: 5px;
+}
+
+.post_title {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-weight: 700;
+    color: seagreen;
+    text-transform: uppercase;
+}
+
+.post_img {
+    height: 100px;
+    width: 200px;
+    float: right;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.next {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    opacity: 0;
+    color: gray;
+    transition: all 0.5s;
+}
+
+.blog-post:hover .next {
+
+    opacity: 1;
+}

@@ -1,8 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-import ResumeBar from './ResumeBar'
-import ResumeExperience from './ResumeExperience'
+import Bar from './Bar'
+import Experience from './Experience'
 import { experiens, languages, tools } from '../../data/resume'
 import './resume.css'
 
@@ -39,7 +39,7 @@ const Resume = function() {
                         Experience
                     </h4>
                     {
-                        experiens.map((experience, index) => <ResumeExperience value={experience} key={index} />)
+                        experiens.map((experience, index) => <Experience value={experience} key={index} />)
                     }
                 </div>
             </div>
@@ -50,7 +50,7 @@ const Resume = function() {
                     </h4>
                     <div className="resume-language__body">
                         {
-                            languages.map((language, index) => <ResumeBar value={language} key={index} />)
+                            languages.map((language, index) => <Bar value={language} key={index} />)
                         }
                     </div>
                 </div>
@@ -60,7 +60,7 @@ const Resume = function() {
                     </h4>
                     <div className="resume-language__body">
                         {
-                            tools.map((tool, index) => <ResumeBar value={tool} key={index} />)
+                            tools.map((tool, index) => <Bar value={tool} key={index} />)
                         }
                     </div>
                 </div>

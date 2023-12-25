@@ -5,6 +5,7 @@ import { AnimatePresence } from 'framer-motion'
 import Sidebar from './components/sidebar/Sidebar'
 import Navbar from './components/navbar/Navbar'
 import About from './components/about/About'
+import Blog from './components/blog/Blog'
 import Contact from './components/contact/Contact'
 import Projects from './components/projects/Projects'
 import Resume from './components/resume/Resume'
@@ -35,6 +36,9 @@ function App() {
                 </Route>
                 <Route path="/about">
                   <About />
+                </Route>
+                <Route path="/blog">
+                  <Blog />
                 </Route>
                 <Route>
                   <Redirect to="/" />

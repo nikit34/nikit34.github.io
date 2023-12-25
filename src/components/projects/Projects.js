@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 import { data_projects, categories } from '../../data/projects'
-import ProjectCard from './ProjectsCard'
-import Tab from './ProjectsTab'
+import Card from './Card'
+import Tab from './Tab'
 import { AnimatePresence } from 'framer-motion'
 import './projects.css'
 
@@ -54,7 +54,7 @@ const Projects = function() {
             <div className="row">
                 <AnimatePresence initial={false}>
                     {
-                        projects.map((project, index) => <ProjectCard key={index} projects={project} />)
+                        projects.map((project, index) => <Card key={index} project={project} />)
                     }
                 </AnimatePresence>
             </div>
