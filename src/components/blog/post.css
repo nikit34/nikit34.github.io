@@ -6,6 +6,7 @@
     padding: 10px 15px;
     transition: all 0.5s;
     color: grey;
+    cursor: pointer;
 }
 
 .blog-post:hover{
@@ -28,4 +29,18 @@
     float: right;
     object-fit: cover;
     border-radius: 15px;
+}
+
+.next {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    opacity: 0;
+    color: gray;
+    transition: all 0.5s;
+}
+
+.blog-post:hover .next {
+
+    opacity: 1;
 }

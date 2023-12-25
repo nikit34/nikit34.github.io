@@ -17,6 +17,7 @@ const Post = function({ post: { title, link, img } }) {
                 <div className="row">
                     <div className="col">
                         <p className="post_title">{title}</p>
+                        <div className="next">Read</div>
                     </div>
                     <div className="col">
                         <img className="post_img" src={`posts/${img}`}></img>
