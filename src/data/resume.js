@@ -23,7 +23,27 @@ const experiens = [
         date_end: 'now',
         texts: [
             {
-                text: 'Code review for the whole team of B2C',
+                text: 'Writing autotests for mobile applications and creating an environment for them',
+                bold: false,
+                newline: true
+            },
+            {
+                text: 'Interviewing candidates',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Write unit tests for iOS on Swift, and for Android on Kotlin',
+                bold: true,
+                newline: true
+            },
+            {
+                text: 'Write tests for analytics events',
+                bold: false,
+                newline: true
+            },
+            {
+                text: 'Code review for the whole team of B2C and other teams',
                 bold: true,
                 newline: true
             },
@@ -33,8 +53,8 @@ const experiens = [
                 newline: true
             },
             {
-                text: 'Interviewing candidates',
-                bold: true,
+                text: 'Setup check-style and formatter inside pipelines',
+                bold: false,
                 newline: true
             },
             {
