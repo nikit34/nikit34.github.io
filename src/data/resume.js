@@ -116,8 +116,8 @@ const experiens = [
                 newline: true
             },
             {
-                text: 'He went into the Uzum for a good reason, not alone and not immediately',
-                bold: true,
+                text: 'Set up a bot for notifications about the status of autotests in a corporate chat',
+                bold: false,
                 newline: true
             }
         ]
