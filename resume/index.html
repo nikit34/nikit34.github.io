@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikita Permikov — Product Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --bg:#0a0a0f;
+      --bg2:#12121a;
+      --bg3:#1a1a2e;
+      --accent:#6c63ff;
+      --accent2:#ff6584;
+      --accent3:#43e97b;
+      --text:#e8e8f0;
+      --text2:#9999b0;
+      --glass:rgba(255,255,255,0.04);
+      --glass-border:rgba(255,255,255,0.08);
+      --glow:0 0 40px rgba(108,99,255,0.15);
+    }
+    html{scroll-behavior:smooth;font-size:16px}
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+      line-height:1.6;
+    }
+
+    /* ===== CURSOR GLOW ===== */
+    .cursor-glow{
+      position:fixed;width:600px;height:600px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(108,99,255,0.08) 0%,transparent 70%);
+      pointer-events:none;z-index:0;
+      transform:translate(-50%,-50%);
+      transition:left 0.3s ease,top 0.3s ease;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:1000;
+      padding:1rem 2rem;
+      background:rgba(10,10,15,0.8);
+      backdrop-filter:blur(20px);
+      border-bottom:1px solid var(--glass-border);
+      display:flex;justify-content:space-between;align-items:center;
+      transition:transform 0.3s ease;
+    }
+    nav.hidden{transform:translateY(-100%)}
+    .nav-logo{
+      font-weight:800;font-size:1.2rem;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      letter-spacing:-0.5px;
+    }
+    .nav-links{display:flex;gap:2rem;list-style:none}
+    .nav-links a{
+      color:var(--text2);text-decoration:none;font-size:0.85rem;
+      font-weight:500;letter-spacing:0.5px;text-transform:uppercase;
+      transition:color 0.3s;position:relative;
+    }
+    .nav-links a::after{
+      content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;
+      background:var(--accent);transition:width 0.3s;
+    }
+    .nav-links a:hover,.nav-links a.active{color:var(--text)}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+    .nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+    /* ===== HERO ===== */
+    .hero{
+      min-height:100vh;display:flex;align-items:center;
+      padding:6rem 2rem 4rem;position:relative;overflow:hidden;
+    }
+    .hero-bg{
+      position:absolute;inset:0;z-index:0;
+    }
+    .hero-bg canvas{width:100%;height:100%}
+    .hero-content{
+      max-width:900px;margin:0 auto;position:relative;z-index:1;
+    }
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:0.5rem;
+      padding:0.4rem 1rem;border-radius:100px;
+      background:var(--glass);border:1px solid var(--glass-border);
+      font-size:0.8rem;color:var(--accent);font-weight:500;
+      margin-bottom:2rem;
+      animation:fadeInUp 0.8s ease forwards;
+    }
+    .hero-badge .dot{
+      width:8px;height:8px;border-radius:50%;background:var(--accent3);
+      animation:pulse 2s infinite;
+    }
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+    .hero h1{
+      font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;
+      line-height:1.1;letter-spacing:-2px;
+      margin-bottom:1.5rem;
+      animation:fadeInUp 0.8s ease 0.1s forwards;opacity:0;
+    }
+    .hero h1 .gradient{
+      background:linear-gradient(135deg,var(--accent),var(--accent2),var(--accent3));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      background-size:200% 200%;
+      animation:gradientShift 4s ease infinite;
+    }
+    @keyframes gradientShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+    .hero-subtitle{
+      font-size:clamp(1rem,2vw,1.3rem);color:var(--text2);
+      max-width:600px;font-weight:300;line-height:1.8;
+      margin-bottom:2.5rem;
+      animation:fadeInUp 0.8s ease 0.2s forwards;opacity:0;
+    }
+    .hero-stats{
+      display:flex;gap:3rem;flex-wrap:wrap;
+      animation:fadeInUp 0.8s ease 0.3s forwards;opacity:0;
+    }
+    .hero-stat{text-align:left}
+    .hero-stat .number{
+      font-size:2.5rem;font-weight:800;
+      font-family:'JetBrains Mono',monospace;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    }
+    .hero-stat .label{font-size:0.8rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-top:0.2rem}
+    .hero-cta{
+      display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;
+      animation:fadeInUp 0.8s ease 0.4s forwards;opacity:0;
+    }
+    .btn{
+      padding:0.8rem 2rem;border-radius:12px;font-size:0.9rem;
+      font-weight:600;cursor:pointer;transition:all 0.3s;
+      text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;
+      border:none;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--accent),#8b5cf6);
+      color:#fff;box-shadow:0 4px 20px rgba(108,99,255,0.3);
+    }
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(108,99,255,0.4)}
+    .btn-outline{
+      background:transparent;color:var(--text);
+      border:1px solid var(--glass-border);
+    }
+    .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+    @keyframes fadeInUp{
+      from{opacity:0;transform:translateY(30px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    /* ===== SECTIONS ===== */
+    section{padding:6rem 2rem;position:relative}
+    .section-container{max-width:1000px;margin:0 auto}
+    .section-header{margin-bottom:4rem;text-align:center}
+    .section-header h2{
+      font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;
+      letter-spacing:-1px;margin-bottom:1rem;
+    }
+    .section-header p{color:var(--text2);font-size:1.05rem;max-width:500px;margin:0 auto}
+    .section-line{
+      width:60px;height:4px;border-radius:2px;
+      background:linear-gradient(90deg,var(--accent),var(--accent2));
+      margin:0 auto 1.5rem;
+    }
+
+    /* ===== EXPERIENCE TIMELINE ===== */
+    .timeline{position:relative;padding-left:3rem}
+    .timeline::before{
+      content:'';position:absolute;left:14px;top:0;bottom:0;
+      width:2px;background:linear-gradient(180deg,var(--accent),var(--accent2),var(--accent3));
+      opacity:0.3;
+    }
+    .timeline-item{
+      position:relative;margin-bottom:3rem;
+      padding:2rem;border-radius:16px;
+      background:var(--glass);border:1px solid var(--glass-border);
+      transition:all 0.4s ease;
+      opacity:0;transform:translateX(-20px);
+    }
+    .timeline-item.visible{opacity:1;transform:translateX(0)}
+    .timeline-item:hover{
+      border-color:rgba(108,99,255,0.3);
+      box-shadow:var(--glow);
+      transform:translateX(4px);
+    }
+    .timeline-item.visible:hover{transform:translateX(4px)}
+    .timeline-dot{
+      position:absolute;left:-2.35rem;top:2.2rem;
+      width:12px;height:12px;border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 20px rgba(108,99,255,0.5);
+      z-index:1;
+    }
+    .timeline-date{
+      display:inline-flex;align-items:center;gap:0.5rem;
+      font-size:0.8rem;color:var(--accent);font-weight:600;
+      font-family:'JetBrains Mono',monospace;
+      margin-bottom:0.8rem;
+      padding:0.3rem 0.8rem;border-radius:6px;
+      background:rgba(108,99,255,0.1);
+    }
+    .timeline-item h3{font-size:1.3rem;font-weight:700;margin-bottom:0.3rem}
+    .timeline-company{
+      font-size:0.95rem;font-weight:500;margin-bottom:1rem;
+      display:flex;align-items:center;gap:0.5rem;
+    }
+    .timeline-company .company-name{
+      background:linear-gradient(135deg,var(--accent2),var(--accent));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    }
+    .timeline-item p{color:var(--text2);font-size:0.9rem;line-height:1.8}
+    .timeline-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem}
+    .timeline-tag{
+      padding:0.25rem 0.7rem;border-radius:6px;
+      background:rgba(108,99,255,0.08);border:1px solid rgba(108,99,255,0.15);
+      font-size:0.75rem;color:var(--accent);font-weight:500;
+    }
+    .achievement{
+      display:flex;align-items:flex-start;gap:0.5rem;
+      margin-top:0.5rem;
+    }
+    .achievement i{color:var(--accent3);font-size:0.75rem;margin-top:0.35rem;flex-shrink:0}
+    .achievement span{color:var(--text2);font-size:0.9rem}
+
+    /* ===== SKILLS ===== */
+    .skills-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.5rem;
+    }
+    .skill-card{
+      padding:2rem;border-radius:16px;
+      background:var(--glass);border:1px solid var(--glass-border);
+      transition:all 0.4s ease;
+      opacity:0;transform:translateY(20px);
+    }
+    .skill-card.visible{opacity:1;transform:translateY(0)}
+    .skill-card:hover{
+      border-color:rgba(108,99,255,0.3);
+      box-shadow:var(--glow);transform:translateY(-4px);
+    }
+    .skill-card.visible:hover{transform:translateY(-4px)}
+    .skill-icon{
+      width:48px;height:48px;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.3rem;margin-bottom:1.2rem;
+    }
+    .skill-icon.purple{background:rgba(108,99,255,0.15);color:var(--accent)}
+    .skill-icon.pink{background:rgba(255,101,132,0.15);color:var(--accent2)}
+    .skill-icon.green{background:rgba(67,233,123,0.15);color:var(--accent3)}
+    .skill-icon.blue{background:rgba(56,189,248,0.15);color:#38bdf8}
+    .skill-card h3{font-size:1.1rem;font-weight:700;margin-bottom:0.8rem}
+    .skill-list{list-style:none}
+    .skill-list li{
+      padding:0.4rem 0;color:var(--text2);font-size:0.88rem;
+      display:flex;align-items:center;gap:0.6rem;
+    }
+    .skill-list li::before{
+      content:'';width:6px;height:6px;border-radius:50%;
+      background:var(--accent);flex-shrink:0;opacity:0.6;
+    }
+
+    /* ===== TOOLS MARQUEE ===== */
+    .tools-section{
+      padding:3rem 0;overflow:hidden;
+      border-top:1px solid var(--glass-border);
+      border-bottom:1px solid var(--glass-border);
+      background:var(--bg2);
+    }
+    .marquee{display:flex;gap:2rem;animation:marquee 30s linear infinite}
+    .marquee-item{
+      flex-shrink:0;padding:0.6rem 1.5rem;border-radius:100px;
+      background:var(--glass);border:1px solid var(--glass-border);
+      font-size:0.85rem;color:var(--text2);font-weight:500;
+      display:flex;align-items:center;gap:0.5rem;
+      white-space:nowrap;
+    }
+    .marquee-item i{color:var(--accent);font-size:1rem}
+    @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* ===== EDUCATION ===== */
+    .edu-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+    .edu-card{
+      padding:2rem;border-radius:16px;
+      background:var(--glass);border:1px solid var(--glass-border);
+      transition:all 0.4s ease;
+      opacity:0;transform:translateY(20px);
+    }
+    .edu-card.visible{opacity:1;transform:translateY(0)}
+    .edu-card:hover{border-color:rgba(108,99,255,0.3);box-shadow:var(--glow)}
+    .edu-card .year{
+      font-family:'JetBrains Mono',monospace;
+      font-size:0.8rem;color:var(--accent);font-weight:600;
+      margin-bottom:0.8rem;
+      padding:0.3rem 0.8rem;border-radius:6px;
+      background:rgba(108,99,255,0.1);display:inline-block;
+    }
+    .edu-card h3{font-size:1.1rem;font-weight:700;margin-bottom:0.3rem}
+    .edu-card .degree{color:var(--accent2);font-size:0.9rem;font-weight:500;margin-bottom:0.5rem}
+    .edu-card p{color:var(--text2);font-size:0.85rem}
+
+    /* ===== CONTACT ===== */
+    .contact-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:1.5rem;max-width:800px;margin:0 auto;
+    }
+    .contact-card{
+      padding:1.5rem;border-radius:16px;
+      background:var(--glass);border:1px solid var(--glass-border);
+      text-align:center;transition:all 0.4s ease;
+      text-decoration:none;color:var(--text);
+      display:flex;flex-direction:column;align-items:center;gap:0.8rem;
+      opacity:0;transform:translateY(20px);
+    }
+    .contact-card.visible{opacity:1;transform:translateY(0)}
+    .contact-card:hover{
+      border-color:rgba(108,99,255,0.3);
+      box-shadow:var(--glow);transform:translateY(-4px);
+    }
+    .contact-card.visible:hover{transform:translateY(-4px)}
+    .contact-icon{
+      width:48px;height:48px;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.3rem;background:rgba(108,99,255,0.15);color:var(--accent);
+    }
+    .contact-card h4{font-weight:600;font-size:0.95rem}
+    .contact-card p{color:var(--text2);font-size:0.85rem}
+
+    /* ===== FOOTER ===== */
+    footer{
+      text-align:center;padding:3rem 2rem;
+      border-top:1px solid var(--glass-border);
+      color:var(--text2);font-size:0.8rem;
+    }
+
+    /* ===== SCROLL TO TOP ===== */
+    .scroll-top{
+      position:fixed;bottom:2rem;right:2rem;
+      width:48px;height:48px;border-radius:12px;
+      background:var(--accent);color:#fff;
+      border:none;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.2rem;opacity:0;pointer-events:none;
+      transition:all 0.3s;z-index:999;
+      box-shadow:0 4px 20px rgba(108,99,255,0.4);
+    }
+    .scroll-top.show{opacity:1;pointer-events:auto}
+    .scroll-top:hover{transform:translateY(-3px)}
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:768px){
+      .nav-links{
+        display:none;position:fixed;top:60px;left:0;right:0;
+        flex-direction:column;background:rgba(10,10,15,0.95);
+        backdrop-filter:blur(20px);padding:2rem;gap:1.5rem;
+        border-bottom:1px solid var(--glass-border);
+      }
+      .nav-links.open{display:flex}
+      .nav-toggle{display:block}
+      .hero-stats{gap:2rem}
+      .timeline{padding-left:2rem}
+      .timeline-dot{left:-1.6rem}
+      section{padding:4rem 1.2rem}
+    }
+
+    /* ===== ANIMATED SECTIONS ===== */
+    .reveal{opacity:0;transform:translateY(30px);transition:all 0.6s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* ===== LANGUAGE SWITCHER ===== */
+    .lang-switch{
+      display:flex;gap:0.3rem;
+      background:var(--glass);border:1px solid var(--glass-border);
+      border-radius:8px;padding:0.2rem;
+    }
+    .lang-btn{
+      padding:0.3rem 0.7rem;border-radius:6px;
+      background:none;border:none;color:var(--text2);
+      font-size:0.75rem;font-weight:600;cursor:pointer;
+      transition:all 0.3s;
+    }
+    .lang-btn.active{background:var(--accent);color:#fff}
+  </style>
+</head>
+<body>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <span class="nav-logo">NP</span>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
+      </div>
+      <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"><canvas id="particleCanvas"></canvas></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span data-en="Open to opportunities" data-ru="Открыт к предложениям">Open to opportunities</span>
+      </div>
+      <h1>
+        <span data-en="Hi, I'm " data-ru="Привет, я ">Hi, I'm </span><br>
+        <span class="gradient">Nikita Permikov</span>
+      </h1>
+      <p class="hero-subtitle" data-en="Product Manager with a technical background, building products that users love across EdTech, AdTech, PropTech, and B2B SaaS. I turn complex problems into elegant, data-driven solutions." data-ru="Продакт-менеджер с техническим бэкграундом. Создаю продукты, которые любят пользователи, в EdTech, AdTech, PropTech и B2B SaaS. Превращаю сложные задачи в элегантные, data-driven решения.">
+        Product Manager with a technical background, building products that users love across EdTech, AdTech, PropTech, and B2B SaaS. I turn complex problems into elegant, data-driven solutions.
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="number" data-count="5">0</div>
+          <div class="label" data-en="Years Experience" data-ru="Лет опыта">Years Experience</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number" data-count="12">0</div>
+          <div class="label" data-en="Products Launched" data-ru="Продуктов запущено">Products Launched</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number" data-count="4">0</div>
+          <div class="label" data-en="Industries" data-ru="Индустрии">Industries</div>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> <span data-en="Get in Touch" data-ru="Связаться">Get in Touch</span></a>
+        <a href="#experience" class="btn btn-outline"><i class="fas fa-briefcase"></i> <span data-en="View Experience" data-ru="Мой опыт">View Experience</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS MARQUEE -->
+  <div class="tools-section">
+    <div class="marquee" id="marquee">
+      <div class="marquee-item"><i class="fab fa-jira"></i> Jira</div>
+      <div class="marquee-item"><i class="fab fa-confluence"></i> Confluence</div>
+      <div class="marquee-item"><i class="fab fa-figma"></i> Figma</div>
+      <div class="marquee-item"><i class="fas fa-chart-line"></i> Amplitude</div>
+      <div class="marquee-item"><i class="fas fa-table"></i> SQL</div>
+      <div class="marquee-item"><i class="fab fa-python"></i> Python</div>
+      <div class="marquee-item"><i class="fas fa-chart-bar"></i> Tableau</div>
+      <div class="marquee-item"><i class="fas fa-tasks"></i> Miro</div>
+      <div class="marquee-item"><i class="fas fa-database"></i> BigQuery</div>
+      <div class="marquee-item"><i class="fas fa-project-diagram"></i> Notion</div>
+      <div class="marquee-item"><i class="fas fa-code-branch"></i> Git</div>
+      <div class="marquee-item"><i class="fas fa-fire"></i> Firebase</div>
+      <div class="marquee-item"><i class="fas fa-chart-pie"></i> Google Analytics</div>
+      <div class="marquee-item"><i class="fas fa-bullhorn"></i> Mixpanel</div>
+      <div class="marquee-item"><i class="fas fa-cogs"></i> A/B Testing</div>
+      <div class="marquee-item"><i class="fas fa-rocket"></i> Agile / Scrum</div>
+      <!-- duplicate for seamless loop -->
+      <div class="marquee-item"><i class="fab fa-jira"></i> Jira</div>
+      <div class="marquee-item"><i class="fab fa-confluence"></i> Confluence</div>
+      <div class="marquee-item"><i class="fab fa-figma"></i> Figma</div>
+      <div class="marquee-item"><i class="fas fa-chart-line"></i> Amplitude</div>
+      <div class="marquee-item"><i class="fas fa-table"></i> SQL</div>
+      <div class="marquee-item"><i class="fab fa-python"></i> Python</div>
+      <div class="marquee-item"><i class="fas fa-chart-bar"></i> Tableau</div>
+      <div class="marquee-item"><i class="fas fa-tasks"></i> Miro</div>
+      <div class="marquee-item"><i class="fas fa-database"></i> BigQuery</div>
+      <div class="marquee-item"><i class="fas fa-project-diagram"></i> Notion</div>
+      <div class="marquee-item"><i class="fas fa-code-branch"></i> Git</div>
+      <div class="marquee-item"><i class="fas fa-fire"></i> Firebase</div>
+      <div class="marquee-item"><i class="fas fa-chart-pie"></i> Google Analytics</div>
+      <div class="marquee-item"><i class="fas fa-bullhorn"></i> Mixpanel</div>
+      <div class="marquee-item"><i class="fas fa-cogs"></i> A/B Testing</div>
+      <div class="marquee-item"><i class="fas fa-rocket"></i> Agile / Scrum</div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-line"></div>
+        <h2 data-en="Work Experience" data-ru="Опыт работы">Work Experience</h2>
+        <p data-en="Where I've made an impact" data-ru="Где я создавал ценность">Where I've made an impact</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Ad Tech Holding -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date"><i class="far fa-calendar"></i> 2023 — <span data-en="Present" data-ru="Настоящее время">Present</span></div>
+          <h3 data-en="Senior Product Manager" data-ru="Senior Product Manager">Senior Product Manager</h3>
+          <div class="timeline-company"><i class="fas fa-building"></i> <span class="company-name">Ad Tech Holding</span> &nbsp;·&nbsp; <span data-en="AdTech / B2B SaaS" data-ru="AdTech / B2B SaaS">AdTech / B2B SaaS</span></div>
+          <p data-en="Leading the product strategy for a programmatic advertising platform processing 500K+ daily ad requests. Driving revenue growth through data-informed product decisions and cross-functional alignment." data-ru="Руковожу продуктовой стратегией программатик-платформы, обрабатывающей 500K+ рекламных запросов в день. Обеспечиваю рост выручки через data-informed решения и кросс-функциональное взаимодействие.">
+            Leading the product strategy for a programmatic advertising platform processing 500K+ daily ad requests. Driving revenue growth through data-informed product decisions and cross-functional alignment.
+          </p>
+          <div class="achievement"><i class="fas fa-arrow-up"></i> <span data-en="Grew platform revenue by 35% through new targeting features and bid optimization" data-ru="Рост выручки платформы на 35% за счет новых функций таргетинга и оптимизации ставок">Grew platform revenue by 35% through new targeting features and bid optimization</span></div>
+          <div class="achievement"><i class="fas fa-arrow-up"></i> <span data-en="Reduced onboarding churn by 40% with redesigned self-serve flow" data-ru="Снижение оттока при онбординге на 40% благодаря редизайну self-serve потока">Reduced onboarding churn by 40% with redesigned self-serve flow</span></div>
+          <div class="achievement"><i class="fas fa-arrow-up"></i> <span data-en="Led a team of 8 engineers, 2 designers, and 1 data analyst" data-ru="Руководил командой из 8 инженеров, 2 дизайнеров и 1 аналитика">Led a team of 8 engineers, 2 designers, and 1 data analyst</span></div>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Programmatic</span>
+            <span class="timeline-tag">RTB</span>
+            <span class="timeline-tag">Revenue Growth</span>
+            <span class="timeline-tag">Platform Strategy</span>
+          </div>
+        </div>
+
+        <!-- Reuroom.ru -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date"><i class="far fa-calendar"></i> 2022 — 2023</div>
+          <h3 data-en="Product Manager" data-ru="Product Manager">Product Manager</h3>
+          <div class="timeline-company"><i class="fas fa-building"></i> <span class="company-name">Reuroom.ru</span> &nbsp;·&nbsp; <span data-en="PropTech / Marketplace" data-ru="PropTech / Маркетплейс">PropTech / Marketplace</span></div>
+          <p data-en="Owned the product roadmap for a real estate renovation marketplace connecting homeowners with verified contractors. Drove user acquisition and engagement through iterative product improvements." data-ru="Отвечал за продуктовый роадмап маркетплейса ремонтных услуг, соединяющего владельцев жилья с проверенными подрядчиками. Обеспечивал привлечение и удержание пользователей через итеративные улучшения.">
+            Owned the product roadmap for a real estate renovation marketplace connecting homeowners with verified contractors. Drove user acquisition and engagement through iterative product improvements.
+          </p>
+          <div class="achievement"><i class="fas fa-arrow-up"></i> <span data-en="Increased contractor conversion rate by 28% with improved matching algorithm" data-ru="Увеличение конверсии подрядчиков на 28% благодаря улучшенному алгоритму матчинга">Increased contractor conversion rate by 28% with improved matching algorithm</span></div>
+          <div class="achievement"><i class="fas fa-arrow-up"></i> <span data-en="Launched mobile-first redesign, boosting mobile engagement by 60%" data-ru="Запуск mobile-first редизайна, рост мобильного вовлечения на 60%">Launched mobile-first redesign, boosting mobile engagement by 60%</span></div>
+          <div class="achievement"><i class="fas fa-arrow-up"></i> <span data-en="Implemented review & trust system reducing disputes by 45%" data-ru="Внедрение системы отзывов и доверия, снижение споров на 45%">Implemented review & trust system reducing disputes by 45%</span></div>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Marketplace</span>
+            <span class="timeline-tag">PropTech</span>
+            <span class="timeline-tag">User Research</span>
+            <span class="timeline-tag">Growth</span>
+          </div>
+        </div>
+
+        <!-- Napoleon IT -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date"><i class="far fa-calendar"></i> 2021 — 2022</div>
+          <h3 data-en="Product Manager" data-ru="Product Manager">Product Manager</h3>
+          <div class="timeline-company"><i class="fas fa-building"></i> <span class="company-name">Napoleon IT</span> &nbsp;·&nbsp; <span data-en="IT Consulting / B2B" data-ru="IT Consulting / B2B">IT Consulting / B2B</span></div>
+          <p data-en="Managed product delivery for enterprise clients across fintech and e-commerce. Led discovery, planning, and execution for multiple concurrent projects using Agile methodology." data-ru="Управлял продуктовой разработкой для enterprise-клиентов в fintech и e-commerce. Вел discovery, планирование и execution для нескольких параллельных проектов по Agile.">
+            Managed product delivery for enterprise clients across fintech and e-commerce. Led discovery, planning, and execution for multiple concurrent projects using Agile methodology.
+          </p>
+          <div class="achievement"><i class="fas fa-arrow-up"></i> <span data-en="Delivered 4 enterprise products on time with 95% client satisfaction" data-ru="Доставил 4 enterprise-продукта в срок с 95% удовлетворенностью клиентов">Delivered 4 enterprise products on time with 95% client satisfaction</span></div>
+          <div class="achievement"><i class="fas fa-arrow-up"></i> <span data-en="Established product discovery framework adopted company-wide" data-ru="Разработал фреймворк product discovery, принятый во всей компании">Established product discovery framework adopted company-wide</span></div>
+          <div class="achievement"><i class="fas fa-arrow-up"></i> <span data-en="Reduced sprint scope creep by 50% through refined backlog management" data-ru="Снижение scope creep спринтов на 50% через улучшенное управление бэклогом">Reduced sprint scope creep by 50% through refined backlog management</span></div>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Enterprise</span>
+            <span class="timeline-tag">Agile</span>
+            <span class="timeline-tag">Fintech</span>
+            <span class="timeline-tag">E-commerce</span>
+          </div>
+        </div>
+
+        <!-- Got It Life -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date"><i class="far fa-calendar"></i> 2020 — 2021</div>
+          <h3 data-en="Junior Product Manager" data-ru="Junior Product Manager">Junior Product Manager</h3>
+          <div class="timeline-company"><i class="fas fa-building"></i> <span class="company-name">Got It Life</span> &nbsp;·&nbsp; <span data-en="EdTech / Mobile App" data-ru="EdTech / Мобильное приложение">EdTech / Mobile App</span></div>
+          <p data-en="Contributed to the growth of an AI-powered tutoring platform. Focused on user engagement, feature experimentation, and building data-driven feedback loops for rapid iteration." data-ru="Участвовал в развитии AI-платформы для образования. Фокус на вовлечении пользователей, экспериментах с фичами и построении data-driven обратной связи для быстрой итерации.">
+            Contributed to the growth of an AI-powered tutoring platform. Focused on user engagement, feature experimentation, and building data-driven feedback loops for rapid iteration.
+          </p>
+          <div class="achievement"><i class="fas fa-arrow-up"></i> <span data-en="Boosted daily active users by 22% through gamification features" data-ru="Рост DAU на 22% через геймификацию">Boosted daily active users by 22% through gamification features</span></div>
+          <div class="achievement"><i class="fas fa-arrow-up"></i> <span data-en="Ran 15+ A/B tests driving measurable improvements in retention" data-ru="Провел 15+ A/B тестов, улучсивших retention">Ran 15+ A/B tests driving measurable improvements in retention</span></div>
+          <div class="achievement"><i class="fas fa-arrow-up"></i> <span data-en="Built analytics dashboards enabling team-wide data literacy" data-ru="Создал аналитические дашборды для всей команды">Built analytics dashboards enabling team-wide data literacy</span></div>
+          <div class="timeline-tags">
+            <span class="timeline-tag">EdTech</span>
+            <span class="timeline-tag">AI/ML</span>
+            <span class="timeline-tag">Mobile</span>
+            <span class="timeline-tag">Growth Hacking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-line"></div>
+        <h2 data-en="Core Skills" data-ru="Ключевые навыки">Core Skills</h2>
+        <p data-en="What I bring to the table" data-ru="Что я привношу в команду">What I bring to the table</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon purple"><i class="fas fa-compass"></i></div>
+          <h3 data-en="Product Strategy" data-ru="Продуктовая стратегия">Product Strategy</h3>
+          <ul class="skill-list">
+            <li data-en="Vision & roadmap development" data-ru="Разработка видения и роадмапа">Vision & roadmap development</li>
+            <li data-en="Market & competitive analysis" data-ru="Рыночный и конкурентный анализ">Market & competitive analysis</li>
+            <li data-en="OKR / KPI frameworks" data-ru="OKR / KPI фреймворки">OKR / KPI frameworks</li>
+            <li data-en="Go-to-market planning" data-ru="Go-to-market планирование">Go-to-market planning</li>
+            <li data-en="Unit economics modeling" data-ru="Моделирование юнит-экономики">Unit economics modeling</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon pink"><i class="fas fa-users"></i></div>
+          <h3 data-en="User-Centric Design" data-ru="User-Centric дизайн">User-Centric Design</h3>
+          <ul class="skill-list">
+            <li data-en="User research & interviews" data-ru="User research и интервью">User research & interviews</li>
+            <li data-en="Jobs-to-be-Done framework" data-ru="Jobs-to-be-Done фреймворк">Jobs-to-be-Done framework</li>
+            <li data-en="Wireframing & prototyping" data-ru="Вайрфрейминг и прототипирование">Wireframing & prototyping</li>
+            <li data-en="Usability testing" data-ru="Юзабилити тестирование">Usability testing</li>
+            <li data-en="Customer journey mapping" data-ru="Customer journey mapping">Customer journey mapping</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon green"><i class="fas fa-chart-line"></i></div>
+          <h3 data-en="Data & Analytics" data-ru="Данные и аналитика">Data & Analytics</h3>
+          <ul class="skill-list">
+            <li data-en="SQL / BigQuery" data-ru="SQL / BigQuery">SQL / BigQuery</li>
+            <li data-en="A/B testing & experimentation" data-ru="A/B тестирование и эксперименты">A/B testing & experimentation</li>
+            <li data-en="Amplitude / Mixpanel / GA" data-ru="Amplitude / Mixpanel / GA">Amplitude / Mixpanel / GA</li>
+            <li data-en="Cohort & funnel analysis" data-ru="Когортный и воронковый анализ">Cohort & funnel analysis</li>
+            <li data-en="Python for data analysis" data-ru="Python для анализа данных">Python for data analysis</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon blue"><i class="fas fa-people-arrows"></i></div>
+          <h3 data-en="Leadership & Delivery" data-ru="Лидерство и Delivery">Leadership & Delivery</h3>
+          <ul class="skill-list">
+            <li data-en="Cross-functional team leadership" data-ru="Кросс-функциональное лидерство">Cross-functional team leadership</li>
+            <li data-en="Agile / Scrum / Kanban" data-ru="Agile / Scrum / Kanban">Agile / Scrum / Kanban</li>
+            <li data-en="Stakeholder management" data-ru="Управление стейкхолдерами">Stakeholder management</li>
+            <li data-en="Sprint planning & retrospectives" data-ru="Спринт-планирование и ретро">Sprint planning & retrospectives</li>
+            <li data-en="Technical requirements writing" data-ru="Написание технических требований">Technical requirements writing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-line"></div>
+        <h2 data-en="Education" data-ru="Образование">Education</h2>
+        <p data-en="Building the foundation" data-ru="Основа знаний">Building the foundation</p>
+      </div>
+      <div class="edu-cards">
+        <div class="edu-card">
+          <div class="year">2016 — 2020</div>
+          <h3 data-en="Bachelor of Computer Science" data-ru="Бакалавр, Информатика">Bachelor of Computer Science</h3>
+          <div class="degree" data-en="Technical University" data-ru="Технический Университет">Technical University</div>
+          <p data-en="Strong foundation in software engineering, algorithms, and systems design. Developed technical acumen that bridges the gap between engineering and product." data-ru="Прочная база в программной инженерии, алгоритмах и проектировании систем. Технические навыки, связывающие инженерию и продукт.">
+            Strong foundation in software engineering, algorithms, and systems design. Developed technical acumen that bridges the gap between engineering and product.
+          </p>
+        </div>
+        <div class="edu-card">
+          <div class="year" data-en="Continuous Learning" data-ru="Постоянное обучение">Continuous Learning</div>
+          <h3 data-en="Certifications & Courses" data-ru="Сертификаты и курсы">Certifications & Courses</h3>
+          <div class="degree" data-en="Product Management" data-ru="Продакт-менеджмент">Product Management</div>
+          <p data-en="Product Analytics (Amplitude), Advanced SQL for Analytics, Product Strategy (Reforge), Agile Product Management, Design Thinking." data-ru="Product Analytics (Amplitude), Advanced SQL for Analytics, Product Strategy (Reforge), Agile Product Management, Design Thinking.">
+            Product Analytics (Amplitude), Advanced SQL for Analytics, Product Strategy (Reforge), Agile Product Management, Design Thinking.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-line"></div>
+        <h2 data-en="Let's Connect" data-ru="Давайте свяжемся">Let's Connect</h2>
+        <p data-en="I'm always open to interesting conversations" data-ru="Всегда открыт к интересным разговорам">I'm always open to interesting conversations</p>
+      </div>
+      <div class="contact-grid">
+        <a href="https://t.me/nikit34" target="_blank" class="contact-card">
+          <div class="contact-icon"><i class="fab fa-telegram"></i></div>
+          <h4>Telegram</h4>
+          <p>@nikit34</p>
+        </a>
+        <a href="https://www.linkedin.com/in/nikitapermikov/" target="_blank" class="contact-card">
+          <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+          <h4>LinkedIn</h4>
+          <p>Nikita Permikov</p>
+        </a>
+        <a href="https://github.com/nikit34" target="_blank" class="contact-card">
+          <div class="contact-icon"><i class="fab fa-github"></i></div>
+          <h4>GitHub</h4>
+          <p>nikit34</p>
+        </a>
+        <a href="mailto:permikov.nikita@gmail.com" class="contact-card">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <h4>Email</h4>
+          <p data-en="Drop me a line" data-ru="Напишите мне">Drop me a line</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 Nikita Permikov. <span data-en="Built with passion." data-ru="Создано с душой.">Built with passion.</span></p>
+  </footer>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    // ===== PARTICLE CANVAS =====
+    const canvas = document.getElementById('particleCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let mouse = {x: 0, y: 0};
+
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.5;
+        this.speedY = (Math.random() - 0.5) * 0.5;
+        this.opacity = Math.random() * 0.5 + 0.1;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 150) {
+          this.x -= dx * 0.01;
+          this.y -= dy * 0.01;
+        }
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(108, 99, 255, ${this.opacity})`;
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < 80; i++) particles.push(new Particle());
+
+    function connectParticles() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(108, 99, 255, ${0.1 * (1 - dist / 120)})`;
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => { p.update(); p.draw(); });
+      connectParticles();
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    document.addEventListener('mousemove', e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      const glow = document.getElementById('cursorGlow');
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+
+    // ===== COUNTER ANIMATION =====
+    function animateCounters() {
+      document.querySelectorAll('.number[data-count]').forEach(el => {
+        const target = +el.getAttribute('data-count');
+        const duration = 2000;
+        const start = performance.now();
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target) + '+';
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }
+
+    // ===== INTERSECTION OBSERVER =====
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.1});
+
+    document.querySelectorAll('.timeline-item, .skill-card, .edu-card, .contact-card').forEach(el => observer.observe(el));
+
+    // hero counter trigger
+    const heroObserver = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        animateCounters();
+        heroObserver.disconnect();
+      }
+    }, {threshold: 0.5});
+    heroObserver.observe(document.querySelector('.hero-stats'));
+
+    // ===== NAV SCROLL BEHAVIOR =====
+    let lastScroll = 0;
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      const st = window.scrollY;
+      if (st > lastScroll && st > 80) nav.classList.add('hidden');
+      else nav.classList.remove('hidden');
+      lastScroll = st;
+
+      // scroll to top button
+      const btn = document.getElementById('scrollTop');
+      if (st > 500) btn.classList.add('show');
+      else btn.classList.remove('show');
+
+      // active nav link
+      document.querySelectorAll('section[id]').forEach(sec => {
+        const top = sec.offsetTop - 100;
+        const bottom = top + sec.offsetHeight;
+        const id = sec.getAttribute('id');
+        const link = document.querySelector(`.nav-links a[href="#${id}"]`);
+        if (link) {
+          if (st >= top && st < bottom) link.classList.add('active');
+          else link.classList.remove('active');
+        }
+      });
+    });
+
+    document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+
+    // ===== MOBILE NAV =====
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    });
+
+    // ===== LANGUAGE SWITCHER =====
+    const langBtns = document.querySelectorAll('.lang-btn');
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        langBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+          el.textContent = el.getAttribute('data-' + lang);
+        });
+      });
+    });
+
+    // ===== SMOOTH SCROLL =====
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({behavior: 'smooth', block: 'start'});
+      });
+    });
+  </script>
+</body>
+</html>
