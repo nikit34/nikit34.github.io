@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Product Times — Nikita Permikov</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --cream:#F4EDE0;
+      --paper:#EDE6D6;
+      --ink:#1C1A17;
+      --ink2:#3D3A35;
+      --ink3:#6B655C;
+      --ink4:#9E9688;
+      --rule:#2C2924;
+      --rule-light:#C4BAA8;
+      --red:#B8221A;
+      --red-light:#D4443C;
+      --blue-ink:#1B3A5C;
+      --display:'Cormorant Garamond',Georgia,serif;
+      --body:'Newsreader','Times New Roman',serif;
+      --label:'Archivo Narrow',Helvetica,sans-serif;
+      --col-gap:28px;
+      --rule-width:1px;
+    }
+    ::selection{background:var(--red);color:var(--cream)}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{
+      font-family:var(--body);
+      background:var(--cream);color:var(--ink);
+      line-height:1.55;font-size:15px;
+      /* subtle paper texture via noise */
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    }
+
+    /* ===== NEWSPAPER SHELL ===== */
+    .newspaper{
+      max-width:1140px;margin:0 auto;
+      padding:0 24px 40px;
+    }
+
+    /* ===== ORNAMENTAL RULES ===== */
+    .rule-thick{height:4px;background:var(--ink);margin:0}
+    .rule-thin{height:1px;background:var(--rule);margin:0}
+    .rule-double{
+      border:none;height:0;
+      border-top:3px solid var(--ink);
+      border-bottom:1px solid var(--ink);
+      padding-top:3px;
+      margin:0;
+    }
+    .rule-ornament{
+      text-align:center;font-family:var(--display);
+      font-size:1.1rem;color:var(--ink3);
+      margin:6px 0;letter-spacing:8px;
+    }
+
+    /* ===== MASTHEAD ===== */
+    .masthead{padding:16px 0 0;text-align:center}
+    .masthead-top{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:4px 0 8px;
+      font-family:var(--label);font-size:0.65rem;
+      text-transform:uppercase;letter-spacing:2px;color:var(--ink3);
+    }
+    .masthead-name{
+      font-family:var(--display);
+      font-size:clamp(2.8rem,7vw,5.2rem);
+      font-weight:400;letter-spacing:0.04em;
+      line-height:1;padding:8px 0;
+      text-transform:uppercase;
+    }
+    .masthead-tagline{
+      font-family:var(--display);font-style:italic;
+      font-size:clamp(0.85rem,1.8vw,1.05rem);
+      color:var(--ink3);letter-spacing:0.5px;
+      margin-bottom:8px;font-weight:400;
+    }
+    .masthead-meta{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:6px 0;font-family:var(--label);
+      font-size:0.68rem;text-transform:uppercase;
+      letter-spacing:1.5px;color:var(--ink3);
+    }
+    .masthead-meta a{color:var(--red);text-decoration:none;font-weight:600}
+
+    /* ===== BREAKING BANNER ===== */
+    .breaking{
+      background:var(--red);color:var(--cream);
+      padding:6px 16px;margin:10px 0;
+      display:flex;align-items:center;gap:12px;
+      font-family:var(--label);font-size:0.72rem;
+      font-weight:700;text-transform:uppercase;letter-spacing:2px;
+      overflow:hidden;position:relative;
+    }
+    .breaking-label{
+      background:var(--cream);color:var(--red);
+      padding:2px 10px;border-radius:2px;
+      font-size:0.6rem;letter-spacing:3px;flex-shrink:0;
+    }
+    .breaking-text{
+      white-space:nowrap;
+      animation:ticker 20s linear infinite;
+    }
+    @keyframes ticker{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+
+    /* ===== MAIN GRID ===== */
+    .grid-main{
+      display:grid;
+      grid-template-columns:1fr var(--rule-width) 1fr var(--rule-width) 0.85fr;
+      gap:0;margin-top:12px;
+    }
+    .col-rule{background:var(--rule-light);width:var(--rule-width);margin:0 calc(var(--col-gap)/2)}
+    .col{padding:0 calc(var(--col-gap)/2)}
+
+    /* ===== HEADLINES ===== */
+    .headline-main{
+      font-family:var(--display);
+      font-size:clamp(1.9rem,3.5vw,2.7rem);
+      font-weight:600;line-height:1.12;
+      letter-spacing:-0.01em;margin-bottom:6px;
+    }
+    .headline-sub{
+      font-family:var(--display);font-style:italic;
+      font-size:1.05rem;font-weight:400;
+      color:var(--ink2);line-height:1.4;
+      margin-bottom:10px;
+    }
+    .headline-section{
+      font-family:var(--display);
+      font-size:clamp(1.3rem,2.5vw,1.7rem);
+      font-weight:600;line-height:1.15;
+      letter-spacing:-0.005em;margin-bottom:5px;
+    }
+    .headline-small{
+      font-family:var(--display);
+      font-size:1.15rem;font-weight:600;
+      line-height:1.2;margin-bottom:4px;
+    }
+
+    /* ===== ARTICLE ELEMENTS ===== */
+    .kicker{
+      font-family:var(--label);font-size:0.6rem;
+      font-weight:700;text-transform:uppercase;
+      letter-spacing:2.5px;color:var(--red);
+      margin-bottom:4px;
+    }
+    .byline{
+      font-family:var(--label);font-size:0.62rem;
+      text-transform:uppercase;letter-spacing:1.5px;
+      color:var(--ink4);margin-bottom:10px;
+    }
+    .byline strong{color:var(--ink3);font-weight:600}
+    .dateline{
+      font-family:var(--label);font-size:0.62rem;
+      font-weight:700;text-transform:uppercase;
+      letter-spacing:1px;
+    }
+    .body-text{
+      font-family:var(--body);font-size:0.92rem;
+      line-height:1.65;color:var(--ink2);
+      text-align:justify;hyphens:auto;
+      margin-bottom:10px;
+    }
+    .body-text b{color:var(--ink);font-weight:600}
+    .drop-cap::first-letter{
+      font-family:var(--display);
+      float:left;font-size:3.8rem;font-weight:700;
+      line-height:0.75;padding:4px 8px 0 0;
+      color:var(--ink);
+    }
+    .jump{
+      font-family:var(--label);font-size:0.6rem;
+      font-style:italic;color:var(--ink4);
+      text-align:right;margin-top:6px;
+    }
+    .article-rule{
+      height:1px;background:var(--rule-light);
+      margin:14px 0;
+    }
+
+    /* ===== DATA BOX (metrics) ===== */
+    .data-box{
+      border:2px solid var(--ink);padding:10px;
+      margin:12px 0;
+    }
+    .data-box-title{
+      font-family:var(--label);font-size:0.58rem;
+      font-weight:700;text-transform:uppercase;
+      letter-spacing:3px;text-align:center;
+      margin-bottom:8px;color:var(--ink);
+    }
+    .data-row{
+      display:flex;justify-content:space-between;
+      padding:3px 0;border-bottom:1px dotted var(--rule-light);
+      font-size:0.82rem;
+    }
+    .data-row:last-child{border-bottom:none}
+    .data-row .data-label{color:var(--ink3);font-family:var(--label);font-size:0.72rem}
+    .data-row .data-val{
+      font-family:var(--display);font-weight:700;
+      font-size:1rem;
+    }
+    .data-val.up{color:var(--red)}
+    .data-val.down{color:var(--blue-ink)}
+
+    /* ===== MARKET DATA / SKILLS ===== */
+    .market-header{
+      font-family:var(--label);font-size:0.55rem;
+      font-weight:700;text-transform:uppercase;
+      letter-spacing:3px;padding:6px;
+      background:var(--ink);color:var(--cream);
+      text-align:center;margin-bottom:8px;
+    }
+    .market-row{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:5px 0;border-bottom:1px solid var(--rule-light);
+      font-size:0.78rem;
+    }
+    .market-row:last-child{border-bottom:none}
+    .market-name{font-family:var(--label);font-weight:600;font-size:0.7rem;color:var(--ink2)}
+    .market-bar{
+      flex:1;margin:0 8px;height:8px;
+      background:var(--paper);border:1px solid var(--rule-light);
+      position:relative;overflow:hidden;
+    }
+    .market-fill{
+      position:absolute;left:0;top:0;bottom:0;
+      background:var(--ink);transition:width 1.2s cubic-bezier(0.16,1,0.3,1);
+      width:0;
+    }
+    .market-pct{
+      font-family:var(--display);font-weight:700;
+      font-size:0.85rem;min-width:32px;text-align:right;
+    }
+
+    /* ===== CLASSIFIEDS ===== */
+    .classifieds{
+      border:3px double var(--ink);padding:12px;
+      margin:14px 0;
+    }
+    .classifieds-title{
+      font-family:var(--display);font-size:1.2rem;
+      font-weight:700;text-align:center;
+      text-transform:uppercase;letter-spacing:3px;
+      margin-bottom:10px;
+      padding-bottom:6px;border-bottom:1px solid var(--rule-light);
+    }
+    .classified-item{
+      display:flex;align-items:center;gap:8px;
+      padding:6px 0;border-bottom:1px dotted var(--rule-light);
+      text-decoration:none;color:var(--ink);
+      transition:color 0.2s;font-size:0.82rem;
+    }
+    .classified-item:last-child{border-bottom:none}
+    .classified-item:hover{color:var(--red)}
+    .classified-item i{width:16px;text-align:center;color:var(--ink3);font-size:0.85rem}
+    .classified-label{font-family:var(--label);font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--ink4)}
+
+    /* ===== PULL QUOTE ===== */
+    .pullquote{
+      padding:16px 0;margin:16px 0;
+      border-top:3px solid var(--ink);
+      border-bottom:1px solid var(--ink);
+      text-align:center;
+    }
+    .pullquote p{
+      font-family:var(--display);font-style:italic;
+      font-size:clamp(1.1rem,2vw,1.4rem);
+      line-height:1.5;color:var(--ink);
+      max-width:600px;margin:0 auto 6px;
+    }
+    .pullquote .attr{
+      font-family:var(--label);font-size:0.58rem;
+      text-transform:uppercase;letter-spacing:2px;color:var(--ink4);
+    }
+
+    /* ===== WEATHER BOX (status) ===== */
+    .weather-box{
+      border:1px solid var(--rule-light);padding:10px;
+      margin-bottom:14px;text-align:center;
+    }
+    .weather-title{
+      font-family:var(--label);font-size:0.55rem;
+      font-weight:700;text-transform:uppercase;
+      letter-spacing:3px;margin-bottom:6px;
+    }
+    .weather-icon{font-size:2rem;margin-bottom:4px}
+    .weather-status{
+      font-family:var(--display);font-size:1.1rem;
+      font-weight:600;color:var(--red);
+    }
+    .weather-detail{font-size:0.72rem;color:var(--ink3);margin-top:4px}
+
+    /* ===== ADVERTISEMENT (CTA) ===== */
+    .advert{
+      border:3px solid var(--ink);padding:16px;
+      margin:14px 0;text-align:center;
+      background:repeating-linear-gradient(
+        45deg,transparent,transparent 10px,
+        rgba(0,0,0,0.01) 10px,rgba(0,0,0,0.01) 20px
+      );
+    }
+    .advert-eyebrow{
+      font-family:var(--label);font-size:0.5rem;
+      text-transform:uppercase;letter-spacing:4px;color:var(--ink4);
+      margin-bottom:4px;
+    }
+    .advert h3{
+      font-family:var(--display);font-size:1.5rem;
+      font-weight:700;margin-bottom:4px;
+    }
+    .advert p{font-size:0.82rem;color:var(--ink3);margin-bottom:10px}
+    .advert-btn{
+      display:inline-block;padding:8px 24px;
+      background:var(--ink);color:var(--cream);
+      font-family:var(--label);font-size:0.7rem;
+      font-weight:700;text-transform:uppercase;
+      letter-spacing:2px;text-decoration:none;
+      transition:all 0.3s;border:none;cursor:pointer;
+    }
+    .advert-btn:hover{background:var(--red)}
+
+    /* ===== EDITION STRIP ===== */
+    .edition-strip{
+      display:flex;justify-content:center;gap:16px;
+      padding:10px 0;margin-top:16px;
+      border-top:1px solid var(--rule-light);
+      border-bottom:1px solid var(--rule-light);
+      font-family:var(--label);font-size:0.55rem;
+      text-transform:uppercase;letter-spacing:2px;color:var(--ink4);
+      flex-wrap:wrap;
+    }
+
+    /* ===== TOOLS STRIP ===== */
+    .tools-strip{
+      display:flex;flex-wrap:wrap;gap:4px;margin:8px 0;
+    }
+    .tool-sm{
+      font-family:var(--label);font-size:0.58rem;
+      padding:2px 6px;border:1px solid var(--rule-light);
+      color:var(--ink3);font-weight:600;
+      letter-spacing:0.5px;transition:all 0.2s;
+    }
+    .tool-sm:hover{border-color:var(--ink);color:var(--ink)}
+
+    /* ===== FOLIO / FOOTER ===== */
+    .folio{
+      text-align:center;padding:12px 0;
+      font-family:var(--label);font-size:0.55rem;
+      text-transform:uppercase;letter-spacing:3px;color:var(--ink4);
+    }
+    .folio a{color:var(--red);text-decoration:none}
+
+    /* ===== ANIMATIONS ===== */
+    .fade-up{opacity:0;transform:translateY(16px);transition:all 0.6s cubic-bezier(0.16,1,0.3,1)}
+    .fade-up.vis{opacity:1;transform:none}
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:860px){
+      .grid-main{
+        grid-template-columns:1fr var(--rule-width) 1fr;
+      }
+      .col-rule:last-of-type,.col:last-child{display:none}
+      .grid-main.has-sidebar .col:last-child{display:block;grid-column:1/-1;margin-top:16px;padding:0}
+      .grid-main.has-sidebar .col-rule:last-of-type{display:none}
+    }
+    @media(max-width:600px){
+      .grid-main{display:block}
+      .col-rule{display:none}
+      .col{padding:0;margin-bottom:16px}
+      .masthead-name{letter-spacing:0.01em}
+      .breaking-text{animation-duration:12s}
+      .masthead-top,.masthead-meta{flex-direction:column;gap:2px;text-align:center}
+      .newspaper{padding:0 12px 24px}
+    }
+
+    /* ===== PRINT ===== */
+    @media print{
+      body{background:#fff}
+      .breaking{display:none}
+      .advert-btn{border:1px solid var(--ink)}
+    }
+  </style>
+</head>
+<body>
+
+<div class="newspaper">
+
+  <!-- ===== MASTHEAD ===== -->
+  <header class="masthead">
+    <div class="rule-thick"></div>
+    <div class="masthead-top">
+      <span>Том V · Выпуск №1</span>
+      <span>Москва · Россия</span>
+    </div>
+    <div class="masthead-name">The Product Times</div>
+    <div class="masthead-tagline">Ежедневная газета продуктового мира с 2020 года</div>
+    <div class="rule-double"></div>
+    <div class="masthead-meta">
+      <span id="dateStr"></span>
+      <a href="#classifieds">Объявления — стр. 4</a>
+      <span>Цена: бесплатно</span>
+    </div>
+    <div class="rule-thin" style="margin-top:4px"></div>
+  </header>
+
+  <!-- ===== BREAKING ===== -->
+  <div class="breaking fade-up">
+    <span class="breaking-label">Срочно</span>
+    <span class="breaking-text">Product Manager с 5-летним опытом ищет новые вызовы · AdTech · PropTech · EdTech · B2B SaaS · 12+ запущенных продуктов · Открыт к предложениям</span>
+  </div>
+
+  <!-- ===== MAIN HEADLINE ===== -->
+  <div style="margin:14px 0 4px" class="fade-up">
+    <div class="kicker">Эксклюзивное интервью</div>
+    <h1 class="headline-main">Продакт-менеджер из Москвы: «Я превращаю хаос в roadmap, гипотезы — в метрики, а фичи — в выручку»</h1>
+    <div class="headline-sub">Никита Пермиков — о пути от junior PM в EdTech-стартапе до руководителя продукта в AdTech-холдинге, об ошибках и принципах</div>
+    <div class="byline"><strong>Редакция The Product Times</strong> · Специальный выпуск</div>
+  </div>
+
+  <div class="rule-thin"></div>
+
+  <!-- ===== THREE-COLUMN GRID ===== -->
+  <div class="grid-main has-sidebar" style="margin-top:12px">
+
+    <!-- COL 1 -->
+    <div class="col">
+
+      <!-- Intro text -->
+      <p class="body-text drop-cap fade-up"><span class="dateline">МОСКВА —</span> За пять лет в продуктовом менеджменте Никита Пермиков прошёл путь от junior PM в AI-стартапе до senior product manager в AdTech-холдинге. Его карьера — это четыре индустрии, двенадцать запущенных продуктов и принцип «каждое решение должно быть подкреплено данными».</p>
+
+      <p class="body-text fade-up">«Мой технический бэкграунд — Computer Science — позволяет говорить с инженерами на одном языке, — рассказывает Пермиков. — Но самое важное, чему я научился, — это слушать пользователей. Не то, что они говорят, а то, что они на самом деле делают».</p>
+
+      <div class="article-rule"></div>
+
+      <!-- AD TECH HOLDING -->
+      <div class="fade-up">
+        <div class="kicker">Текущая позиция · 2023—н.в.</div>
+        <h2 class="headline-section">Ad Tech Holding: рост выручки на 35% и перестройка онбординга</h2>
+        <div class="byline"><strong>Senior Product Manager</strong> · AdTech / B2B SaaS</div>
+        <p class="body-text">Пермиков руководит стратегией программатик-платформы, обрабатывающей более 500 тысяч рекламных запросов в день. Под его началом — кросс-функциональная команда из 11 человек: инженеры, дизайнеры и аналитик.</p>
+        <p class="body-text">Ключевые достижения включают переработку системы таргетинга и оптимизации ставок, а также полное перепроектирование self-serve onboarding-потока, которое снизило отток новых клиентов на 40%.</p>
+      </div>
+
+      <div class="data-box fade-up">
+        <div class="data-box-title">Ключевые показатели · Ad Tech</div>
+        <div class="data-row"><span class="data-label">Revenue</span><span class="data-val up">+35%</span></div>
+        <div class="data-row"><span class="data-label">Onboard Churn</span><span class="data-val down">−40%</span></div>
+        <div class="data-row"><span class="data-label">Team Size</span><span class="data-val">11</span></div>
+        <div class="data-row"><span class="data-label">Daily Requests</span><span class="data-val">500K+</span></div>
+      </div>
+
+      <div class="article-rule"></div>
+
+      <!-- NAPOLEON IT -->
+      <div class="fade-up">
+        <div class="kicker">Консалтинг · 2021—2022</div>
+        <h2 class="headline-small">Napoleon IT: четыре enterprise-продукта в срок при 95% CSAT</h2>
+        <div class="byline"><strong>Product Manager</strong> · IT Consulting / Fintech / E-commerce</div>
+        <p class="body-text">В Napoleon IT Пермиков вёл product discovery и delivery для enterprise-клиентов в fintech и e-commerce. Разработал фреймворк product discovery, который был принят во всей компании. Scope creep в спринтах сократился вдвое.</p>
+      </div>
+
+      <div class="data-box fade-up">
+        <div class="data-box-title">Показатели · Napoleon IT</div>
+        <div class="data-row"><span class="data-label">Products Shipped</span><span class="data-val">4</span></div>
+        <div class="data-row"><span class="data-label">Client CSAT</span><span class="data-val up">95%</span></div>
+        <div class="data-row"><span class="data-label">Scope Creep</span><span class="data-val down">−50%</span></div>
+      </div>
+
+    </div>
+
+    <!-- RULE 1 -->
+    <div class="col-rule"></div>
+
+    <!-- COL 2 -->
+    <div class="col">
+
+      <!-- REUROOM -->
+      <div class="fade-up">
+        <div class="kicker">PropTech · 2022—2023</div>
+        <h2 class="headline-section">Reuroom.ru: как переделать маркетплейс ремонтов и сократить споры на 45%</h2>
+        <div class="byline"><strong>Product Manager</strong> · PropTech / Marketplace</div>
+        <p class="body-text drop-cap">Маркетплейс ремонтных услуг Reuroom.ru соединяет владельцев жилья с проверенными подрядчиками. Пермиков пришёл в продукт, когда мобильный опыт отставал от десктопа, а система матчинга работала по простейшим правилам.</p>
+        <p class="body-text">«Первым делом я провёл серию глубинных интервью с обеими сторонами маркетплейса, — вспоминает он. — Главная боль оказалась не в интерфейсе, а в доверии. Люди боялись попасть на недобросовестного подрядчика».</p>
+        <p class="body-text">Результат — mobile-first редизайн (+60% мобильного вовлечения), улучшенный алгоритм матчинга (+28% конверсии) и система отзывов и рейтингов, которая сократила количество споров на 45%.</p>
+      </div>
+
+      <div class="data-box fade-up">
+        <div class="data-box-title">Ключевые показатели · Reuroom</div>
+        <div class="data-row"><span class="data-label">Contractor Conversion</span><span class="data-val up">+28%</span></div>
+        <div class="data-row"><span class="data-label">Mobile Engagement</span><span class="data-val up">+60%</span></div>
+        <div class="data-row"><span class="data-label">Disputes</span><span class="data-val down">−45%</span></div>
+      </div>
+
+      <div class="article-rule"></div>
+
+      <!-- GOT IT LIFE -->
+      <div class="fade-up">
+        <div class="kicker">Начало карьеры · 2020—2021</div>
+        <h2 class="headline-small">Got It Life: первый PM-опыт в EdTech — геймификация, A/B тесты и рост DAU на 22%</h2>
+        <div class="byline"><strong>Junior Product Manager</strong> · EdTech / AI</div>
+        <p class="body-text">AI-платформа для образования Got It Life стала первым PM-опытом Пермикова — и сразу с измеримым импактом. Запуск геймификации привёл к росту DAU на 22%. За год было проведено более 15 A/B тестов, каждый из которых приводил к конкретным улучшениям в retention.</p>
+        <p class="body-text">«Я построил аналитические дашборды для всей команды. До этого данные были, но никто ими не пользовался системно», — рассказывает Пермиков.</p>
+      </div>
+
+      <div class="data-box fade-up">
+        <div class="data-box-title">Показатели · Got It Life</div>
+        <div class="data-row"><span class="data-label">Daily Active Users</span><span class="data-val up">+22%</span></div>
+        <div class="data-row"><span class="data-label">A/B Tests Run</span><span class="data-val">15+</span></div>
+        <div class="data-row"><span class="data-label">Retention</span><span class="data-val up">↑</span></div>
+      </div>
+
+      <div class="article-rule"></div>
+
+      <!-- PULLQUOTE -->
+      <div class="pullquote fade-up">
+        <p>«Лучшее продуктовое решение — то, которое можно объяснить данными, но вдохновение для которого пришло от разговора с пользователем»</p>
+        <div class="attr">Никита Пермиков, Senior Product Manager</div>
+      </div>
+
+      <!-- EDUCATION small -->
+      <div class="fade-up" style="margin-top:12px">
+        <div class="kicker">Образование</div>
+        <h3 class="headline-small">Фундамент: Computer Science и непрерывное обучение</h3>
+        <p class="body-text">Бакалавриат по информатике (2016—2020) заложил инженерное мышление. Сертификаты: Product Strategy (Reforge), Product Analytics (Amplitude), Advanced SQL, Design Thinking, Agile PM.</p>
+        <p class="body-text"><b>Языки:</b> Русский (native) · English (professional)</p>
+      </div>
+
+    </div>
+
+    <!-- RULE 2 -->
+    <div class="col-rule"></div>
+
+    <!-- COL 3 (SIDEBAR) -->
+    <div class="col">
+
+      <!-- WEATHER/STATUS -->
+      <div class="weather-box fade-up">
+        <div class="weather-title">Текущий статус</div>
+        <div class="weather-icon">☀️</div>
+        <div class="weather-status">Открыт к предложениям</div>
+        <div class="weather-detail">Москва · Готов к релокации</div>
+      </div>
+
+      <!-- MARKET DATA / SKILLS -->
+      <div class="fade-up">
+        <div class="market-header">Биржа навыков · Котировки</div>
+        <div class="market-row"><span class="market-name">Strategy</span><div class="market-bar"><div class="market-fill" data-w="92%"></div></div><span class="market-pct">92</span></div>
+        <div class="market-row"><span class="market-name">User Research</span><div class="market-bar"><div class="market-fill" data-w="90%"></div></div><span class="market-pct">90</span></div>
+        <div class="market-row"><span class="market-name">Analytics</span><div class="market-bar"><div class="market-fill" data-w="88%"></div></div><span class="market-pct">88</span></div>
+        <div class="market-row"><span class="market-name">A/B Testing</span><div class="market-bar"><div class="market-fill" data-w="90%"></div></div><span class="market-pct">90</span></div>
+        <div class="market-row"><span class="market-name">SQL / Data</span><div class="market-bar"><div class="market-fill" data-w="88%"></div></div><span class="market-pct">88</span></div>
+        <div class="market-row"><span class="market-name">Agile / Scrum</span><div class="market-bar"><div class="market-fill" data-w="92%"></div></div><span class="market-pct">92</span></div>
+        <div class="market-row"><span class="market-name">Leadership</span><div class="market-bar"><div class="market-fill" data-w="87%"></div></div><span class="market-pct">87</span></div>
+        <div class="market-row"><span class="market-name">Python</span><div class="market-bar"><div class="market-fill" data-w="78%"></div></div><span class="market-pct">78</span></div>
+      </div>
+
+      <div class="article-rule"></div>
+
+      <!-- TOOLS -->
+      <div class="fade-up">
+        <div class="kicker">Рабочий стек</div>
+        <div class="tools-strip">
+          <span class="tool-sm">Jira</span>
+          <span class="tool-sm">Confluence</span>
+          <span class="tool-sm">Figma</span>
+          <span class="tool-sm">Miro</span>
+          <span class="tool-sm">Notion</span>
+          <span class="tool-sm">SQL</span>
+          <span class="tool-sm">Python</span>
+          <span class="tool-sm">Amplitude</span>
+          <span class="tool-sm">Mixpanel</span>
+          <span class="tool-sm">GA</span>
+          <span class="tool-sm">BigQuery</span>
+          <span class="tool-sm">Tableau</span>
+          <span class="tool-sm">Firebase</span>
+          <span class="tool-sm">Git</span>
+        </div>
+      </div>
+
+      <div class="article-rule"></div>
+
+      <!-- ADVERTISEMENT / CTA -->
+      <div class="advert fade-up">
+        <div class="advert-eyebrow">Объявление</div>
+        <h3>Ищу продукт,<br>который стоит строить</h3>
+        <p>Открыт к позициям Product Manager / Senior PM в компаниях, которые решают настоящие проблемы.</p>
+        <a href="https://t.me/nikit34" target="_blank" class="advert-btn">Написать в Telegram</a>
+      </div>
+
+      <div class="article-rule"></div>
+
+      <!-- CLASSIFIEDS / CONTACT -->
+      <div class="classifieds fade-up" id="classifieds">
+        <div class="classifieds-title">Контакты</div>
+        <a href="https://t.me/nikit34" target="_blank" class="classified-item">
+          <i class="fab fa-telegram"></i>
+          <div><div class="classified-label">Telegram</div>@nikit34</div>
+        </a>
+        <a href="https://www.linkedin.com/in/nikitapermikov/" target="_blank" class="classified-item">
+          <i class="fab fa-linkedin"></i>
+          <div><div class="classified-label">LinkedIn</div>Nikita Permikov</div>
+        </a>
+        <a href="https://github.com/nikit34" target="_blank" class="classified-item">
+          <i class="fab fa-github"></i>
+          <div><div class="classified-label">GitHub</div>nikit34</div>
+        </a>
+        <a href="mailto:permikov.nikita@gmail.com" class="classified-item">
+          <i class="fas fa-envelope"></i>
+          <div><div class="classified-label">Email</div>permikov.nikita@gmail.com</div>
+        </a>
+      </div>
+
+      <div class="jump fade-up">Продолжение на стр. ∞</div>
+
+    </div>
+
+  </div><!-- /grid-main -->
+
+  <!-- ===== EDITION STRIP ===== -->
+  <div class="rule-thin" style="margin-top:16px"></div>
+  <div class="edition-strip">
+    <span>AdTech</span>
+    <span>·</span>
+    <span>PropTech</span>
+    <span>·</span>
+    <span>EdTech</span>
+    <span>·</span>
+    <span>Fintech</span>
+    <span>·</span>
+    <span>B2B SaaS</span>
+    <span>·</span>
+    <span>E-commerce</span>
+  </div>
+  <div class="rule-thin"></div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="folio">
+    &copy; 2024 The Product Times · <a href="https://t.me/nikit34">Написать издателю</a>
+  </div>
+
+</div><!-- /newspaper -->
+
+<script>
+  // Date
+  const d = new Date();
+  const months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+  const days = ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'];
+  document.getElementById('dateStr').textContent =
+    days[d.getDay()] + ', ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear() + ' г.';
+
+  // Intersection Observer for fade-in
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+  // Animate skill bars on scroll
+  const barObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.market-fill').forEach(bar => {
+          bar.style.width = bar.dataset.w;
+        });
+        barObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.market-header').forEach(el => {
+    barObs.observe(el.parentElement);
+  });
+</script>
+</body>
+</html>
