@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikita Permikov — Product Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --bg:#FAFAF8;
+      --bg2:#F2F0EC;
+      --bg3:#E8E5DF;
+      --dark:#1A1A1A;
+      --dark2:#2D2D2D;
+      --text:#333;
+      --text2:#6B6B6B;
+      --text3:#999;
+      --accent:#C45D3E;
+      --accent2:#2D5F4A;
+      --accent-light:rgba(196,93,62,0.08);
+      --serif:'Playfair Display',Georgia,serif;
+      --sans:'Inter',system-ui,sans-serif;
+      --mono:'JetBrains Mono',monospace;
+      --max-w:1080px;
+      --space:clamp(4rem,8vw,8rem);
+    }
+    ::selection{background:var(--accent);color:#fff}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+
+    /* ===== LAYOUT ===== */
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 2rem}
+    section{padding:var(--space) 0}
+    .divider{width:100%;height:1px;background:var(--bg3);margin:0}
+
+    /* ===== NAV ===== */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      background:rgba(250,250,248,0.85);backdrop-filter:blur(16px);
+      border-bottom:1px solid transparent;
+      transition:border-color 0.3s,box-shadow 0.3s;
+    }
+    nav.scrolled{border-bottom-color:var(--bg3);box-shadow:0 1px 20px rgba(0,0,0,0.04)}
+    .nav-inner{
+      max-width:var(--max-w);margin:0 auto;padding:0.9rem 2rem;
+      display:flex;justify-content:space-between;align-items:center;
+    }
+    .nav-name{font-family:var(--serif);font-weight:600;font-size:1.1rem;color:var(--dark);letter-spacing:-0.5px;text-decoration:none}
+    .nav-links{display:flex;gap:2rem;align-items:center;list-style:none}
+    .nav-links a{
+      font-size:0.82rem;color:var(--text2);text-decoration:none;
+      font-weight:500;letter-spacing:0.3px;transition:color 0.3s;
+    }
+    .nav-links a:hover{color:var(--dark)}
+    .nav-cta{
+      font-size:0.8rem;font-weight:600;color:var(--accent)!important;
+      border:1.5px solid var(--accent);border-radius:100px;
+      padding:0.4rem 1.2rem;transition:all 0.3s;
+    }
+    .nav-cta:hover{background:var(--accent);color:#fff!important}
+    .nav-toggle{display:none;background:none;border:none;font-size:1.3rem;color:var(--dark);cursor:pointer}
+
+    /* ===== HERO ===== */
+    .hero{
+      padding-top:clamp(8rem,14vw,12rem);
+      padding-bottom:var(--space);
+    }
+    .hero-eyebrow{
+      font-family:var(--mono);font-size:0.72rem;
+      color:var(--accent);letter-spacing:2.5px;text-transform:uppercase;
+      font-weight:500;margin-bottom:1.5rem;
+      display:flex;align-items:center;gap:0.8rem;
+    }
+    .hero-eyebrow::before{content:'';width:32px;height:1.5px;background:var(--accent)}
+    .hero h1{
+      font-family:var(--serif);font-size:clamp(2.4rem,5.5vw,4.2rem);
+      font-weight:500;line-height:1.2;letter-spacing:-0.02em;
+      color:var(--dark);margin-bottom:1.8rem;
+    }
+    .hero h1 em{font-style:italic;color:var(--accent)}
+    .hero-text{
+      font-size:1.1rem;color:var(--text2);max-width:580px;
+      line-height:1.85;font-weight:300;margin-bottom:2.5rem;
+    }
+    .hero-meta{
+      display:flex;gap:3rem;flex-wrap:wrap;
+      padding-top:2rem;border-top:1px solid var(--bg3);
+    }
+    .hero-meta-item .num{
+      font-family:var(--serif);font-size:2rem;font-weight:700;
+      color:var(--dark);letter-spacing:-1px;
+    }
+    .hero-meta-item .label{
+      font-size:0.72rem;color:var(--text3);
+      text-transform:uppercase;letter-spacing:1.5px;margin-top:0.2rem;
+    }
+
+    /* ===== PHILOSOPHY RIBBON ===== */
+    .ribbon{
+      background:var(--dark);color:var(--bg);
+      padding:3.5rem 2rem;text-align:center;
+      position:relative;overflow:hidden;
+    }
+    .ribbon blockquote{
+      font-family:var(--serif);font-size:clamp(1.2rem,2.5vw,1.7rem);
+      font-weight:400;font-style:italic;
+      max-width:750px;margin:0 auto;line-height:1.7;
+      position:relative;z-index:1;
+    }
+    .ribbon .attr{
+      font-family:var(--mono);font-size:0.7rem;
+      color:var(--text3);margin-top:1.2rem;
+      letter-spacing:1.5px;text-transform:uppercase;
+    }
+    .ribbon .deco{
+      position:absolute;font-family:var(--serif);
+      font-size:12rem;color:rgba(255,255,255,0.03);
+      font-weight:800;line-height:1;pointer-events:none;
+    }
+    .ribbon .deco.left{top:-1rem;left:2rem}
+    .ribbon .deco.right{bottom:-3rem;right:2rem}
+
+    /* ===== SECTION HEADERS ===== */
+    .sec-header{margin-bottom:3.5rem}
+    .sec-eyebrow{
+      font-family:var(--mono);font-size:0.68rem;
+      color:var(--accent);letter-spacing:2.5px;text-transform:uppercase;
+      font-weight:500;margin-bottom:0.8rem;
+      display:flex;align-items:center;gap:0.6rem;
+    }
+    .sec-eyebrow::before{content:'';width:16px;height:1.5px;background:var(--accent)}
+    .sec-title{
+      font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);
+      font-weight:500;color:var(--dark);letter-spacing:-0.02em;
+      line-height:1.25;
+    }
+
+    /* ===== EXPERIENCE ===== */
+    .exp-list{display:flex;flex-direction:column;gap:0}
+    .exp-item{
+      display:grid;grid-template-columns:200px 1fr;gap:3rem;
+      padding:2.5rem 0;border-bottom:1px solid var(--bg3);
+      transition:background 0.4s;position:relative;
+    }
+    .exp-item:first-child{border-top:1px solid var(--bg3)}
+    .exp-item:hover{background:var(--accent-light);margin:0 -2rem;padding-left:2rem;padding-right:2rem;border-radius:8px}
+    .exp-left{position:sticky;top:6rem;align-self:start}
+    .exp-date{
+      font-family:var(--mono);font-size:0.75rem;
+      color:var(--text3);letter-spacing:0.5px;margin-bottom:0.3rem;
+    }
+    .exp-industry{
+      font-size:0.72rem;color:var(--accent2);font-weight:600;
+      text-transform:uppercase;letter-spacing:1.5px;
+    }
+    .exp-company{
+      font-family:var(--serif);font-size:1.65rem;
+      font-weight:600;color:var(--dark);letter-spacing:-0.5px;
+      margin-bottom:0.2rem;
+    }
+    .exp-role{font-size:0.95rem;color:var(--text2);font-weight:500;margin-bottom:1rem}
+    .exp-desc{font-size:0.92rem;color:var(--text2);line-height:1.8;margin-bottom:1.2rem;font-weight:300}
+    .exp-metrics{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:1rem}
+    .exp-metric{
+      padding:0.9rem 1.3rem;background:var(--bg);
+      border:1px solid var(--bg3);border-radius:10px;
+      min-width:100px;transition:border-color 0.3s;
+    }
+    .exp-item:hover .exp-metric{border-color:rgba(196,93,62,0.2)}
+    .exp-metric .val{
+      font-family:var(--serif);font-size:1.4rem;font-weight:700;
+      color:var(--accent);letter-spacing:-0.5px;
+    }
+    .exp-metric .lbl{
+      font-size:0.65rem;color:var(--text3);text-transform:uppercase;
+      letter-spacing:1px;margin-top:0.15rem;
+    }
+    .exp-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+    .exp-tag{
+      font-size:0.68rem;padding:0.25rem 0.7rem;border-radius:100px;
+      background:var(--bg2);color:var(--text2);font-weight:500;
+    }
+
+    /* ===== TESTIMONIAL (inline) ===== */
+    .testimonial{
+      padding:2.5rem 3rem;margin:var(--space) 0;
+      background:var(--bg2);border-radius:16px;
+      border-left:3px solid var(--accent);
+      position:relative;
+    }
+    .testimonial p{
+      font-family:var(--serif);font-size:1.15rem;
+      font-style:italic;line-height:1.8;color:var(--dark2);
+    }
+    .testimonial .t-author{
+      margin-top:1rem;font-family:var(--sans);
+      font-size:0.82rem;color:var(--text2);font-weight:500;
+      font-style:normal;
+    }
+    .testimonial .t-author strong{color:var(--dark);font-weight:600}
+
+    /* ===== SKILLS GRID ===== */
+    .skills-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:2rem;
+    }
+    .skill-group{padding:2rem;border:1px solid var(--bg3);border-radius:12px;transition:all 0.3s}
+    .skill-group:hover{border-color:var(--accent);box-shadow:0 4px 24px rgba(196,93,62,0.06)}
+    .skill-group-title{
+      font-family:var(--serif);font-size:1.15rem;font-weight:600;
+      color:var(--dark);margin-bottom:1rem;
+      display:flex;align-items:center;gap:0.6rem;
+    }
+    .skill-group-title .ico{
+      width:32px;height:32px;border-radius:8px;
+      display:inline-flex;align-items:center;justify-content:center;
+      font-size:0.9rem;
+    }
+    .ico-s{background:rgba(196,93,62,0.1);color:var(--accent)}
+    .ico-u{background:rgba(45,95,74,0.1);color:var(--accent2)}
+    .ico-d{background:rgba(59,100,180,0.1);color:#3B64B4}
+    .ico-l{background:rgba(160,100,50,0.1);color:#A06432}
+    .skill-list{list-style:none;display:flex;flex-direction:column;gap:0.55rem}
+    .skill-list li{
+      font-size:0.88rem;color:var(--text2);
+      display:flex;align-items:center;gap:0.6rem;
+      padding:0.3rem 0;
+    }
+    .skill-list li::before{
+      content:'';width:5px;height:5px;border-radius:50%;
+      background:var(--bg3);flex-shrink:0;
+    }
+    .skill-list li:hover::before{background:var(--accent)}
+
+    /* ===== TOOLS BAR ===== */
+    .tools-bar{
+      display:flex;flex-wrap:wrap;gap:0.6rem;
+      padding:2rem 0;
+    }
+    .tool-chip{
+      padding:0.45rem 1rem;border-radius:100px;
+      border:1px solid var(--bg3);font-size:0.78rem;
+      color:var(--text2);font-weight:500;
+      transition:all 0.3s;background:var(--bg);
+    }
+    .tool-chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+
+    /* ===== APPROACH ===== */
+    .approach-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.5rem;counter-reset:step;
+    }
+    .approach-card{
+      padding:2rem;border:1px solid var(--bg3);border-radius:12px;
+      transition:all 0.3s;position:relative;counter-increment:step;
+    }
+    .approach-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.04)}
+    .approach-card::before{
+      content:counter(step,decimal-leading-zero);
+      font-family:var(--serif);font-size:2.5rem;font-weight:700;
+      color:var(--bg3);line-height:1;margin-bottom:1rem;display:block;
+      transition:color 0.3s;
+    }
+    .approach-card:hover::before{color:var(--accent)}
+    .approach-card h3{
+      font-family:var(--serif);font-size:1.1rem;font-weight:600;
+      color:var(--dark);margin-bottom:0.6rem;
+    }
+    .approach-card p{font-size:0.85rem;color:var(--text2);line-height:1.7}
+
+    /* ===== EDUCATION ===== */
+    .edu-row{
+      display:grid;grid-template-columns:200px 1fr;gap:3rem;
+      padding:1.5rem 0;border-bottom:1px solid var(--bg3);
+    }
+    .edu-row:first-child{border-top:1px solid var(--bg3)}
+    .edu-year{font-family:var(--mono);font-size:0.78rem;color:var(--text3);padding-top:0.2rem}
+    .edu-title{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--dark);margin-bottom:0.2rem}
+    .edu-sub{font-size:0.88rem;color:var(--text2)}
+
+    /* ===== CTA SECTION ===== */
+    .cta-section{
+      text-align:center;padding:var(--space) 2rem;
+    }
+    .cta-section h2{
+      font-family:var(--serif);font-size:clamp(1.8rem,4vw,3rem);
+      font-weight:500;color:var(--dark);letter-spacing:-0.02em;
+      margin-bottom:1rem;
+    }
+    .cta-section h2 em{font-style:italic;color:var(--accent)}
+    .cta-section p{
+      font-size:1rem;color:var(--text2);max-width:480px;
+      margin:0 auto 2rem;font-weight:300;
+    }
+    .cta-buttons{display:flex;justify-content:center;gap:0.8rem;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:0.5rem;
+      padding:0.85rem 2rem;border-radius:100px;font-size:0.88rem;
+      font-weight:600;text-decoration:none;transition:all 0.3s;
+      cursor:pointer;border:none;
+    }
+    .btn-fill{background:var(--dark);color:var(--bg)}
+    .btn-fill:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 4px 16px rgba(196,93,62,0.3)}
+    .btn-ghost{border:1.5px solid var(--bg3);color:var(--text);background:transparent}
+    .btn-ghost:hover{border-color:var(--dark);background:var(--dark);color:var(--bg)}
+
+    /* ===== CONTACT ===== */
+    .contact-row{
+      display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;
+    }
+    .contact-chip{
+      display:flex;align-items:center;gap:0.6rem;
+      padding:0.7rem 1.5rem;border-radius:100px;
+      border:1px solid var(--bg3);text-decoration:none;
+      color:var(--text);font-size:0.85rem;font-weight:500;
+      transition:all 0.3s;
+    }
+    .contact-chip i{color:var(--accent);font-size:1rem}
+    .contact-chip:hover{border-color:var(--accent);background:var(--accent-light);transform:translateY(-2px)}
+
+    /* ===== FOOTER ===== */
+    footer{
+      padding:2rem;text-align:center;
+      border-top:1px solid var(--bg3);
+    }
+    footer p{font-size:0.75rem;color:var(--text3)}
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in{opacity:0;transform:translateY(24px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1)}
+    .fade-in.visible{opacity:1;transform:none}
+    .fade-in-delay-1{transition-delay:0.1s}
+    .fade-in-delay-2{transition-delay:0.2s}
+    .fade-in-delay-3{transition-delay:0.3s}
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:768px){
+      .exp-item{grid-template-columns:1fr;gap:0.5rem}
+      .exp-left{position:static;display:flex;gap:1rem;align-items:baseline;margin-bottom:0.3rem}
+      .edu-row{grid-template-columns:1fr;gap:0.3rem}
+      .hero-meta{gap:2rem}
+      .testimonial{padding:1.5rem}
+      .nav-links{
+        display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+        background:rgba(250,250,248,0.97);backdrop-filter:blur(16px);
+        flex-direction:column;justify-content:center;align-items:center;
+        gap:2rem;z-index:90;
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{font-size:1.2rem}
+      .nav-toggle{display:block;z-index:100}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-name">Nikita Permikov</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#experience">Опыт</a></li>
+        <li><a href="#skills">Навыки</a></li>
+        <li><a href="#approach">Подход</a></li>
+        <li><a href="#contact" class="nav-cta">Связаться</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-eyebrow fade-in">Product Manager</div>
+      <h1 class="fade-in fade-in-delay-1">
+        Я строю продукты, которые<br>
+        люди <em>действительно</em> используют
+      </h1>
+      <p class="hero-text fade-in fade-in-delay-2">
+        5+ лет в продуктовом менеджменте — от EdTech стартапа до enterprise AdTech.
+        Превращаю пользовательские проблемы в бизнес-метрики через
+        data-driven подход, глубокий user research и итеративную разработку.
+      </p>
+      <div class="hero-meta fade-in fade-in-delay-3">
+        <div class="hero-meta-item">
+          <div class="num">4</div>
+          <div class="label">Компании</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="num">12+</div>
+          <div class="label">Продуктов</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="num">AdTech</div>
+          <div class="label">Сейчас</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="num">Moscow</div>
+          <div class="label">Локация</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY RIBBON -->
+  <div class="ribbon">
+    <div class="deco left">"</div>
+    <div class="deco right">"</div>
+    <blockquote class="fade-in">
+      «Лучшее решение — то, которое можно объяснить данными,<br>
+      но вдохновение для которого пришло от разговора с пользователем»
+    </blockquote>
+    <div class="attr fade-in">Мой принцип</div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="sec-header">
+        <div class="sec-eyebrow fade-in">Опыт работы</div>
+        <h2 class="sec-title fade-in">Где я создавал ценность</h2>
+      </div>
+
+      <div class="exp-list">
+
+        <!-- Ad Tech Holding -->
+        <div class="exp-item fade-in">
+          <div class="exp-left">
+            <div class="exp-date">2023 — Сейчас</div>
+            <div class="exp-industry">AdTech · B2B</div>
+          </div>
+          <div class="exp-right">
+            <div class="exp-company">Ad Tech Holding</div>
+            <div class="exp-role">Senior Product Manager</div>
+            <p class="exp-desc">
+              Владею стратегией программатик-платформы, обрабатывающей 500K+ рекламных запросов в день. Переработал систему таргетинга и оптимизации ставок, полностью перестроил self-serve onboarding. Руковожу кросс-функциональной командой из 11 человек.
+            </p>
+            <div class="exp-metrics">
+              <div class="exp-metric"><div class="val">+35%</div><div class="lbl">Revenue</div></div>
+              <div class="exp-metric"><div class="val">−40%</div><div class="lbl">Onboard Churn</div></div>
+              <div class="exp-metric"><div class="val">11</div><div class="lbl">Team Size</div></div>
+            </div>
+            <div class="exp-tags">
+              <span class="exp-tag">Programmatic</span>
+              <span class="exp-tag">RTB</span>
+              <span class="exp-tag">Revenue Growth</span>
+              <span class="exp-tag">Platform Strategy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reuroom.ru -->
+        <div class="exp-item fade-in">
+          <div class="exp-left">
+            <div class="exp-date">2022 — 2023</div>
+            <div class="exp-industry">PropTech</div>
+          </div>
+          <div class="exp-right">
+            <div class="exp-company">Reuroom.ru</div>
+            <div class="exp-role">Product Manager</div>
+            <p class="exp-desc">
+              Маркетплейс ремонтных услуг, соединяющий владельцев жилья с проверенными подрядчиками. Запустил mobile-first редизайн, переработал алгоритм матчинга и внедрил систему рейтингов и доверия, сократившую споры почти вдвое.
+            </p>
+            <div class="exp-metrics">
+              <div class="exp-metric"><div class="val">+28%</div><div class="lbl">Conversion</div></div>
+              <div class="exp-metric"><div class="val">+60%</div><div class="lbl">Mobile</div></div>
+              <div class="exp-metric"><div class="val">−45%</div><div class="lbl">Disputes</div></div>
+            </div>
+            <div class="exp-tags">
+              <span class="exp-tag">Marketplace</span>
+              <span class="exp-tag">Matching</span>
+              <span class="exp-tag">Mobile-first</span>
+              <span class="exp-tag">Growth</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- inline testimonial -->
+        <div class="testimonial fade-in">
+          <p>«Никита умеет находить баланс между тем, что хочет бизнес, и тем, что нужно пользователю. Он не просто менеджер задач — он видит продукт целиком и думает на два шага вперёд.»</p>
+          <div class="t-author"><strong>Коллега по продуктовой команде</strong> · Reuroom.ru</div>
+        </div>
+
+        <!-- Napoleon IT -->
+        <div class="exp-item fade-in">
+          <div class="exp-left">
+            <div class="exp-date">2021 — 2022</div>
+            <div class="exp-industry">Consulting · B2B</div>
+          </div>
+          <div class="exp-right">
+            <div class="exp-company">Napoleon IT</div>
+            <div class="exp-role">Product Manager</div>
+            <p class="exp-desc">
+              Вёл product discovery и delivery для enterprise-клиентов в fintech и e-commerce. Разработал фреймворк discovery, который был принят во всей компании. Все четыре проекта доставлены в срок с высоким CSAT.
+            </p>
+            <div class="exp-metrics">
+              <div class="exp-metric"><div class="val">4</div><div class="lbl">Products</div></div>
+              <div class="exp-metric"><div class="val">95%</div><div class="lbl">CSAT</div></div>
+              <div class="exp-metric"><div class="val">−50%</div><div class="lbl">Scope Creep</div></div>
+            </div>
+            <div class="exp-tags">
+              <span class="exp-tag">Enterprise</span>
+              <span class="exp-tag">Fintech</span>
+              <span class="exp-tag">E-commerce</span>
+              <span class="exp-tag">Agile</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Got It Life -->
+        <div class="exp-item fade-in">
+          <div class="exp-left">
+            <div class="exp-date">2020 — 2021</div>
+            <div class="exp-industry">EdTech · AI</div>
+          </div>
+          <div class="exp-right">
+            <div class="exp-company">Got It Life</div>
+            <div class="exp-role">Junior Product Manager</div>
+            <p class="exp-desc">
+              AI-платформа для образования. Первый PM-опыт — и сразу с измеримым импактом. Запустил геймификацию, провёл 15+ A/B тестов, построил аналитические дашборды для всей команды.
+            </p>
+            <div class="exp-metrics">
+              <div class="exp-metric"><div class="val">+22%</div><div class="lbl">DAU</div></div>
+              <div class="exp-metric"><div class="val">15+</div><div class="lbl">A/B Tests</div></div>
+              <div class="exp-metric"><div class="val">↑</div><div class="lbl">Retention</div></div>
+            </div>
+            <div class="exp-tags">
+              <span class="exp-tag">EdTech</span>
+              <span class="exp-tag">AI/ML</span>
+              <span class="exp-tag">Growth</span>
+              <span class="exp-tag">Analytics</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- MID-PAGE CTA -->
+  <div class="cta-section">
+    <h2 class="fade-in">Интересно поработать <em>вместе</em>?</h2>
+    <p class="fade-in">Открыт к предложениям в продуктовом менеджменте — особенно если продукт решает настоящую проблему.</p>
+    <div class="cta-buttons fade-in">
+      <a href="https://t.me/nikit34" target="_blank" class="btn btn-fill"><i class="fab fa-telegram"></i> Telegram</a>
+      <a href="https://www.linkedin.com/in/nikitapermikov/" target="_blank" class="btn btn-ghost"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="sec-header">
+        <div class="sec-eyebrow fade-in">Компетенции</div>
+        <h2 class="sec-title fade-in">Чем я владею</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-group fade-in">
+          <div class="skill-group-title"><span class="ico ico-s"><i class="fas fa-compass"></i></span> Стратегия</div>
+          <ul class="skill-list">
+            <li>Видение и roadmap продукта</li>
+            <li>Рыночный и конкурентный анализ</li>
+            <li>OKR / KPI фреймворки</li>
+            <li>Go-to-market планирование</li>
+            <li>Юнит-экономика и финмодели</li>
+          </ul>
+        </div>
+        <div class="skill-group fade-in">
+          <div class="skill-group-title"><span class="ico ico-u"><i class="fas fa-users"></i></span> Пользователь</div>
+          <ul class="skill-list">
+            <li>Глубинные интервью и CustDev</li>
+            <li>Jobs-to-be-Done фреймворк</li>
+            <li>Прототипирование в Figma</li>
+            <li>Юзабилити тестирование</li>
+            <li>Customer Journey Mapping</li>
+          </ul>
+        </div>
+        <div class="skill-group fade-in">
+          <div class="skill-group-title"><span class="ico ico-d"><i class="fas fa-chart-line"></i></span> Аналитика</div>
+          <ul class="skill-list">
+            <li>SQL / BigQuery</li>
+            <li>A/B тестирование</li>
+            <li>Amplitude / Mixpanel / GA</li>
+            <li>Когортный и воронковый анализ</li>
+            <li>Python для анализа данных</li>
+          </ul>
+        </div>
+        <div class="skill-group fade-in">
+          <div class="skill-group-title"><span class="ico ico-l"><i class="fas fa-people-arrows"></i></span> Delivery</div>
+          <ul class="skill-list">
+            <li>Кросс-функциональное лидерство</li>
+            <li>Agile / Scrum / Kanban</li>
+            <li>Управление стейкхолдерами</li>
+            <li>Sprint planning и ретро</li>
+            <li>Технические требования</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem">
+        <div class="sec-eyebrow fade-in" style="margin-bottom:1rem">Инструменты</div>
+        <div class="tools-bar fade-in">
+          <span class="tool-chip">Jira</span>
+          <span class="tool-chip">Confluence</span>
+          <span class="tool-chip">Figma</span>
+          <span class="tool-chip">Miro</span>
+          <span class="tool-chip">Notion</span>
+          <span class="tool-chip">SQL</span>
+          <span class="tool-chip">Python</span>
+          <span class="tool-chip">Amplitude</span>
+          <span class="tool-chip">Mixpanel</span>
+          <span class="tool-chip">Google Analytics</span>
+          <span class="tool-chip">BigQuery</span>
+          <span class="tool-chip">Tableau</span>
+          <span class="tool-chip">Firebase</span>
+          <span class="tool-chip">Git</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- APPROACH -->
+  <section id="approach">
+    <div class="container">
+      <div class="sec-header">
+        <div class="sec-eyebrow fade-in">Процесс</div>
+        <h2 class="sec-title fade-in">Как я строю продукты</h2>
+      </div>
+      <div class="approach-grid">
+        <div class="approach-card fade-in">
+          <h3>Discover</h3>
+          <p>Глубокое погружение — user interviews, анализ данных, конкурентная разведка. Ищу настоящую проблему, а не симптомы.</p>
+        </div>
+        <div class="approach-card fade-in">
+          <h3>Define</h3>
+          <p>Формулирую гипотезы, считаю юнит-экономику, определяю метрики успеха. Каждая фича — инвестиция с ожидаемым ROI.</p>
+        </div>
+        <div class="approach-card fade-in">
+          <h3>Design & Build</h3>
+          <p>Wireframes, прототипы, юзабилити-тесты. Sprint planning, daily sync. Работаю бок о бок с инженерами и дизайнерами.</p>
+        </div>
+        <div class="approach-card fade-in">
+          <h3>Measure</h3>
+          <p>A/B тесты, когорты, воронки. Каждый релиз — эксперимент. Ретро, lessons learned, обновление roadmap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECOND TESTIMONIAL -->
+  <div class="container">
+    <div class="testimonial fade-in">
+      <p>«Никита — редкий тип PM, который одинаково комфортно чувствует себя и в SQL-запросе, и в customer interview, и на demo для C-level. Его технический бэкграунд — реальное преимущество.»</p>
+      <div class="t-author"><strong>Engineering Lead</strong> · Ad Tech Holding</div>
+    </div>
+  </div>
+
+  <div class="divider" style="margin-top:var(--space)"></div>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="container">
+      <div class="sec-header">
+        <div class="sec-eyebrow fade-in">Фундамент</div>
+        <h2 class="sec-title fade-in">Образование</h2>
+      </div>
+      <div>
+        <div class="edu-row fade-in">
+          <div class="edu-year">2016 — 2020</div>
+          <div>
+            <div class="edu-title">Computer Science</div>
+            <div class="edu-sub">Технический университет · Бакалавриат</div>
+          </div>
+        </div>
+        <div class="edu-row fade-in">
+          <div class="edu-year">Ongoing</div>
+          <div>
+            <div class="edu-title">Certifications</div>
+            <div class="edu-sub">Product Strategy (Reforge) · Product Analytics (Amplitude) · Advanced SQL · Design Thinking · Agile PM</div>
+          </div>
+        </div>
+        <div class="edu-row fade-in">
+          <div class="edu-year">Языки</div>
+          <div>
+            <div class="edu-title">Русский — Native &nbsp;·&nbsp; English — Professional</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT / FINAL CTA -->
+  <section class="cta-section" id="contact">
+    <div class="sec-eyebrow fade-in" style="justify-content:center">Контакт</div>
+    <h2 class="fade-in">Давайте создадим<br>что-то <em>стоящее</em></h2>
+    <p class="fade-in">Я всегда открыт к разговору — будь то вакансия, консультация или совместный проект.</p>
+    <div class="contact-row fade-in">
+      <a href="https://t.me/nikit34" target="_blank" class="contact-chip"><i class="fab fa-telegram"></i> Telegram</a>
+      <a href="https://www.linkedin.com/in/nikitapermikov/" target="_blank" class="contact-chip"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/nikit34" target="_blank" class="contact-chip"><i class="fab fa-github"></i> GitHub</a>
+      <a href="mailto:permikov.nikita@gmail.com" class="contact-chip"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 Nikita Permikov · Built with care</p>
+  </footer>
+
+  <script>
+    // ===== NAV SCROLL =====
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ===== MOBILE NAV =====
+    document.getElementById('navToggle').addEventListener('click', () => {
+      const links = document.getElementById('navLinks');
+      links.classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(a =>
+      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'))
+    );
+
+    // ===== INTERSECTION OBSERVER =====
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+
+    // ===== SMOOTH SCROLL =====
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) {
+          const y = t.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ===== METRIC COUNT-UP =====
+    const countObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const text = el.textContent.trim();
+        const match = text.match(/^([+\-−]?)(\d+)(.*)/);
+        if (!match) return;
+        const prefix = match[1];
+        const target = parseInt(match[2]);
+        const suffix = match[3];
+        const duration = 1200;
+        const start = performance.now();
+        function tick(now) {
+          const p = Math.min((now - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - p, 3);
+          el.textContent = prefix + Math.round(ease * target) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        countObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.exp-metric .val, .hero-meta-item .num').forEach(el => {
+      if (/\d/.test(el.textContent)) countObs.observe(el);
+    });
+  </script>
+</body>
+</html>
